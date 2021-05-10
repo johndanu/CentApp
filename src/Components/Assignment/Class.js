@@ -5,10 +5,8 @@ import { Grid } from "@material-ui/core";
 import Popover from "@material-ui/core/Popover";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import PublishIcon from "@material-ui/icons/Publish";
-import AlarmIcon from "@material-ui/icons/Alarm";
+import PlaceIcon from "@material-ui/icons/Place";
+import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 
 export const Class = (props) => {
   const styleReceiver = {
@@ -49,8 +47,28 @@ export const Class = (props) => {
   return (
     <Grid container>
       <Grid>
+        {/* {JSON.stringify(props.classUpdate)} */}
         <span style={styleReceiver}>
-          <p>{props.classUpdate.type}</p>
+          <h3>{props.classUpdate.classOn}</h3>
+          <div>
+            <small>{props.classUpdate.dateAndTime}</small>
+          </div>
+
+          {props.classUpdate.place == "online" ? (
+            <a href={props.classUpdate.venue} target="blank">
+              {props.classUpdate.venue}
+              <IconButton>
+                <OpenInNewIcon />
+              </IconButton>
+            </a>
+          ) : (
+            <p>
+              <IconButton>
+                <PlaceIcon />
+              </IconButton>
+              {props.classUpdate.venue}
+            </p>
+          )}
         </span>
       </Grid>
     </Grid>

@@ -16,12 +16,20 @@ export const MyChatRightBar = (props) => {
 
   let id = window.location.href.split("/");
   id = id[id.length - 1];
-  console.log("hello");
+
   let filteredChat = chat.find((item) => {
     if (item.id == id) {
       return item;
     }
   });
+  console.log(filteredChat.chats[2]);
+  // let filteredChat = {
+  //   chats: [s
+  //     {
+  //       name: "john",
+  //     },
+  //   ],
+  // };
   return (
     <div style={space}>
       {filteredChat.chats.map((data) => {

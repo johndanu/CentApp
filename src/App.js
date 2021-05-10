@@ -32,7 +32,8 @@ function App() {
           <Route path="/class/:id" component={Classes} />
           <Route path="/adminmsg" component={AdminToStuChat} />
           <Route path="/progress" component={Progress} />
-          <Route path="/techview" component={TeacherView} />
+          {/* <Route path="/techview" component={TeacherView} /> */}
+          <Route path="/techview/:id" component={TeacherView} />
           <Route path="/TeachToAdminChat" component={TeacherToAdminChat} />
           <Route path="/TeachClsWork" component={TeacherClassWork} />
           <Route path="/Tech2Stu" component={Teacher2StuPersonal} />

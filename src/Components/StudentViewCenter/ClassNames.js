@@ -36,7 +36,7 @@ export const ClassNames = (props) => {
         </Grid>
         <Grid item sm={6}>
           <h4 onClick={handleClick}>
-            {props.name}sas
+            {props.name}
             <br />
             <small>{props.teacher}</small>
           </h4>
