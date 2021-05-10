@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import { MyChatLeftBar } from "./MyChat/MyChatLeftBar";
 import { MyChatRightBar } from "./MyChat/MyChatRightBar";
 import { CentLogo } from "./MyChat/CentLogo";
 import { ChatHeading } from "./MyChat/ChatHeading";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import Firebase from "firebase";
 
 export const MyChat = () => {
   var style = {
@@ -18,90 +19,112 @@ export const MyChat = () => {
   // var containerStyle = {
   //   backgroundColor: "white",
   // }
+  const [ChatCollections, setChatCollections] = useState([
+    // {
+    //   id: "",
+    //   type: "",
+    //   member: [],
+    //   chats: [],
+    // },
+  ]);
 
-  var ChatCollections = [
-    {
-      id: "chat001",
-      type: "personal",
-      members: ["0775647873", "0774766597"],
-      chats: [
-        {
-          id: "message001",
-          sender: "0774766597",
-          message: "Hi Iam john Danushan",
-        },
-        {
-          id: "message002",
-          sender: "0775647873",
-          message: "Hello John",
-        },
-        {
-          id: "message003",
-          sender: "0774766597",
-          message: "how can i help you",
-        },
-        {
-          id: "message001",
-          sender: "0775647873",
-          message: "May I call you tommoroww",
-        },
-      ],
-    },
-    {
-      id: "chat002",
-      type: "personal",
-      members: ["0774548725", "0774766597"],
-      chats: [
-        {
-          id: "message001",
-          sender: "0774766597",
-          message: "Hi Iam john Danushan",
-        },
-        {
-          id: "message002",
-          sender: "0774548725",
-          message: "Hello John",
-        },
-        {
-          id: "message003",
-          sender: "0774548725",
-          message: "how can i help you",
-        },
-        {
-          id: "message001",
-          sender: "0774766597",
-          message: "where can I go for dinner",
-        },
-      ],
-    },
-    {
-      id: "chat003",
-      type: "personal",
-      members: ["0774766597", "0776858489"],
-      chats: [
-        {
-          id: "message001",
-          sender: "0774766597",
-          message: "Hi Iam john Danushan",
-        },
-        {
-          id: "message002",
-          sender: "0776858489",
-          message: "Hello John",
-        },
-        {
-          id: "message003",
-          sender: "0774766597",
-          message: "how can i help you",
-        },
-        {
-          id: "message001",
-          sender: "0776858489",
-          message: "I dont need any help",
-        },
-      ],
-    },
-  ];
+  const getUserData = () => {
+    console.log("sd===============+=");
+    let ref = Firebase.database().ref("/");
+    ref.on("value", (snapshot) => {
+      const state = snapshot.val();
+      console.log("DATA SAVED", state);
+      // console.log("DATA SAVED", state);
+      setChatCollections(state);
+    });
+  };
+  useEffect(() => {
+    getUserData();
+  }, []);
+  console.log(ChatCollections, "chat");
+  // var ChatCollections = [
+  //   {
+  //     id: "chat001",
+  //     type: "personal",
+  //     members: ["0775647873", "0774766597"],
+  //     chats: [
+  //       {
+  //         id: "message001",
+  //         sender: "0774766597",
+  //         message: "Hi Iam john Danushan",
+  //       },
+  //       {
+  //         id: "message002",
+  //         sender: "0775647873",
+  //         message: "Hello John",
+  //       },
+  //       {
+  //         id: "message003",
+  //         sender: "0774766597",
+  //         message: "how can i help you",
+  //       },
+  //       {
+  //         id: "message001",
+  //         sender: "0775647873",
+  //         message: "May I call you tommoroww",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: "chat002",
+  //     type: "personal",
+  //     members: ["0774548725", "0774766597"],
+  //     chats: [
+  //       {
+  //         id: "message001",
+  //         sender: "0774766597",
+  //         message: "Hi Iam john Danushan",
+  //       },
+  //       {
+  //         id: "message002",
+  //         sender: "0774548725",
+  //         message: "Hello John",
+  //       },
+  //       {
+  //         id: "message003",
+  //         sender: "0774548725",
+  //         message: "how can i help you",
+  //       },
+  //       {
+  //         id: "message001",
+  //         sender: "0774766597",
+  //         message: "where can I go for dinner",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     id: "chat003",
+  //     type: "personal",
+  //     members: ["0774766597", "0776858489"],
+  //     chats: [
+  //       {
+  //         id: "message001",
+  //         sender: "0774766597",
+  //         message: "Hi Iam john Danushan",
+  //       },
+  //       {
+  //         id: "message002",
+  //         sender: "0776858489",
+  //         message: "Hello John",
+  //       },
+  //       {
+  //         id: "message003",
+  //         sender: "0774766597",
+  //         message: "how can i help you",
+  //       },
+  //       {
+  //         id: "message001",
+  //         sender: "0776858489",
+  //         message: "I dont need any help",
+  //       },
+  //     ],
+  //   },
+  // ];
 
   return (
     // <div style={style}>
@@ -117,12 +140,16 @@ export const MyChat = () => {
         </Grid>
       </Grid>
       <Grid container>
-        <Grid item xs={3}>
-          <MyChatLeftBar chats={ChatCollections} />
-        </Grid>
-        <Grid item xs={9}>
-          <MyChatRightBar chat={ChatCollections} />
-        </Grid>
+        {ChatCollections.length > 0 && (
+          <div>
+            <Grid item xs={3}>
+              <MyChatLeftBar chats={ChatCollections} />
+            </Grid>
+            <Grid item xs={9}>
+              <MyChatRightBar chat={ChatCollections} />
+            </Grid>
+          </div>
+        )}
       </Grid>
     </Grid>
     // </div>
