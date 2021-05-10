@@ -6,18 +6,13 @@ import { AssignmentReceived } from "../Assignment/AssignmentReceived";
 import { Class } from "../Assignment/Class";
 
 export const TutoryRightBar = () => {
-  // const space = {
-  //     padding: "30px"
-  // }
   const Marginspace = {
     margin: "5px",
   };
-
   const rightContainer = {
     height: "76vh",
     paddingLeft: "30px",
     paddingTop: "10px",
-    // transform: 'rotateY(180deg)',
     direction: "ltr",
     overflowY: "auto",
     width: "135vh",
@@ -25,7 +20,6 @@ export const TutoryRightBar = () => {
     backgroundImage:
       "url(https://i.pinimg.com/originals/ab/ab/60/abab60f06ab52fa7846593e6ae0c9a0b.png)",
   };
-
   const classUpdateCollection = {
     id: "classUpdate001",
     classUpdate: [
