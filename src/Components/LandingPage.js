@@ -19,9 +19,10 @@ export default function LandingPage() {
   var divStyle = {
     height: "35vh",
     width: "80vh",
-    margin: "50px",
+    marginLeft: "5vh",
     marginTop: "20vh",
-    paddingTop: "40px",
+    paddingLeft: "5vh",
+    paddingTop:'10vh',
     backgroundColor: "#F2F2F2",
     // boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
   };
@@ -54,10 +55,10 @@ export default function LandingPage() {
   };
   return (
     <Grid container xs={12} sm={12} spacing={3} style={style}>
-      <Grid item sm={6}>
+      <Grid>
         <div style={divStyle}>Logo</div>
       </Grid>
-      <Grid item sm={6}>
+      <Grid>
         <div style={divStyle}>
           <h3>Member Login</h3>
           <Button variant="contained" onClick={click} style={buttonStyle}>
