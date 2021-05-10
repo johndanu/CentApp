@@ -9,7 +9,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import PublishIcon from "@material-ui/icons/Publish";
 import AlarmIcon from "@material-ui/icons/Alarm";
-
+import AssignmentIndIcon from "@material-ui/icons/AssignmentInd";
 export const AssignmentReceived = (props) => {
   const styleReceiver = {
     padding: "10px",
@@ -29,6 +29,9 @@ export const AssignmentReceived = (props) => {
   const threeDots = {
     marginLeft: "-14px",
   };
+  const coloring = {
+    color: "white",
+  };
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -47,13 +50,18 @@ export const AssignmentReceived = (props) => {
       <Grid container>
         <Grid item sm={11}>
           <span style={styleReceiver}>
-            <p>{props.classUpdate.title}</p>
+            <p>
+              {props.classUpdate.title}
+              <IconButton>
+                <AssignmentIndIcon />
+              </IconButton>
+            </p>
             <p>{props.classUpdate.description}</p>
           </span>
         </Grid>
         <Grid item sm={1}>
           <IconButton style={threeDots} onClick={handleClick}>
-            <MoreHorizIcon />
+            <MoreHorizIcon style={coloring} />
           </IconButton>
           <Popover
             id={id}
