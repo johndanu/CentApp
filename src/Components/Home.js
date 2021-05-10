@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Grid from "@material-ui/core/Grid";
 import { Container } from "@material-ui/core";
 import { ChatHeadingFromHome } from "./Home/ChatHeadingFromHome";
+import { AuthContext } from "../Auth";
+import LandingPage from "./LandingPage";
 
 export const Home = () => {
   const divStyle = {
@@ -43,48 +45,56 @@ export const Home = () => {
       role: "teacher",
     },
   ];
-
+  const [user, dispatch] = useContext(AuthContext);
   return (
-    <Grid container style={divStyle}>
-      <Grid container style={style}>
-        <h1 style={{ padding: "10px", marginTop: "1px" }}>Hi Dude!</h1>
-        <Grid container>
-          <Grid item sm={6} style={padding}>
-            <a href="/mychat/chat001">
-              <ChatHeadingFromHome name="MyChat" />
-            </a>
-          </Grid>
-          <Grid item sm={6} style={padding}>
-            <a href="/progress">
-              <ChatHeadingFromHome name="Progress" />
-            </a>
-          </Grid>
-          <Grid item sm={12}>
-            <h1>Student at </h1>
-          </Grid>
-          {LearningInstitutes.map((institute, i) => {
-            return (
+    <div>
+      {user.user ? (
+        <Grid container style={divStyle}>
+          <Grid container style={style}>
+            <h1 style={{ padding: "10px", marginTop: "1px" }}>
+              Hi {user.user.displayName}!
+            </h1>
+            <Grid container>
               <Grid item sm={6} style={padding}>
-                <a href="/class/class001-001">
-                  <ChatHeadingFromHome name={institute.name} />
+                <a href="/mychat/chat001">
+                  <ChatHeadingFromHome name="MyChat" />
                 </a>
               </Grid>
-            );
-          })}
-          <Grid item sm={12}>
-            <h1>Teach in</h1>
-          </Grid>
-          {TeachingInstitutes.map((institute, i) => {
-            return (
               <Grid item sm={6} style={padding}>
-                <a href="/techview">
-                  <ChatHeadingFromHome name={institute.name} />
+                <a href="/progress">
+                  <ChatHeadingFromHome name="Progress" />
                 </a>
               </Grid>
-            );
-          })}
+              <Grid item sm={12}>
+                <h1>Student at </h1>
+              </Grid>
+              {LearningInstitutes.map((institute, i) => {
+                return (
+                  <Grid item sm={6} style={padding}>
+                    <a href="/class/class001-001">
+                      <ChatHeadingFromHome name={institute.name} />
+                    </a>
+                  </Grid>
+                );
+              })}
+              <Grid item sm={12}>
+                <h1>Teach in</h1>
+              </Grid>
+              {TeachingInstitutes.map((institute, i) => {
+                return (
+                  <Grid item sm={6} style={padding}>
+                    <a href="/techview">
+                      <ChatHeadingFromHome name={institute.name} />
+                    </a>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </Grid>
         </Grid>
-      </Grid>
-    </Grid>
+      ) : (
+        <LandingPage />
+      )}
+    </div>
   );
 };

@@ -9,12 +9,10 @@ export const TutoryRightBar = (props) => {
   const Marginspace = {
     margin: "5px",
   };
-
   const rightContainer = {
     height: "76vh",
     paddingLeft: "30px",
     paddingTop: "10px",
-    // transform: 'rotateY(180deg)',
     direction: "ltr",
     overflowY: "auto",
     width: "135vh",

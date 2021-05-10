@@ -14,11 +14,12 @@ import Teacher2StuPersonal from "./Components/TeacherVew/Teacher2StuPersonal";
 import IfMyChatOpen from "./Components/MyChat/IfMyChatOpen";
 import LandingPage from "./Components/LandingPage";
 import { AuthProvider } from "./Auth";
+import reducer, { initialState } from "./Authreducer";
 
 function App() {
   return (
     // <Container style={{ backgroundColor: "white", marginTop: "10px", paddingTop: "10px", marginBottom: "10px", borderRadius: "10px" }}>
-    <AuthProvider>
+    <AuthProvider initialState={initialState} reducer={reducer}>
       <Router>
         <Switch>
           <Route path="/" exact component={Home} />
