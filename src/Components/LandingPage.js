@@ -59,7 +59,7 @@ export default function LandingPage() {
       </Grid>
       <Grid item sm={6}>
         <div style={divStyle}>
-          <h3>Member Login and Sign up</h3>
+          <h3>Member Login</h3>
           <Button variant="contained" onClick={click} style={buttonStyle}>
             Log in With Google
           </Button>
