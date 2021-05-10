@@ -5,10 +5,7 @@ import { StudyMaterial } from "../Assignment/StudyMaterial";
 import { AssignmentReceived } from "../Assignment/AssignmentReceived";
 import { Class } from "../Assignment/Class";
 
-export const TutoryRightBar = () => {
-  // const space = {
-  //     padding: "30px"
-  // }
+export const TutoryRightBar = (props) => {
   const Marginspace = {
     margin: "5px",
   };
@@ -25,66 +22,20 @@ export const TutoryRightBar = () => {
     backgroundImage:
       "url(https://i.pinimg.com/originals/ab/ab/60/abab60f06ab52fa7846593e6ae0c9a0b.png)",
   };
+  const collection = props.classes;
 
-  const classUpdateCollection = {
-    id: "classUpdate001",
-    classUpdate: [
-      {
-        id: "update003",
-        type: "assignment",
-        assignmentHead: "ReactMeterial",
-        assignmentMessage: "assignment",
-        dueDate: "2021.04.30",
-      },
-      {
-        id: "update006",
-        type: "studyMaterial",
-        StudyMetrial: "React tutorial",
-        Link: "",
-      },
-      {
-        id: "update004",
-        type: "class",
-        classMessage: "Message",
-        "classDate&Time": "2021.04.26 7pm",
-        place: "zoom link",
-      },
-
-      {
-        id: "StudyMetrial002",
-        type: "studyMaterial",
-        StudyMetrial: "jpg",
-      },
-      {
-        id: "ClassTym003",
-        type: "studyMaterial",
-        StudyMetrial: "video",
-      },
-      {
-        id: "update005",
-        type: "class",
-        classMessage: "Message",
-        "classDate&Time": "2021.04.26 7pm",
-        place: "zoom link",
-      },
-      {
-        id: "update002",
-        type: "assignment",
-        assignmentHead: "JS",
-        assignmentMessage: "assignment",
-        dueDate: "2021.04.30",
-      },
-      {
-        id: "StudyMetrial003",
-        type: "studyMaterial",
-        StudyMetrial: "video",
-      },
-    ],
-  };
-
+  let id = window.location.href.split("/");
+  id = id[id.length - 1];
+  console.log(id);
+  const classUpdateCollection = collection.find((item) => {
+    if (item.id == id) {
+      return item;
+    }
+  });
   return (
     <div style={rightContainer}>
-      {classUpdateCollection.classUpdate.map((classUpdate, i) => {
+      {"hello"}
+      {classUpdateCollection.classupdates.map((classUpdate, i) => {
         if (classUpdate.type == "assignment") {
           return (
             <span>
@@ -99,7 +50,7 @@ export const TutoryRightBar = () => {
               <Divider style={Marginspace} />
             </span>
           );
-        } else if (classUpdate.type == "class") {
+        } else if (classUpdate.type == "ClassUpdate") {
           return (
             <span>
               <Class classUpdate={classUpdate} />

@@ -1,25 +1,28 @@
 import React from "react";
 import { ChatPerson } from "../MyChat/ChatPerson";
-import { ClassDeatils, Classes, ClassNames } from "./ClassNames";
+import { ClassNames } from "./ClassNames";
+// import { ClassNames } from "./ClassNames";
 
-export const TutoryLeftBar = () => {
+export const TutoryLeftBar = (props) => {
   const leftContainer = {
     overflowY: "scroll",
   };
 
-  let names = ["CSS", "HTML", "React", "Java", "JavaScript", "PHP"];
-  let teachers = ["Danu", "Angel", "Amali", "Anne", "Rex", "Vino"];
+  let names = ["CSS", "HTML", "React", "Java"];
+  let teachers = ["Danu", "Angel", "Amali", "tinbal"];
 
   return (
     <div style={leftContainer}>
-      {/* <a href="/stuview">
-                 <ClassNames name="Common"  />
-            </a> */}
-      <a href="/class">
-        {names.map((chatname, i) => {
-          return <ClassNames name={chatname} />;
-        })}
-      </a>
+      {props.classes.map((classes) => (
+        <a href={"/class/" + classes.id}>
+          <ClassNames
+            name={classes.Class}
+            teacher={classes.teacher}
+            id={classes.id}
+          />
+        </a>
+      ))}
+      {/* {props.classes} */}
     </div>
   );
 };

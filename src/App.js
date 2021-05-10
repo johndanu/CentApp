@@ -22,12 +22,13 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/mychat/chat001" component={MyChat} />
+          <Route path="/mychat/:id" component={MyChat} />
           <Route path="/landing" component={LandingPage} />
-          <Route path="/mychat/:id" component={<MyChat />} />
+          {/* <Route path="/mychat/:id" component={<MyChat />} /> */}
           <Route path="/stuview" component={TutoryCommonStuUpdateView} />
           <Route path="/clspersonal" component={StudentViewClassPersonal} />
-          <Route path="/class" component={Classes} />
+          {/* <Route path="/class" exact component={Classes} /> */}
+          <Route path="/class/:id" component={Classes} />
           <Route path="/adminmsg" component={AdminToStuChat} />
           <Route path="/progress" component={Progress} />
           <Route path="/techview" component={TeacherView} />
