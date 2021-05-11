@@ -17,14 +17,15 @@ export default function TeacherView() {
   };
   const ClassCollection = {
     id: "class001",
-    Name: "Uki Coding School",
+    Name: "Sooriyan Tution",
     studets: ["077653625", "09827362", "0776526517"],
-    Teacher: "09834323",
+    Teacher: "0774766597",
     classes: [
       {
         id: "class001-001",
         Class: "HTML",
         teacher: "Senthil",
+        teacherno: "0774766597",
         classupdates: [
           {
             type: "assignment",
@@ -236,7 +237,7 @@ export default function TeacherView() {
       <Grid container>
         <Grid item xs={3}>
           <a href="/">
-            <TeachingPlace />
+            <TeachingPlace name={ClassCollection.Name} />
           </a>
         </Grid>
         {/* <Grid item xs={5}>

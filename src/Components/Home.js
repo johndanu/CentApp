@@ -41,7 +41,7 @@ export const Home = () => {
   ];
   let TeachingInstitutes = [
     {
-      name: "IDM Music center",
+      name: "Sooriyan Tution",
       role: "teacher",
     },
   ];
@@ -83,7 +83,7 @@ export const Home = () => {
               {TeachingInstitutes.map((institute, i) => {
                 return (
                   <Grid item sm={6} style={padding}>
-                    <a href="/techview">
+                    <a href="/techview/class001-001">
                       <ChatHeadingFromHome name={institute.name} />
                     </a>
                   </Grid>

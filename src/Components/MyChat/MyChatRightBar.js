@@ -1,11 +1,11 @@
 import { Grid } from "@material-ui/core";
-import React from "react";
+import React, { useState } from "react";
 import { ChatTypingSpace } from "./ChatTypingSpace";
 import { ReceiverChat } from "./ReceiverChat";
 import { SenderChat } from "./SenderChat";
 
 export const MyChatRightBar = (props) => {
-  var chat = props.chat;
+  var chat = useState();
   const space = {
     padding: "15px",
     height: "72vh",
@@ -16,20 +16,13 @@ export const MyChatRightBar = (props) => {
 
   let id = window.location.href.split("/");
   id = id[id.length - 1];
+  let filteredChat = chat;
 
-  let filteredChat = chat.find((item) => {
+  let filteredCha = chat.find((item) => {
     if (item.id == id) {
       return item;
     }
   });
-  console.log(filteredChat.chats[2]);
-  // let filteredChat = {
-  //   chats: [s
-  //     {
-  //       name: "john",
-  //     },
-  //   ],
-  // };
   return (
     <div style={space}>
       {filteredChat.chats.map((data) => {
