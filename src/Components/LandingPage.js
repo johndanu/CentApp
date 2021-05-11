@@ -18,11 +18,22 @@ export default function LandingPage() {
 
   var divStyle = {
     height: "35vh",
-    width: "80vh",
+    width: "65vh",
     marginLeft: "5vh",
     marginTop: "20vh",
     paddingLeft: "5vh",
-    paddingTop:'10vh',
+    paddingTop: '10vh',
+    backgroundColor: "#F2F2F2",
+    // boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+  };
+
+  var logoDivStyle = {
+    height: "300px",
+    width: "80vh",
+    marginLeft: "5vh",
+    marginTop: "5vh",
+    paddingLeft: "20vh",
+    paddingTop: '3vh',
     backgroundColor: "#F2F2F2",
     // boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
   };
@@ -55,16 +66,14 @@ export default function LandingPage() {
   };
   return (
     <Grid container xs={12} sm={12} spacing={3} style={style}>
-      <Grid>
-        <div style={divStyle}>Logo</div>
+      <Grid style={logoDivStyle}>
+        <h1>Welcome to Zent</h1>
       </Grid>
-      <Grid>
-        <div style={divStyle}>
-          <h3>Member Login</h3>
-          <Button variant="contained" onClick={click} style={buttonStyle}>
-            Log in With Google
+      <Grid style={divStyle}>
+        <h3>Member Login</h3>
+        <Button variant="contained" onClick={click} style={buttonStyle}>
+          Log in With Google
           </Button>
-        </div>
       </Grid>
     </Grid>
   );
