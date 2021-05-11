@@ -40,6 +40,7 @@ export const MyChat = () => {
   };
   useEffect(() => {
     getUserData();
+    console.log("chat22======my ");
   }, []);
   console.log(ChatCollections, "chat");
 
@@ -57,12 +58,18 @@ export const MyChat = () => {
         </Grid>
       </Grid>
       <Grid container>
-        <Grid item xs={3}>
-          <MyChatLeftBar chat={ChatCollections} />
-        </Grid>
-        <Grid item xs={9}>
-          <MyChatRightBar chat={ChatCollections} />
-        </Grid>
+        {ChatCollections ? (
+          <div>
+            <Grid item xs={3}>
+              <MyChatLeftBar chat={ChatCollections} />
+            </Grid>
+            <Grid item xs={9}>
+              <MyChatRightBar chat={ChatCollections} />
+            </Grid>
+          </div>
+        ) : (
+          <div></div>
+        )}
       </Grid>
     </Grid>
     // </div>

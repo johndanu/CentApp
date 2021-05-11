@@ -4,6 +4,7 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import { Grid } from "@material-ui/core";
 import Popover from "@material-ui/core/Popover";
 import GetAppIcon from "@material-ui/icons/GetApp";
+import { Link } from "@material-ui/icons";
 export const StudyMaterial = (props) => {
   const styleReceiver = {
     padding: "10px",
@@ -47,6 +48,9 @@ export const StudyMaterial = (props) => {
           <p>{props.classUpdate.title}</p>
           <p>
             {props.classUpdate.link}{" "}
+            <IconButton>
+              <Link />
+            </IconButton>
             <IconButton>
               <GetAppIcon />
             </IconButton>
