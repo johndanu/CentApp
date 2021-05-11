@@ -26,35 +26,37 @@ export const Classes = () => {
     classes: [
       {
         id: "class001-001",
-        Class: "HTML",
-        teacher: "Senthil",
+        Class: "Css",
+        teacher: "Mathan",
         classupdates: [
           {
             type: "assignment",
-            title: "Assignment One",
+            title: "Fun Work",
             duedate: "Date",
-            description: "This would be a sample description",
+            description: "Here goes assignment",
           },
-          {
-            type: "studyMaterial",
-            title: "HTML Tags",
-            link: "www.schoolbag.pro",
-          },
+
           {
             type: "ClassUpdate",
-            classOn: "Using HTML tags Effectively",
+            classOn: "Using Css tags Effectively",
             dateAndTime:
               "Sun May 09 2021 22:38:59 GMT+0530 (India Standard Time)",
             place: "online",
             venue: "meet.google.com/ffd-fzss-kty",
           },
           {
+            type: "studyMaterial",
+            title: "HTML Tags",
+            link:
+              "https://books.goalkicker.com/CSSBook/CSSNotesForProfessionals.pdf",
+          },
+          {
             type: "ClassUpdate",
-            classOn: "Build Your First Website",
+            classOn: "Css Beutify your Site",
             dateAndTime:
               "Sun May 10 2021 22:38:59 GMT+0530 (India Standard Time)",
             place: "offline",
-            venue: "Mahareswary Building",
+            venue: "Thilalangadi Building",
           },
         ],
         classPersonal: [

@@ -23,36 +23,37 @@ export default function TeacherView() {
     classes: [
       {
         id: "class001-001",
-        Class: "HTML",
+        Class: "Maths",
         teacher: "Senthil",
         teacherno: "0774766597",
         classupdates: [
           {
+            type: "ClassUpdate",
+            classOn: "Algorithams",
+            dateAndTime:
+              "Sun May 10 2021 22:38:59 GMT+0530 (India Standard Time)",
+            place: "offline",
+            venue: "Sooriyan Building",
+          },
+          {
             type: "assignment",
-            title: "Assignment One",
+            title: "Make a cuboid with cardboard",
             duedate: "Date",
-            description: "This would be a sample description",
+            description:
+              "Every students should submit a cuboid that made up of cardboard",
           },
           {
             type: "studyMaterial",
-            title: "HTML Tags",
-            link: "www.schoolbag.pro",
+            title: "Further Studies",
+            link: "www.mathteacher.com",
           },
           {
             type: "ClassUpdate",
-            classOn: "Using HTML tags Effectively",
+            classOn: "Maths Class on Arithmetic Expression",
             dateAndTime:
               "Sun May 09 2021 22:38:59 GMT+0530 (India Standard Time)",
             place: "online",
             venue: "meet.google.com/ffd-fzss-kty",
-          },
-          {
-            type: "ClassUpdate",
-            classOn: "Build Your First Website",
-            dateAndTime:
-              "Sun May 10 2021 22:38:59 GMT+0530 (India Standard Time)",
-            place: "offline",
-            venue: "Mahareswary Building",
           },
         ],
         classPersonal: [

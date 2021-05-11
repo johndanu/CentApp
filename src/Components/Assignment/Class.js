@@ -55,7 +55,7 @@ export const Class = (props) => {
           </div>
 
           {props.classUpdate.place == "online" ? (
-            <a href={props.classUpdate.venue} target="blank">
+            <a href="https://meet.google.com/ffd-fzss-kty" target="blank">
               {props.classUpdate.venue}
               <IconButton>
                 <OpenInNewIcon />
@@ -63,9 +63,11 @@ export const Class = (props) => {
             </a>
           ) : (
             <p>
-              <IconButton>
-                <PlaceIcon />
-              </IconButton>
+              <a href="https://goo.gl/maps/wv9CPkK6dKhtJQZt6" target="blank">
+                <IconButton>
+                  <PlaceIcon />
+                </IconButton>
+              </a>
               {props.classUpdate.venue}
             </p>
           )}

@@ -5,12 +5,12 @@ import { ReceiverChat } from "./ReceiverChat";
 import { SenderChat } from "./SenderChat";
 
 export const MyChatRightBar = (props) => {
-  const [chat, setChat] = useState([]);
-  // useEffect((props) => {
-  // console.log();
-  console.log(props.chat, "=======chat");
-  // let chat = [];
-  // }, []);
+  // const [chat, setChat] = useState([]);
+  // // useEffect((props) => {
+  // // console.log();
+  // console.log(props.chat, "=======chat");
+  // // let chat = [];
+  // // }, []);
   const space = {
     padding: "15px",
     height: "72vh",
@@ -19,17 +19,26 @@ export const MyChatRightBar = (props) => {
     overflowY: "scroll",
   };
 
+  let chat = props.chat;
+
   let id = window.location.href.split("/");
   id = id[id.length - 1];
-  const [filteredChat, setFilteredChat] = useState([]);
-  // let filteredChat = [];
-  setFilteredChat(
-    chat.find((item) => {
-      if (item.id == id) {
-        return item;
-      }
-    })
-  );
+
+  let filteredChat = chat.find((item) => {
+    if (item.id == id) {
+      return item;
+    }
+  });
+
+  // const [filteredChat, setFilteredChat] = useState([]);
+  // // let filteredChat = [];
+  // setFilteredChat(
+  //   chat.find((item) => {
+  //     if (item.id == id) {
+  //       return item;
+  //     }
+  //   })
+  // );
   // console.log(chat, "====arrayfl");
   // let filteredChat = {
   //   chats: [s
@@ -40,27 +49,26 @@ export const MyChatRightBar = (props) => {
   // };
   return (
     <div style={space}>
-      {filteredChat.length > 0 &&
-        filteredChat.chats.map((data) => {
-          if (data.sender == "0774766597") {
-            return (
-              <Grid container>
-                <Grid item sm={6} />
-                <Grid item sm={6}>
-                  <SenderChat message={data.message} />
-                </Grid>
+      {filteredChat.chats.map((data) => {
+        if (data.sender == "0774766597") {
+          return (
+            <Grid container>
+              <Grid item sm={6} />
+              <Grid item sm={6}>
+                <SenderChat message={data.message} />
               </Grid>
-            );
-          } else {
-            return (
-              <Grid container>
-                <Grid item sm={6}>
-                  <ReceiverChat message={data.message} />
-                </Grid>
+            </Grid>
+          );
+        } else {
+          return (
+            <Grid container>
+              <Grid item sm={6}>
+                <ReceiverChat message={data.message} />
               </Grid>
-            );
-          }
-        })}
+            </Grid>
+          );
+        }
+      })}
       <ChatTypingSpace />
     </div>
   );

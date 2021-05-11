@@ -48,9 +48,14 @@ export const StudyMaterial = (props) => {
           <p>{props.classUpdate.title}</p>
           <p>
             {props.classUpdate.link}{" "}
-            <IconButton>
-              <Link />
-            </IconButton>
+            <a
+              href="https://www.cs.uct.ac.za/mit_notes/web_programming/pdfs/chp03.pdf"
+              target="blank"
+            >
+              <IconButton>
+                <Link />
+              </IconButton>
+            </a>
             <IconButton>
               <GetAppIcon />
             </IconButton>

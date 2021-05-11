@@ -32,7 +32,6 @@ export const TutoryRightBar = (props) => {
   });
   return (
     <div style={rightContainer}>
-      {"hello"}
       {classUpdateCollection.classupdates.map((classUpdate, i) => {
         if (classUpdate.type == "assignment") {
           return (

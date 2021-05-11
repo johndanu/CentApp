@@ -19,30 +19,113 @@ export const MyChat = () => {
   // var containerStyle = {
   //   backgroundColor: "white",
   // }
-  const [ChatCollections, setChatCollections] = useState([
-    // {
-    //   id: "",
-    //   type: "",
-    //   member: [],
-    //   chats: [],
-    // },
-  ]);
+  // const [ChatCollections, setChatCollections] = useState([
+  // {
+  //   id: "",
+  //   type: "",
+  //   member: [],
+  //   chats: [],
+  // },
+  // ]);
 
-  const getUserData = () => {
-    console.log("sd===============+=");
-    let ref = Firebase.database().ref("/PersonalChatCollection");
-    ref.on("value", (snapshot) => {
-      const state = snapshot.val();
-      // console.log("DATA SAVED", state);
-      // console.log("DATA SAVED", state);
-      setChatCollections(state);
-    });
-  };
-  useEffect(() => {
-    getUserData();
-    console.log("chat22======my ");
-  }, []);
-  console.log(ChatCollections, "chat");
+  // const getUserData = () => {
+  //   console.log("sd===============+=");
+  //   let ref = Firebase.database().ref("/PersonalChatCollection");
+  //   ref.on("value", (snapshot) => {
+  //     const state = snapshot.val();
+  //     // console.log("DATA SAVED", state);
+  //     // console.log("DATA SAVED", state);
+  //     setChatCollections(state);
+  //   });
+  // };
+  // useEffect(() => {
+  //   getUserData();
+  //   console.log("chat22======my ");
+  // }, []);
+  // console.log(ChatCollections, "chat");
+  let ChatCollections = [
+    {
+      id: "chat001",
+      type: "personal",
+      members: ["0775647873", "0774766597"],
+      chats: [
+        {
+          id: "message001",
+          sender: "0774766597",
+          message: "Hi Iam john Danushan",
+        },
+        {
+          id: "message002",
+          sender: "0775647873",
+          message: "Hello John",
+        },
+        {
+          id: "message003",
+          sender: "0774766597",
+          message: "how can i help you",
+        },
+        {
+          id: "message001",
+          sender: "0775647873",
+          message: "May I call you tommoroww",
+        },
+      ],
+    },
+    {
+      id: "chat002",
+      type: "personal",
+      members: ["0774548725", "0774766597"],
+      chats: [
+        {
+          id: "message001",
+          sender: "0774766597",
+          message: "Hi Iam john Danushan",
+        },
+        {
+          id: "message002",
+          sender: "0774548725",
+          message: "Hello John",
+        },
+        {
+          id: "message003",
+          sender: "0774548725",
+          message: "how can i help you",
+        },
+        {
+          id: "message001",
+          sender: "0774766597",
+          message: "where can I go for dinner",
+        },
+      ],
+    },
+    {
+      id: "chat003",
+      type: "personal",
+      members: ["0774766597", "0776858489"],
+      chats: [
+        {
+          id: "message001",
+          sender: "0774766597",
+          message: "Hi Iam john Danushan",
+        },
+        {
+          id: "message002",
+          sender: "0776858489",
+          message: "Hello John",
+        },
+        {
+          id: "message003",
+          sender: "0774766597",
+          message: "how can i help you",
+        },
+        {
+          id: "message001",
+          sender: "0776858489",
+          message: "I dont need any help",
+        },
+      ],
+    },
+  ];
 
   return (
     // <div style={style}>
