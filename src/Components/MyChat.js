@@ -57,20 +57,18 @@ export const MyChat = () => {
           <ChatHeading />
         </Grid>
       </Grid>
-      <Grid container>
-        {ChatCollections ? (
-          <div>
-            <Grid item xs={3}>
-              <MyChatLeftBar chat={ChatCollections} />
-            </Grid>
-            <Grid item xs={9}>
-              <MyChatRightBar chat={ChatCollections} />
-            </Grid>
-          </div>
-        ) : (
-          <div></div>
-        )}
-      </Grid>
+      {ChatCollections ? (
+        <Grid container>
+          <Grid item xs={3}>
+            <MyChatLeftBar chat={ChatCollections} />
+          </Grid>
+          <Grid item xs={9}>
+            <MyChatRightBar chat={ChatCollections} />
+          </Grid>
+        </Grid>
+      ) : (
+        <div></div>
+      )}
     </Grid>
     // </div>
   );

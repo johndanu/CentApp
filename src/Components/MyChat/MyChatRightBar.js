@@ -5,7 +5,7 @@ import { ReceiverChat } from "./ReceiverChat";
 import { SenderChat } from "./SenderChat";
 
 export const MyChatRightBar = (props) => {
-  // const [chat, setChat] = useState([]);
+  const [chat, setChat] = useState([]);
   // useEffect((props) => {
   // console.log();
   console.log(props.chat, "=======chat");
@@ -23,13 +23,13 @@ export const MyChatRightBar = (props) => {
   id = id[id.length - 1];
   const [filteredChat, setFilteredChat] = useState([]);
   // let filteredChat = [];
-  // setFilteredChat(
-  //   chat.find((item) => {
-  //     if (item.id == id) {
-  //       return item;
-  //     }
-  //   })
-  // );
+  setFilteredChat(
+    chat.find((item) => {
+      if (item.id == id) {
+        return item;
+      }
+    })
+  );
   // console.log(chat, "====arrayfl");
   // let filteredChat = {
   //   chats: [s
