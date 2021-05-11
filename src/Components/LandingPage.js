@@ -19,7 +19,7 @@ export default function LandingPage() {
   var divStyle = {
     height: "35vh",
     width: "65vh",
-    marginLeft: "5vh",
+    marginLeft: "10vh",
     marginTop: "20vh",
     paddingLeft: "5vh",
     paddingTop: '10vh',
@@ -28,18 +28,27 @@ export default function LandingPage() {
   };
 
   var logoDivStyle = {
-    height: "300px",
-    width: "80vh",
     marginLeft: "5vh",
     marginTop: "5vh",
-    paddingLeft: "20vh",
-    paddingTop: '3vh',
     backgroundColor: "#F2F2F2",
     // boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
   };
 
+  var imageDivStyle = {
+    height: "300px",
+    width: "60vh",
+    marginLeft: "8vh",
+    marginTop: "8vh",
+    paddingLeft: "20vh",
+    paddingTop: '3vh',
+    borderRedius:'10px',
+    backgroundImage:
+      "url(https://img.freepik.com/free-vector/online-tutorials-concept_52683-37480.jpg?size=626&ext=jpg)",
+    // boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+  };
+
   var buttonStyle = {
-    backgroundColor: "#F2F2F2",
+    padding: "2vh",
     color: "#ffffff",
     backgroundColor: "#756d5e",
   };
@@ -68,6 +77,7 @@ export default function LandingPage() {
     <Grid container xs={12} sm={12} spacing={3} style={style}>
       <Grid style={logoDivStyle}>
         <h1>Welcome to Zent</h1>
+        <div style={imageDivStyle}></div>
       </Grid>
       <Grid style={divStyle}>
         <h3>Member Login</h3>

@@ -10,7 +10,7 @@ export const TutoryRightBar = (props) => {
     margin: "5px",
   };
   const rightContainer = {
-    height: "76vh",
+    height: "74.7vh",
     paddingLeft: "30px",
     paddingTop: "10px",
     direction: "ltr",

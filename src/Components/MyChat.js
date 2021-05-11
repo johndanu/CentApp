@@ -52,12 +52,12 @@ export const MyChat = () => {
         {
           id: "message001",
           sender: "0774766597",
-          message: "Hi Iam john Danushan",
+          message: "Hi Iam Abi",
         },
         {
           id: "message002",
           sender: "0775647873",
-          message: "Hello John",
+          message: "Hello Abi",
         },
         {
           id: "message003",
@@ -79,12 +79,12 @@ export const MyChat = () => {
         {
           id: "message001",
           sender: "0774766597",
-          message: "Hi Iam john Danushan",
+          message: "Hi Iam Abi",
         },
         {
           id: "message002",
           sender: "0774548725",
-          message: "Hello John",
+          message: "Hello Abi",
         },
         {
           id: "message003",
@@ -106,12 +106,12 @@ export const MyChat = () => {
         {
           id: "message001",
           sender: "0774766597",
-          message: "Hi Iam john Danushan",
+          message: "Hi Iam Abi",
         },
         {
           id: "message002",
           sender: "0776858489",
-          message: "Hello John",
+          message: "Hello Abi",
         },
         {
           id: "message003",
