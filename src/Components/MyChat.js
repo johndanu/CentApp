@@ -40,7 +40,6 @@ export const MyChat = () => {
   };
   useEffect(() => {
     getUserData();
-    console.log("chat22======my ");
   }, []);
   console.log(ChatCollections, "chat");
 

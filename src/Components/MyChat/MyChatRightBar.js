@@ -6,11 +6,7 @@ import { SenderChat } from "./SenderChat";
 
 export const MyChatRightBar = (props) => {
   const [chat, setChat] = useState([]);
-  // useEffect((props) => {
-  // console.log();
-  console.log(props.chat, "=======chat");
-  // let chat = [];
-  // }, []);
+
   const space = {
     padding: "15px",
     height: "72vh",
@@ -21,16 +17,25 @@ export const MyChatRightBar = (props) => {
 
   let id = window.location.href.split("/");
   id = id[id.length - 1];
-  const [filteredChat, setFilteredChat] = useState([]);
-  // let filteredChat = [];
-  setFilteredChat(
-    chat.find((item) => {
-      if (item.id == id) {
-        return item;
-      }
-    })
-  );
-  // console.log(chat, "====arrayfl");
+  const [filteredChat, setFilteredChat] = useState({});
+  const [Loading, setLoading] = useState(false);
+  useEffect(() => {
+    console.log("dmfp");
+    setTimeout(() => {
+      setFilteredChat(
+        props.chat.find((item) => {
+          if (item.id == id) {
+            return item;
+          }
+        })
+      );
+      setTimeout(() => {
+        setLoading(true);
+      }, 2000);
+    }, 1000);
+  }, []);
+  // console.log(filteredChat.chats, "====filteredChat ");
+  // console.log();
   // let filteredChat = {
   //   chats: [s
   //     {
@@ -40,8 +45,9 @@ export const MyChatRightBar = (props) => {
   // };
   return (
     <div style={space}>
-      {filteredChat.length > 0 &&
-        filteredChat.chats.map((data) => {
+      {JSON.stringify(filteredChat, "sdf")}
+      {Loading &&
+        filteredChat.chats.map(([key, data]) => {
           if (data.sender == "0774766597") {
             return (
               <Grid container>
