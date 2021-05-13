@@ -1,7 +1,7 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
 import { ChatTypingSpace } from "./MyChat/ChatTypingSpace";
-
+import { Link } from "react-router-dom";
 import TeacherLeftView from "./TeacherVew/TeacherLeftView";
 import TeachingPlace from "./TeacherVew/TeachingPlace";
 import { TeacherRightBar } from "./TeacherVew/TecherRightBar";
@@ -237,9 +237,9 @@ export default function TeacherView() {
     <div style={style}>
       <Grid container>
         <Grid item xs={3}>
-          <a href="/">
+          <Link to="/">
             <TeachingPlace name={ClassCollection.Name} />
-          </a>
+          </Link>
         </Grid>
         {/* <Grid item xs={5}>
                     <a href="/techview">
