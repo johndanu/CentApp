@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button } from '@material-ui/core'
 import { IconButton } from '@material-ui/core';
+import SendIcon from '@material-ui/icons/Send';
 const wrapperDiv = {
     width: '100vh',
     padding: '10px',
@@ -12,20 +13,27 @@ const styleTypingSpace = {
     bottom: '10px',
     right: '125px',
     height: '50px',
-    width: '138.5vh',
+    width: '135.3vh',
     padding: '5px',
     marginBottom: '55px',
-    marginRight: '-59.5px',
-    border: " 1px solid rgba(255, 255, 255, 0.18)"
+    marginRight: '-6.7vh',
+    border: " 1px solid rgba(255, 255, 255, 0.18)",
 }
 const styleMsgBox = {
     backgroundColor: '#D8D1C9',
     height: '40px',
-    width: '135vh',
+    marginBottom: "5vh",
+    width: '95%',
     WebkitBackdropFilter: " blur(4px)",
     border: " 1px solid rgba(255, 255, 255, 0.18)",
-    margin: '1px'
+    display:"flex"
 }
+
+const buttonStle ={
+    display:"flex"
+
+}
+
 export class ChatTypingSpace extends Component {
 
     render() {
@@ -38,9 +46,9 @@ export class ChatTypingSpace extends Component {
             <div style={styleTypingSpace}>
                 <form>
                     <input type='text' placeholder='Enter your message..' style={styleMsgBox} />
-                    {/* <input type='text' placeholder='Enter your message..' style={styleMsgBox}>
-                        <i class="fas fa-paper-plane"></i>
-                    </input> */}
+                   <IconButton style={buttonStle}>
+                        <SendIcon/>
+                   </IconButton>
                 </form>
             </div>
         )

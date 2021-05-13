@@ -74,9 +74,14 @@ export default function ClassAddButtonModel() {
     </div>
   );
 
+  const position={
+    marginBottom:"5vh",
+    marginRight:"7.3vh"
+  }
+
   return (
-    <div>
-      <IconButton onClick={handleOpen} className={styleclass.style}>
+    <div >
+      <IconButton onClick={handleOpen} className={styleclass.style} style={position}>
         <AddCircleIcon fontSize="large" />
       </IconButton>
       <Modal

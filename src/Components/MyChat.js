@@ -43,7 +43,7 @@ export const MyChat = () => {
   //   console.log("chat22======my ");
   // }, []);
   // console.log(ChatCollections, "chat");
-  let ChatCollections = [
+  const ChatCollections = [
     {
       id: "chat001",
       type: "personal",
@@ -126,6 +126,7 @@ export const MyChat = () => {
       ],
     },
   ];
+
 
   return (
     // <div style={style}>

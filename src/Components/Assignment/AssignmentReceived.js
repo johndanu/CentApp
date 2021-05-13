@@ -30,7 +30,7 @@ export const AssignmentReceived = (props) => {
     marginLeft: "-14px",
   };
   const coloring = {
-    color: "white",
+    color: "#756d5e",
   };
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleClick = (event) => {
