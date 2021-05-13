@@ -6,7 +6,7 @@ import { CentLogo } from "./MyChat/CentLogo";
 import { ChatHeading } from "./MyChat/ChatHeading";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import Firebase from "firebase";
-
+// import axios from 'axios'
 export const MyChat = () => {
   var style = {
     paddingTop: "1px",
@@ -126,7 +126,21 @@ export const MyChat = () => {
       ],
     },
   ];
+// var [ChatCollections, setChatCollections] = useState([])
 
+//  useEffect(()=>{
+//    fetch(`https://cent-app-uki-default-rtdb.firebaseio.com/PersonalChatCollection${id}`)
+//  },[id])
+
+//  useEffect(()=>{
+//   axios.get('https://cent-app-uki-default-rtdb.firebaseio.com/PersonalChatCollection')
+//   .then(res=> {
+//     console.log(res)
+//   })
+//   .catch(err=>{
+//     console.log(err)
+//   })
+// },[])
 
   return (
     // <div style={style}>
