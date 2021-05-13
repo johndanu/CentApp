@@ -47,6 +47,7 @@ export default function TeacherLeftView(props) {
 
   const leftContainer = {
     overflowY: "scroll",
+    height:'76vh'
   };
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);

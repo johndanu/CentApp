@@ -8,6 +8,7 @@ export const MyChatLeftBar = (props) => {
     height: "76vh",
     overflowY: "scroll",
   };
+
   return (
     <div style={space}>
       {ChatList.map((chat, i) => {

@@ -14,8 +14,8 @@ const styleTypingSpace = {
     height: '50px',
     width: '135.5vh',
     padding: '5px',
-    marginBottom:'54px',
-    marginRight:'-52px',
+    marginBottom: '54px',
+    marginRight: '-52px',
     border: " 1px solid rgba(255, 255, 255, 0.18)"
 }
 const styleMsgBox = {
@@ -24,7 +24,7 @@ const styleMsgBox = {
     width: '135vh',
     WebkitBackdropFilter: " blur(4px)",
     border: " 1px solid rgba(255, 255, 255, 0.18)",
-    margin:'1px'
+    margin: '1px'
 }
 export class ChatTypingSpace extends Component {
 
@@ -35,12 +35,14 @@ export class ChatTypingSpace extends Component {
         // };
 
         return (
-                <div style={styleTypingSpace}>
-                    <form>
-                        <input type='text' placeholder='Enter your message..' style={styleMsgBox} />
-                        {/* <Button onClick={this.MessageSend}><i class="fas fa-paper-plane"></i></Button> */}
-                    </form>
-                </div>
+            <div style={styleTypingSpace}>
+                <form>
+                    <input type='text' placeholder='Enter your message..' style={styleMsgBox} />
+                    {/* <input type='text' placeholder='Enter your message..' style={styleMsgBox}>
+                        <i class="fas fa-paper-plane"></i>
+                    </input> */}
+                </form>
+            </div>
         )
     }
 }

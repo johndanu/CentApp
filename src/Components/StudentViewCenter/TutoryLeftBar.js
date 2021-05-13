@@ -6,6 +6,7 @@ import { ClassNames } from "./ClassNames";
 export const TutoryLeftBar = (props) => {
   const leftContainer = {
     overflowY: "scroll",
+    height:"76vh"
   };
 
   let names = ["CSS", "HTML", "React", "Java"];
