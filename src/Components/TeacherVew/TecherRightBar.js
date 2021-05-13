@@ -4,6 +4,7 @@ import React from "react";
 import { StudyMaterial } from "../Assignment/StudyMaterial";
 import { AssignmentReceived } from "../Assignment/AssignmentReceived";
 import { Class } from "../Assignment/Class";
+import ClassAddButtonModel from "./ClassAddButtonModel";
 
 export const TeacherRightBar = (props) => {
   const Marginspace = {
@@ -57,6 +58,7 @@ export const TeacherRightBar = (props) => {
           );
         }
       })}
+      <ClassAddButtonModel />
     </div>
   );
 };

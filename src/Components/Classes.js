@@ -3,7 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import { TutorialName } from "./StudentViewCenter/TutorialName";
 import { TutoryLeftBar } from "./StudentViewCenter/TutoryLeftBar";
 import { TutoryRightBar } from "./StudentViewCenter/TutoryRightBar";
-
+import { Link } from "react-router-dom";
 export const Classes = () => {
   const style = {
     paddingTop: "1px",
@@ -47,8 +47,7 @@ export const Classes = () => {
           {
             type: "studyMaterial",
             title: "HTML Tags",
-            link:
-              "https://books.goalkicker.com/CSSBook/CSSNotesForProfessionals.pdf",
+            link: "https://books.goalkicker.com/CSSBook/CSSNotesForProfessionals.pdf",
           },
           {
             type: "ClassUpdate",
@@ -241,9 +240,9 @@ export const Classes = () => {
     <div style={style}>
       <Grid container>
         <Grid item xs={3}>
-          <a href="/">
+          <Link to="/">
             <TutorialName institute={ClassCollection.Name} />
-          </a>
+          </Link>
         </Grid>
         <Grid item xs={3}>
           <h3>Class</h3>
