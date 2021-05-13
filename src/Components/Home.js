@@ -4,6 +4,7 @@ import { Container } from "@material-ui/core";
 import { ChatHeadingFromHome } from "./Home/ChatHeadingFromHome";
 import { AuthContext } from "../Auth";
 import LandingPage from "./LandingPage";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   const divStyle = {
@@ -46,6 +47,12 @@ export const Home = () => {
     },
   ];
   const [user, dispatch] = useContext(AuthContext);
+  let thisuser = () => {
+    if (user) {
+      return true;
+    }
+  };
+
   return (
     <div>
       {user.user ? (
@@ -56,14 +63,14 @@ export const Home = () => {
             </h1>
             <Grid container>
               <Grid item sm={6} style={padding}>
-                <a href="/mychat/chat001">
+                <Link to="/mychat/chat001">
                   <ChatHeadingFromHome name="MyChat" />
-                </a>
+                </Link>
               </Grid>
               <Grid item sm={6} style={padding}>
-                <a href="/progress">
+                <Link to="/progress">
                   <ChatHeadingFromHome name="Progress" />
-                </a>
+                </Link>
               </Grid>
               <Grid item sm={12}>
                 <h1>Student at </h1>
@@ -71,9 +78,9 @@ export const Home = () => {
               {LearningInstitutes.map((institute, i) => {
                 return (
                   <Grid item sm={6} style={padding}>
-                    <a href="/class/class001-001">
+                    <Link to="/class/class001-001">
                       <ChatHeadingFromHome name={institute.name} />
-                    </a>
+                    </Link>
                   </Grid>
                 );
               })}
@@ -83,9 +90,9 @@ export const Home = () => {
               {TeachingInstitutes.map((institute, i) => {
                 return (
                   <Grid item sm={6} style={padding}>
-                    <a href="/techview/class001-001">
+                    <Link to="/techview/class001-001">
                       <ChatHeadingFromHome name={institute.name} />
-                    </a>
+                    </Link>
                   </Grid>
                 );
               })}
