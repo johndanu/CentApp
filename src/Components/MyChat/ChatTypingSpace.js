@@ -3,19 +3,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button } from '@material-ui/core'
 import { IconButton } from '@material-ui/core';
 const wrapperDiv = {
-    width: '1000px',
+    width: '100vh',
     padding: '10px',
 }
 const styleTypingSpace = {
-    backgroundColor: '#F2F2F2',
+    backgroundColor: '#f2f2f2',
     position: 'fixed',
     bottom: '10px',
     right: '125px',
     height: '50px',
-    width: '135.5vh',
+    width: '138.5vh',
     padding: '5px',
-    marginBottom: '54px',
-    marginRight: '-52px',
+    marginBottom: '55px',
+    marginRight: '-59.5px',
     border: " 1px solid rgba(255, 255, 255, 0.18)"
 }
 const styleMsgBox = {

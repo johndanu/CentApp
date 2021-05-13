@@ -5,7 +5,7 @@ export const MyChatLeftBar = (props) => {
   var ChatList = props.chat;
 
   const space = {
-    height: "76vh",
+    height: "75.5vh",
     overflowY: "scroll",
   };
 
