@@ -8,15 +8,15 @@ const wrapperDiv = {
     padding: '10px',
 }
 const styleTypingSpace = {
-    backgroundColor: 'red',
+    backgroundColor: '#f2f2f2',
     position: 'fixed',
     bottom: '10px',
     right: '125px',
     height: '50px',
-    width: '70vw',
+    width: '68.5vw',
     padding: '5px',
-    marginBottom: '3.9vw',
-    marginRight: '-7.5vh',
+    marginBottom: '3.8vw',
+    marginRight: '-4.3vw',
     border: " 1px solid rgba(255, 255, 255, 0.18)",
 }
 const styleMsgBox = {
