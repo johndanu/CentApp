@@ -12,7 +12,7 @@ export default function TeacherView() {
     boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
     height: "85vh",
     margin: "50px",
-    width: "185vh",
+    width: "93vw",
     backgroundColor: "#F2F2F2",
   };
   const ClassCollection = {

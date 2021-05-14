@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 export const Home = () => {
   const divStyle = {
     backgroundColor: "white",
-    width: "185vh",
+    width: "93vw",
     height: "90vh",
     marginTop: "40px",
     marginLeft: "53px",
@@ -19,7 +19,7 @@ export const Home = () => {
     height: "77.5vh",
     margin: "50px",
     overflowY: "scroll",
-    width: "172vh",
+    width: "172vw",
     boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
     backgroundImage:
       "url(https://i.pinimg.com/originals/ab/ab/60/abab60f06ab52fa7846593e6ae0c9a0b.png)",

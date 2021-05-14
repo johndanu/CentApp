@@ -10,7 +10,7 @@ export default function TeacherLeftView(props) {
 
   const leftContainer = {
     overflowY: "scroll",
-    height: "76vh",
+    height: "75.8vh",
   };
 
   return (

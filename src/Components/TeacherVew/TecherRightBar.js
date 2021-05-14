@@ -11,12 +11,12 @@ export const TeacherRightBar = (props) => {
     margin: "5px",
   };
   const rightContainer = {
-    height: "74.7vh",
+    height: "76.1vh",
     paddingLeft: "30px",
     paddingTop: "10px",
     direction: "ltr",
     overflowY: "auto",
-    width: "135vh",
+    width: "140.8vh",
     backgroundColor: "white",
     backgroundImage:
       "url(https://i.pinimg.com/originals/ab/ab/60/abab60f06ab52fa7846593e6ae0c9a0b.png)",

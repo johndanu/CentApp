@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export const TutoryLeftBar = (props) => {
   const leftContainer = {
     overflowY: "scroll",
-    height: "76vh",
+    height: "75.8vh",
   };
 
   return (
