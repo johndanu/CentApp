@@ -1,5 +1,5 @@
-import React, { useEffect, useReducer, useState } from "react";
-import firebaseApp from "./fire";
+import React, { useReducer } from "react";
+// import firebaseApp from "./fire";
 export const AuthContext = React.createContext();
 
 export const AuthProvider = ({ reducer, initialState, children }) => {

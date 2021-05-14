@@ -1,6 +1,6 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
-import { ChatTypingSpace } from "./MyChat/ChatTypingSpace";
+// import { ChatTypingSpace } from "./MyChat/ChatTypingSpace";
 import { Link } from "react-router-dom";
 import TeacherLeftView from "./TeacherVew/TeacherLeftView";
 import TeachingPlace from "./TeacherVew/TeachingPlace";

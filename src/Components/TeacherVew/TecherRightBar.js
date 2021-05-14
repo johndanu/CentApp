@@ -28,28 +28,28 @@ export const TeacherRightBar = (props) => {
   console.log(id);
   const classUpdateCollection = collection.classes.find((item) => {
     console.log(item.id + id);
-    if (item.id == id) {
+    if (item.id === id) {
       return item;
     }
   });
   return (
     <div style={rightContainer}>
       {classUpdateCollection.classupdates.map((classUpdate, i) => {
-        if (classUpdate.type == "assignment") {
+        if (classUpdate.type === "assignment") {
           return (
             <span>
               <AssignmentReceived classUpdate={classUpdate} />{" "}
               <Divider style={Marginspace} />
             </span>
           );
-        } else if (classUpdate.type == "studyMaterial") {
+        } else if (classUpdate.type === "studyMaterial") {
           return (
             <span>
               <StudyMaterial classUpdate={classUpdate} />{" "}
               <Divider style={Marginspace} />
             </span>
           );
-        } else if (classUpdate.type == "ClassUpdate") {
+        } else if (classUpdate.type === "ClassUpdate") {
           return (
             <span>
               <Class classUpdate={classUpdate} />

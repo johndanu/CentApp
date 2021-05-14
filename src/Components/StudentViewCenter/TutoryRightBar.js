@@ -26,14 +26,16 @@ export const TutoryRightBar = (props) => {
   id = id[id.length - 1];
   console.log(id);
   const classUpdateCollection = collection.find((item) => {
-    if (item.id == id) {
+    if (item.id === id) {
       return item;
+    } else {
+      return null;
     }
   });
   return (
     <div style={rightContainer}>
       {classUpdateCollection.classupdates.map((classUpdate, i) => {
-        if (classUpdate.type == "assignment") {
+        if (classUpdate.type === "assignment") {
           return (
             <span>
               <AssignmentReceived classUpdate={classUpdate} />{" "}

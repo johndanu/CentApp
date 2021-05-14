@@ -1,10 +1,8 @@
 import React from "react";
 import IconButton from "@material-ui/core/IconButton";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+
 import { Grid } from "@material-ui/core";
-import Popover from "@material-ui/core/Popover";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+
 import PlaceIcon from "@material-ui/icons/Place";
 import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 

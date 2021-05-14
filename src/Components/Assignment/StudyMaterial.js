@@ -1,8 +1,8 @@
 import React from "react";
 import IconButton from "@material-ui/core/IconButton";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+
 import { Grid } from "@material-ui/core";
-import Popover from "@material-ui/core/Popover";
+
 import GetAppIcon from "@material-ui/icons/GetApp";
 import { Link } from "@material-ui/icons";
 export const StudyMaterial = (props) => {

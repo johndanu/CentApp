@@ -19,30 +19,24 @@ export const MyChat = () => {
   // var containerStyle = {
   //   backgroundColor: "white",
   // }
-  // const [ChatCollections, setChatCollections] = useState([
-  // {
-  //   id: "",
-  //   type: "",
-  //   member: [],
-  //   chats: [],
-  // },
-  // ]);
+  const [ChatCollections2, setChatCollections2] = useState([]);
 
-  // const getUserData = () => {
-  //   console.log("sd===============+=");
-  //   let ref = Firebase.database().ref("/PersonalChatCollection");
-  //   ref.on("value", (snapshot) => {
-  //     const state = snapshot.val();
-  //     // console.log("DATA SAVED", state);
-  //     // console.log("DATA SAVED", state);
-  //     setChatCollections(state);
-  //   });
-  // };
-  // useEffect(() => {
-  //   getUserData();
-  //   console.log("chat22======my ");
-  // }, []);
-  // console.log(ChatCollections, "chat");
+  const [value, setValue] = useState(false);
+
+  const getUserData = () => {
+    // console.log("sd===============+=");
+    let ref = Firebase.database().ref("/PersonalChatCollection");
+    ref.on("value", (snapshot) => {
+      const state = snapshot.val();
+      console.log("DATA SAVED", state);
+      setChatCollections2(state);
+      setValue(true);
+    });
+  };
+  useEffect(() => {
+    getUserData();
+  }, []);
+  console.log(ChatCollections2, "chat");
   let ChatCollections = [
     {
       id: "chat001",
@@ -126,6 +120,7 @@ export const MyChat = () => {
       ],
     },
   ];
+  console.log(value);
 
   return (
     // <div style={style}>
@@ -140,17 +135,17 @@ export const MyChat = () => {
           <ChatHeading />
         </Grid>
       </Grid>
-      {ChatCollections ? (
+      {value ? (
         <Grid container>
           <Grid item xs={3}>
-            <MyChatLeftBar chat={ChatCollections} />
+            <MyChatLeftBar chat={ChatCollections2} />
           </Grid>
           <Grid item xs={9}>
-            <MyChatRightBar chat={ChatCollections} />
+            <MyChatRightBar chat={ChatCollections2} />
           </Grid>
         </Grid>
       ) : (
-        <div></div>
+        <div> Loading </div>
       )}
     </Grid>
     // </div>
