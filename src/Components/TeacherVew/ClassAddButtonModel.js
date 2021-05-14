@@ -75,7 +75,7 @@ export default function ClassAddButtonModel() {
   );
 
   const position={
-    marginBottom:"5vh",
+    marginBottom:"6vh",
     marginRight:"7.3vh"
   }
 

@@ -5,8 +5,10 @@ import { MyChatRightBar } from "./MyChat/MyChatRightBar";
 import { CentLogo } from "./MyChat/CentLogo";
 import { ChatHeading } from "./MyChat/ChatHeading";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import Firebase from "firebase";
+import firebaseApp from "firebase";
 // import axios from 'axios'
+
+
 export const MyChat = () => {
   var style = {
     paddingTop: "1px",
@@ -30,14 +32,29 @@ export const MyChat = () => {
 
   // const getUserData = () => {
   //   console.log("sd===============+=");
-  //   let ref = Firebase.database().ref("/PersonalChatCollection");
+  //   let ref = firebaseApp.database().ref("/PersonalChatCollection");
   //   ref.on("value", (snapshot) => {
   //     const state = snapshot.val();
-  //     // console.log("DATA SAVED", state);
-  //     // console.log("DATA SAVED", state);
+  //     console.log("DATA SAVED", state);
+  //     console.log("DATA SAVED", state);
   //     setChatCollections(state);
   //   });
   // };
+
+  
+ var [userData, setUserData] = useState({})
+  useEffect(() => {
+    firebaseApp.child().on('value', snapshot => {
+      if(snapshot.val()!= null)
+      setUserData({
+        ...snapshot.val()
+      })
+      else
+      setUserData({})
+    })
+  }, [])
+
+
   // useEffect(() => {
   //   getUserData();
   //   console.log("chat22======my ");
@@ -126,21 +143,21 @@ export const MyChat = () => {
       ],
     },
   ];
-// var [ChatCollections, setChatCollections] = useState([])
+  // var [ChatCollections, setChatCollections] = useState([])
 
-//  useEffect(()=>{
-//    fetch(`https://cent-app-uki-default-rtdb.firebaseio.com/PersonalChatCollection${id}`)
-//  },[id])
+  //  useEffect(()=>{
+  //    fetch(`https://cent-app-uki-default-rtdb.firebaseio.com/PersonalChatCollection${id}`)
+  //  },[id])
 
-//  useEffect(()=>{
-//   axios.get('https://cent-app-uki-default-rtdb.firebaseio.com/PersonalChatCollection')
-//   .then(res=> {
-//     console.log(res)
-//   })
-//   .catch(err=>{
-//     console.log(err)
-//   })
-// },[])
+  //  useEffect(()=>{
+  //   axios.get('https://cent-app-uki-default-rtdb.firebaseio.com/PersonalChatCollection')
+  //   .then(res=> {
+  //     console.log(res)
+  //   })
+  //   .catch(err=>{
+  //     console.log(err)
+  //   })
+  // },[])
 
   return (
     // <div style={style}>
