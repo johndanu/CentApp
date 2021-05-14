@@ -10,7 +10,7 @@ export default function LandingPage() {
   var style = {
     paddingTop: "1px",
     height: "85vh",
-    width: "185vh",
+    width: "92.5vw",
     margin: "50px",
     backgroundColor: "#F2F2F2",
     boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",

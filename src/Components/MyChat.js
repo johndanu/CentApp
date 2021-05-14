@@ -41,18 +41,19 @@ export const MyChat = () => {
   //   });
   // };
 
-  
- var [userData, setUserData] = useState({})
-  useEffect(() => {
-    firebaseApp.child().on('value', snapshot => {
-      if(snapshot.val()!= null)
-      setUserData({
-        ...snapshot.val()
-      })
-      else
-      setUserData({})
-    })
-  }, [])
+
+//  var [userData, setUserData] = useState({})
+//  console.log("data varutha")
+//   useEffect(() => {
+//     firebaseApp.child('PersonalChatCollection').on('value', snapshot => {
+//       if(snapshot.val()!= null)
+//       setUserData({
+//         ...snapshot.val()
+//       })
+//       else
+//       setUserData({})
+//     })
+//   }, [])
 
 
   // useEffect(() => {
@@ -86,6 +87,7 @@ export const MyChat = () => {
           sender: "0775647873",
           message: "May I call you tommoroww",
         },
+      
       ],
     },
     {
