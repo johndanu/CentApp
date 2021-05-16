@@ -1,15 +1,22 @@
-import { Divider } from "@material-ui/core";
+import { Divider, IconButton } from "@material-ui/core";
 import React from "react";
-
+import LinkIcon from "@material-ui/icons/Link";
+import PlaceIcon from "@material-ui/icons/Place";
 import { StudyMaterial } from "../Assignment/StudyMaterial";
 import { AssignmentReceived } from "../Assignment/AssignmentReceived";
 import { Class } from "../Assignment/Class";
 import ClassAddButtonModel from "./ClassAddButtonModel";
+import { AssignmentInd } from "@material-ui/icons";
 
 export const TeacherRightBar = (props) => {
   const Marginspace = {
     margin: "5px",
   };
+
+  const divStyle = {
+    marginLeft: "56.3vw"
+  }
+
   const rightContainer = {
     height: "76.1vh",
     paddingLeft: "30px",
@@ -59,6 +66,7 @@ export const TeacherRightBar = (props) => {
         }
       })}
       <ClassAddButtonModel />
+     
     </div>
   );
 };
