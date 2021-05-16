@@ -41,7 +41,7 @@ export default function ClassAddButtonModel() {
         </div> */}
 
   return (
-    <div style={position}>
+    <div>
       <IconButton>
         <AssignmentInd fontSize="large" />
       </IconButton>
