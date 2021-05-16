@@ -11,7 +11,7 @@ export const TeacherRightBar = (props) => {
     margin: "5px",
   };
   const rightContainer = {
-    height: "75vh",
+    height: "76.1vh",
     paddingLeft: "30px",
     paddingTop: "10px",
     direction: "ltr",

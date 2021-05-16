@@ -6,6 +6,10 @@ import { AssignmentInd } from "@material-ui/icons";
 import LinkIcon from "@material-ui/icons/Link";
 import PlaceIcon from "@material-ui/icons/Place";
 import { makeStyles } from "@material-ui/core/styles";
+import { useState } from 'react';
+import { StudyMetrialModal } from "../ClassModel/StudyMetrialModal";
+import { ClassUpdateModal } from "../ClassModel/ClassUpdateModal";
+import { AssignmentModal } from "../ClassModel/AssignmentModal";
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -45,6 +49,10 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function ClassAddButtonModel() {
+  const [show, SetShow] = useState(false);
+  const closeModalHandler = () => SetShow(false);
+
+
   const [modalStyle] = React.useState(getModalStyle);
   const [open, setOpen] = React.useState(false);
   const styleclass = useStyles();
@@ -60,23 +68,51 @@ export default function ClassAddButtonModel() {
     <div style={modalStyle} className={styleclass.paper}>
       <h2 id="mytitle">Create a new</h2>
       <p id="simple-modal-description" className={styleclass.text}>
+
+        {/* <div>
+          {show ? <div onClick={closeModalHandler} className="back-drop"></div> : null}
+          <IconButton onClick={() => SetShow(true)} className="btn-openModal">
+            <AssignmentInd />
+          </IconButton>
+          <AssignmentModal show={show} close={closeModalHandler} />
+        </div> */}
+
         <IconButton>
           <AssignmentInd fontSize="large" />
         </IconButton>
+
+        {/* <div>
+          {show ? <div onClick={closeModalHandler} className="back-drop"></div> : null}
+          <IconButton onClick={() => SetShow(true)} className="btn-openModal">
+            <LinkIcon />
+          </IconButton>
+          <StudyMetrialModal show={show} close={closeModalHandler} />
+        </div> */}
+
         <IconButton>
           <LinkIcon fontSize="large" />
         </IconButton>
+
+        {/* <div>
+          {show ? <div onClick={closeModalHandler} className="back-drop"></div> : null}
+          <IconButton onClick={() => SetShow(true)} className="btn-openModal">
+            <PlaceIcon />
+          </IconButton>
+          <ClassUpdateModal show={show} close={closeModalHandler} />
+        </div> */}
+
         <IconButton>
           <PlaceIcon fontSize="large" />
         </IconButton>
+
       </p>
       {/* <TeacherLeftView /> */}
     </div>
   );
 
-  const position={
-    marginBottom:"6vh",
-    marginRight:"7.3vh"
+  const position = {
+    marginBottom: "6vh",
+    marginRight: "7.3vh"
   }
 
   return (
