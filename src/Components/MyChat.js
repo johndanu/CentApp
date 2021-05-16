@@ -5,7 +5,7 @@ import { MyChatRightBar } from "./MyChat/MyChatRightBar";
 import { CentLogo } from "./MyChat/CentLogo";
 import { ChatHeading } from "./MyChat/ChatHeading";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import firebaseApp from "firebase";
+import Firebase from "firebase";
 // import axios from 'axios'
 
 export const MyChat = () => {
