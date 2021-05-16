@@ -69,7 +69,7 @@ export const MyChatRightBar = (props) => {
           );
         }
       })}
-      <ChatTypingSpace />
+      <ChatTypingSpace length={filteredChat.chats.length} />
     </div>
   );
 };

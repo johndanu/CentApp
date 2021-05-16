@@ -5,9 +5,8 @@ import { MyChatRightBar } from "./MyChat/MyChatRightBar";
 import { CentLogo } from "./MyChat/CentLogo";
 import { ChatHeading } from "./MyChat/ChatHeading";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import firebaseApp from "firebase";
+import Firebase from "firebase";
 // import axios from 'axios'
-
 
 export const MyChat = () => {
   var style = {
@@ -21,47 +20,25 @@ export const MyChat = () => {
   // var containerStyle = {
   //   backgroundColor: "white",
   // }
-  // const [ChatCollections, setChatCollections] = useState([
-  // {
-  //   id: "",
-  //   type: "",
-  //   member: [],
-  //   chats: [],
-  // },
-  // ]);
+  const [ChatCollections2, setChatCollections2] = useState([]);
 
-  // const getUserData = () => {
-  //   console.log("sd===============+=");
-  //   let ref = firebaseApp.database().ref("/PersonalChatCollection");
-  //   ref.on("value", (snapshot) => {
-  //     const state = snapshot.val();
-  //     console.log("DATA SAVED", state);
-  //     console.log("DATA SAVED", state);
-  //     setChatCollections(state);
-  //   });
-  // };
+  const [value, setValue] = useState(false);
 
-
-//  var [userData, setUserData] = useState({})
-//  console.log("data varutha")
-//   useEffect(() => {
-//     firebaseApp.child('PersonalChatCollection').on('value', snapshot => {
-//       if(snapshot.val()!= null)
-//       setUserData({
-//         ...snapshot.val()
-//       })
-//       else
-//       setUserData({})
-//     })
-//   }, [])
-
-
-  // useEffect(() => {
-  //   getUserData();
-  //   console.log("chat22======my ");
-  // }, []);
-  // console.log(ChatCollections, "chat");
-  const ChatCollections = [
+  const getUserData = () => {
+    // console.log("sd===============+=");
+    let ref = Firebase.database().ref("/PersonalChatCollection");
+    ref.on("value", (snapshot) => {
+      const state = snapshot.val();
+      console.log("DATA SAVED", state);
+      setChatCollections2(state);
+      setValue(true);
+    });
+  };
+  useEffect(() => {
+    getUserData();
+  }, []);
+  console.log(ChatCollections2, "chat");
+  let ChatCollections = [
     {
       id: "chat001",
       type: "personal",
@@ -87,7 +64,6 @@ export const MyChat = () => {
           sender: "0775647873",
           message: "May I call you tommoroww",
         },
-      
       ],
     },
     {
@@ -145,21 +121,7 @@ export const MyChat = () => {
       ],
     },
   ];
-  // var [ChatCollections, setChatCollections] = useState([])
-
-  //  useEffect(()=>{
-  //    fetch(`https://cent-app-uki-default-rtdb.firebaseio.com/PersonalChatCollection${id}`)
-  //  },[id])
-
-  //  useEffect(()=>{
-  //   axios.get('https://cent-app-uki-default-rtdb.firebaseio.com/PersonalChatCollection')
-  //   .then(res=> {
-  //     console.log(res)
-  //   })
-  //   .catch(err=>{
-  //     console.log(err)
-  //   })
-  // },[])
+  console.log(value);
 
   return (
     // <div style={style}>
@@ -174,17 +136,17 @@ export const MyChat = () => {
           <ChatHeading />
         </Grid>
       </Grid>
-      {ChatCollections ? (
+      {value ? (
         <Grid container>
           <Grid item xs={3}>
-            <MyChatLeftBar chat={ChatCollections} />
+            <MyChatLeftBar chat={ChatCollections2} />
           </Grid>
           <Grid item xs={9}>
-            <MyChatRightBar chat={ChatCollections} />
+            <MyChatRightBar chat={ChatCollections2} />
           </Grid>
         </Grid>
       ) : (
-        <div></div>
+        <div> Loading </div>
       )}
     </Grid>
     // </div>
