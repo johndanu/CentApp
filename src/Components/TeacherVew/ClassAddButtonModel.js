@@ -25,6 +25,7 @@ const useStyles = makeStyles(() => ({
   paper: {
     position: "absolute",
     width: 400,
+    height: 400,
     backgroundColor: "white",
     border: "2px solid #000",
     boxShadow: 5,
@@ -74,14 +75,18 @@ export default function ClassAddButtonModel() {
     </div>
   );
 
-  const position={
-    marginBottom:"6vh",
-    marginRight:"7.3vh"
-  }
+  const position = {
+    marginBottom: "6vh",
+    marginRight: "7.3vh",
+  };
 
   return (
-    <div >
-      <IconButton onClick={handleOpen} className={styleclass.style} style={position}>
+    <div>
+      <IconButton
+        onClick={handleOpen}
+        className={styleclass.style}
+        style={position}
+      >
         <AddCircleIcon fontSize="large" />
       </IconButton>
       <Modal
