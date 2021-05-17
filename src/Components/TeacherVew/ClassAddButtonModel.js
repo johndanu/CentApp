@@ -82,7 +82,7 @@ export default function ClassAddButtonModel(props) {
   );
   return (
     // <div>
-    <div>
+    <div style={{marginLeft:"55.3vw"}}>
       <IconButton onClick={handleOpen1}>
         {" "}
         <LinkIcon fontSize="large" />
