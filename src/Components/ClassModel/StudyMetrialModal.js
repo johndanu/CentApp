@@ -1,9 +1,23 @@
-import { Grid } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import React from "react";
 import "./StudyMetrialModal.css";
 import Firebase from "firebase";
 
-export const StudyMetrialModal = ({ show, close, length }) => {
+const useStyle = makeStyles((theme) => ({
+  input: {
+    width: "100%",
+    padding: 6,
+    margin: 5,
+  },
+  btn: {
+    width: "100%",
+    padding: 6,
+    margin: 5,
+  },
+}));
+export const StudyMetrialModal = ({ close, length }) => {
+  const classes = useStyle();
+
   const handleClick = () => {
     let id = window.location.href.split("/");
     id = id[id.length - 1].split("");
@@ -23,41 +37,27 @@ export const StudyMetrialModal = ({ show, close, length }) => {
       ref.set(Assignment);
       console.log(Assignment);
     }
-    close();
   };
 
   return (
-    <div
-      className="modalWrapper"
-      style={{
-        transform: show ? "translateY(0vh)" : "translateY(-100vh)",
-        opacity: show ? "1" : "0",
-        borderRadius: "10px",
-      }}
-    >
-      <div className="modalHeader">
-        <p>Assignment</p>
-        <span onClick={close} className="close-modal-btn">
-          x
-        </span>
-      </div>
-      <div className="modalContent">
-        <div className="modalBody">
-          <form>
-            <Grid>
-              <input type="text" placeholder="StudyMetrialHead" id="title" />
-            </Grid>
-            <Grid>
-              <input type="text" placeholder="StudyMetrial" id="link" />
-            </Grid>
-          </form>
-        </div>
-        <div className="modalFooter">
-          <button onClick={handleClick} className="btn-cancel">
-            Add
-          </button>
-        </div>
-      </div>
+    <div>
+      <input
+        type="text"
+        placeholder="StudyMetrialHead"
+        id="title"
+        className={classes.input}
+      />
+
+      <input
+        type="text"
+        placeholder="StudyMetrial"
+        id="link"
+        className={classes.input}
+      />
+
+      <button onClick={handleClick} className={classes.btn}>
+        Add
+      </button>
     </div>
   );
 };

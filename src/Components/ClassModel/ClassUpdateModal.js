@@ -1,10 +1,19 @@
-import { Grid } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import React, { useState } from "react";
 import "./ClassUpdateModal.css";
 import Firebase from "firebase";
+
 // import { Assignment } from "@material-ui/icons";
 
+const useStyle = makeStyles((theme) => ({
+  inputBox: {
+    width: "100%",
+    padding: 6,
+    margin: 6,
+  },
+}));
 export const ClassUpdateModal = ({ show, close, length }) => {
+  const classes = useStyle();
   const handleClick = () => {
     let id = window.location.href.split("/");
     id = id[id.length - 1].split("");
@@ -30,51 +39,39 @@ export const ClassUpdateModal = ({ show, close, length }) => {
       ref.set(Assignment);
       console.log(Assignment);
     }
-    close();
   };
 
   return (
-    <div
-      className="modal-wrapper"
-      style={{
-        transform: show ? "translateY(0vh)" : "translateY(-100vh)",
-        opacity: show ? "1" : "0",
-        borderRadius: "10px",
-      }}
-    >
-      <div className="modal-header">
-        <p>Assignment</p>
-        <span onClick={close} className="close-modal-btn">
-          x
-        </span>
-      </div>
-      <div className="modal-content">
-        <div className="modal-body">
-          <form>
-            <Grid>
-              <input type="text" placeholder="ClassTopic" id="classOn" />
-            </Grid>
+    <div>
+      <input
+        type="text"
+        placeholder="ClassTopic"
+        id="classOn"
+        className={classes.inputBox}
+      />
 
-            <Grid>
-              <input type="DateAndTime" placeholder="DateAndTime" id="date" />
-            </Grid>
-            <Grid>
-              <select name="cars" id="place">
-                <option value="online">Online</option>
-                <option value="offline">Offline</option>
-              </select>
-            </Grid>
-            <Grid>
-              <input type="text" placeholder="venue" id="venue" />
-            </Grid>
-          </form>
-        </div>
-        <div className="modal-footer">
-          <button onClick={handleClick} className="btn-cancel">
-            Add
-          </button>
-        </div>
-      </div>
+      <input
+        type="DateAndTime"
+        placeholder="DateAndTime"
+        id="date"
+        className={classes.inputBox}
+      />
+
+      <select name="cars" id="place" className={classes.inputBox}>
+        <option value="online">Online</option>
+        <option value="offline">Offline</option>
+      </select>
+
+      <input
+        type="text"
+        placeholder="venue"
+        id="venue"
+        className={classes.inputBox}
+      />
+
+      <button onClick={handleClick} className={classes.inputBox}>
+        Add
+      </button>
     </div>
   );
 };
