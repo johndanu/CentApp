@@ -10,12 +10,12 @@ export const TutoryRightBar = (props) => {
     margin: "5px",
   };
   const rightContainer = {
-    height: "75vh",
+    height: "76.1vh",
     paddingLeft: "30px",
     paddingTop: "10px",
     direction: "ltr",
-    overflowY: "auto",
-    width: "68.2vw",
+    overflowY: "scroll",
+    width: "70.1vw",
     backgroundColor: "white",
     backgroundImage:
       "url(https://i.pinimg.com/originals/ab/ab/60/abab60f06ab52fa7846593e6ae0c9a0b.png)",

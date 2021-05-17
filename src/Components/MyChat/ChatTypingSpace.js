@@ -13,9 +13,9 @@ const styleTypingSpace = {
   bottom: "10px",
   right: "125px",
   height: "50px",
-  width: "68.5vw",
+  width: "69.6vw",
   padding: "5px",
-  marginBottom: "3.8vw",
+  marginBottom: "3.9vw",
   marginRight: "-4.3vw",
   border: " 1px solid rgba(255, 255, 255, 0.18)",
 };

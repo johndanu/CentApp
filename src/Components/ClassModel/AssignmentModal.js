@@ -26,6 +26,7 @@ export const AssignmentModal = ({ show, close, length }) => {
       description: document.getElementById("description").value,
       duedate: document.getElementById("duedate").value,
       title: document.getElementById("title").value,
+      type: "assignment",
     };
     ref.set(Assignment);
     console.log(Assignment);

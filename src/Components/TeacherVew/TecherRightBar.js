@@ -1,10 +1,12 @@
-import { Divider } from "@material-ui/core";
+import { Divider, IconButton } from "@material-ui/core";
 import React from "react";
-
+import LinkIcon from "@material-ui/icons/Link";
+import PlaceIcon from "@material-ui/icons/Place";
 import { StudyMaterial } from "../Assignment/StudyMaterial";
 import { AssignmentReceived } from "../Assignment/AssignmentReceived";
 import { Class } from "../Assignment/Class";
 import ClassAddButtonModel from "./ClassAddButtonModel";
+import { AssignmentInd } from "@material-ui/icons";
 
 export const TeacherRightBar = (props) => {
   const Marginspace = {
@@ -12,7 +14,7 @@ export const TeacherRightBar = (props) => {
   };
 
   const rightContainer = {
-    height: "75vh",
+    height: "76.1vh",
     paddingLeft: "30px",
     paddingTop: "10px",
     direction: "ltr",
