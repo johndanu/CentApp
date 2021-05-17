@@ -13,10 +13,10 @@ import { AssignmentModal } from "../ClassModel/AssignmentModal";
 
 export default function ClassAddButtonModel(props) {
   const [show, SetShow] = useState(false);
-  const [show1, SetShow1] = useState(false);
+  // const [show1, SetShow1] = useState(false);
 
   const closeModalHandler = () => SetShow(false);
-  const closeModalHandler1 = () => SetShow1(false);
+  // const closeModalHandler1 = () => SetShow1(false);
 
   {
     /* <div>
@@ -49,10 +49,10 @@ export default function ClassAddButtonModel(props) {
 
   return (
     <div>
-      {show1 ? (
+      {show ? (
         <div onClick={closeModalHandler} className="back-drop"></div>
       ) : null}
-      <IconButton onClick={() => SetShow1(true)} className="btn-openModal">
+      <IconButton onClick={() => SetShow(true)} className="btn-openModal">
         <AssignmentInd />
       </IconButton>
       <IconButton>
@@ -66,8 +66,13 @@ export default function ClassAddButtonModel(props) {
         length={props.length}
         close={closeModalHandler}
       /> */}
-      <ClassUpdateModal
+      {/* <ClassUpdateModal
         show={show1}
+        length={props.length}
+        close={closeModalHandler}
+      /> */}
+      <StudyMetrialModal
+        show={show}
         length={props.length}
         close={closeModalHandler}
       />
