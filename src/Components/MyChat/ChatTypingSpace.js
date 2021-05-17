@@ -50,7 +50,7 @@ export const ChatTypingSpace = (props) => {
     console.log(link);
   };
 
-  const [myMessage, setMyMessage] = useState();
+  // const [myMessage, setMyMessage] = useState();
 
   return (
     <div style={styleTypingSpace}>

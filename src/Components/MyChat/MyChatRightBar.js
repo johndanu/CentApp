@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ChatTypingSpace } from "./ChatTypingSpace";
 import { ReceiverChat } from "./ReceiverChat";
 import { SenderChat } from "./SenderChat";
+import Firebase from "firebase";
 
 export const MyChatRightBar = (props) => {
   // const [chat, setChat] = useState([]);

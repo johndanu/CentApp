@@ -1,10 +1,11 @@
 import { Grid } from "@material-ui/core";
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import { ChatTypingSpace } from "./MyChat/ChatTypingSpace";
 import { Link } from "react-router-dom";
 import TeacherLeftView from "./TeacherVew/TeacherLeftView";
 import TeachingPlace from "./TeacherVew/TeachingPlace";
 import { TeacherRightBar } from "./TeacherVew/TecherRightBar";
+import Firebase from "firebase";
 
 export default function TeacherView() {
   const style = {
@@ -15,7 +16,25 @@ export default function TeacherView() {
     width: "93vw",
     backgroundColor: "#F2F2F2",
   };
-  const ClassCollection = {
+
+  const [classCollection2, setClassCollection2] = useState([]);
+
+  const [value, setValue] = useState(false);
+
+  const getUserData = () => {
+    // console.log("sd===============+=");
+    let ref = Firebase.database().ref("/ClassCollection");
+    ref.on("value", (snapshot) => {
+      const state = snapshot.val();
+      console.log("DATA SAVED", state);
+      setClassCollection2(state);
+      setValue(true);
+    });
+  };
+  useEffect(() => {
+    getUserData();
+  }, []);
+  const classCollection = {
     id: "class001",
     Name: "Sooriyan Tution",
     studets: ["077653625", "09827362", "0776526517"],
@@ -235,33 +254,30 @@ export default function TeacherView() {
   };
   return (
     <div style={style}>
-      <Grid container>
-        <Grid item xs={3}>
-          <Link to="/">
-            <TeachingPlace name={ClassCollection.Name} />
-          </Link>
-        </Grid>
-        {/* <Grid item xs={5}>
-                    <a href="/techview">
-                        <h3>Tutory Update</h3>
-                    </a>
-                </Grid>
-                <Grid item xs={4}>
-                    <a href="/TeachToAdminChat">
-                        <h3>Admin</h3>
-                    </a>
-                </Grid> */}
-      </Grid>
-      <Grid container>
-        <Grid item sm={3}>
-          <TeacherLeftView classes={ClassCollection} />
-        </Grid>
-        <Grid item sm={9}>
+      {value ? (
+        <span>
           <Grid container>
-            <TeacherRightBar classes={ClassCollection} />
+            <Grid item xs={3}>
+              <Link to="/">
+                <TeachingPlace name={classCollection2[0].Name} />
+                {/* <p>{classCollection2}</p> */}
+              </Link>
+            </Grid>
           </Grid>
-        </Grid>
-      </Grid>
+          <Grid container>
+            <Grid item sm={3}>
+              <TeacherLeftView classes={classCollection2[0]} />
+            </Grid>
+            <Grid item sm={9}>
+              <Grid container>
+                <TeacherRightBar classes={classCollection2[0]} />
+              </Grid>
+            </Grid>
+          </Grid>
+        </span>
+      ) : (
+        <div>Loading</div>
+      )}
     </div>
   );
 }
