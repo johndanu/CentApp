@@ -13,7 +13,6 @@ export const TeacherRightBar = (props) => {
     margin: "5px",
   };
 
-
   const rightContainer = {
     height: "76.1vh",
     paddingLeft: "30px",
@@ -63,9 +62,10 @@ export const TeacherRightBar = (props) => {
         }
       })}
       <div>
-        <ClassAddButtonModel />
+        <ClassAddButtonModel
+          length={classUpdateCollection.classupdates.length}
+        />
       </div>
-
     </div>
   );
 };

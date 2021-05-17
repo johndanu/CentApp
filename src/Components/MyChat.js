@@ -4,7 +4,7 @@ import { MyChatLeftBar } from "./MyChat/MyChatLeftBar";
 import { MyChatRightBar } from "./MyChat/MyChatRightBar";
 import { CentLogo } from "./MyChat/CentLogo";
 import { ChatHeading } from "./MyChat/ChatHeading";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Firebase from "firebase";
 // import axios from 'axios'
 
@@ -38,89 +38,7 @@ export const MyChat = () => {
     getUserData();
   }, []);
   console.log(ChatCollections2, "chat");
-  let ChatCollections = [
-    {
-      id: "chat001",
-      type: "personal",
-      members: ["0775647873", "0774766597"],
-      chats: [
-        {
-          id: "message001",
-          sender: "0774766597",
-          message: "Hi Iam Abi",
-        },
-        {
-          id: "message002",
-          sender: "0775647873",
-          message: "Hello Abi",
-        },
-        {
-          id: "message003",
-          sender: "0774766597",
-          message: "how can i help you",
-        },
-        {
-          id: "message001",
-          sender: "0775647873",
-          message: "May I call you tommoroww",
-        },
-      ],
-    },
-    {
-      id: "chat002",
-      type: "personal",
-      members: ["0774548725", "0774766597"],
-      chats: [
-        {
-          id: "message001",
-          sender: "0774766597",
-          message: "Hi Iam Abi",
-        },
-        {
-          id: "message002",
-          sender: "0774548725",
-          message: "Hello Abi",
-        },
-        {
-          id: "message003",
-          sender: "0774548725",
-          message: "how can i help you",
-        },
-        {
-          id: "message001",
-          sender: "0774766597",
-          message: "where can I go for dinner",
-        },
-      ],
-    },
-    {
-      id: "chat003",
-      type: "personal",
-      members: ["0774766597", "0776858489"],
-      chats: [
-        {
-          id: "message001",
-          sender: "0774766597",
-          message: "Hi Iam Abi",
-        },
-        {
-          id: "message002",
-          sender: "0776858489",
-          message: "Hello Abi",
-        },
-        {
-          id: "message003",
-          sender: "0774766597",
-          message: "how can i help you",
-        },
-        {
-          id: "message001",
-          sender: "0776858489",
-          message: "I dont need any help",
-        },
-      ],
-    },
-  ];
+
   console.log(value);
 
   return (

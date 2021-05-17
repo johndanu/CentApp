@@ -16,9 +16,11 @@ export default function TeacherLeftView(props) {
   return (
     <div style={leftContainer}>
       {/* <a href="/techview">
-                <ClassNames name="Common"/>
-            </a> */}
+        <ClassNames name="Common" />
+      </a>
       {/* {JSON.stringify(classes)} */}
+      {/* {classes} */}
+      {/* <p>{JSON.stringify(classes.classes[0].Class)}</p>  */}
       {classes.classes.map((myclasses) => (
         <Link to={"/techview/" + myclasses.id}>
           {myclasses.teacherno === "0774766597" ? (
@@ -29,7 +31,7 @@ export default function TeacherLeftView(props) {
             />
           ) : (
             <br />
-          )}
+          )}{" "}
         </Link>
       ))}
     </div>

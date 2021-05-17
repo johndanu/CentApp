@@ -6,60 +6,64 @@ import { AssignmentInd } from "@material-ui/icons";
 import LinkIcon from "@material-ui/icons/Link";
 import PlaceIcon from "@material-ui/icons/Place";
 import { makeStyles } from "@material-ui/core/styles";
-import { useState } from 'react';
+import { useState } from "react";
 import { StudyMetrialModal } from "../ClassModel/StudyMetrialModal";
 import { ClassUpdateModal } from "../ClassModel/ClassUpdateModal";
 import { AssignmentModal } from "../ClassModel/AssignmentModal";
 
-export default function ClassAddButtonModel() {
+export default function ClassAddButtonModel(props) {
   const [show, SetShow] = useState(false);
   const closeModalHandler = () => SetShow(false);
 
-  {/* <div>
+  {
+    /* <div>
           {show ? <div onClick={closeModalHandler} className="back-drop"></div> : null}
           <IconButton onClick={() => SetShow(true)} className="btn-openModal">
             <AssignmentInd />
           </IconButton>
           <AssignmentModal show={show} close={closeModalHandler} />
-        </div> */}
+        </div> */
+  }
 
-
-  {/* <div>
+  {
+    /* <div>
           {show ? <div onClick={closeModalHandler} className="back-drop"></div> : null}
           <IconButton onClick={() => SetShow(true)} className="btn-openModal">
             <LinkIcon />
           </IconButton>
           <StudyMetrialModal show={show} close={closeModalHandler} />
-        </div> */}
+        </div> */
+  }
 
-  {/* <div>
+  {
+    /* <div>
           {show ? <div onClick={closeModalHandler} className="back-drop"></div> : null}
           <IconButton onClick={() => SetShow(true)} className="btn-openModal">
             <PlaceIcon />
           </IconButton>
           <ClassUpdateModal show={show} close={closeModalHandler} />
-        </div> */}
+        </div> */
+  }
 
   return (
     <div>
-
-       <div>
-          {show ? <div onClick={closeModalHandler} className="back-drop"></div> : null}
-          <IconButton onClick={() => SetShow(true)} className="btn-openModal">
-            <AssignmentInd />
-          </IconButton>
-          <AssignmentModal show={show} close={closeModalHandler} />
-        </div>
-
-      {/* <IconButton>
-        <AssignmentInd fontSize="large" />
-      </IconButton> */}
+      {show ? (
+        <div onClick={closeModalHandler} className="back-drop"></div>
+      ) : null}
+      <IconButton onClick={() => SetShow(true)} className="btn-openModal">
+        <AssignmentInd />
+      </IconButton>
       <IconButton>
         <LinkIcon fontSize="large" />
       </IconButton>
       <IconButton>
         <PlaceIcon fontSize="large" />
       </IconButton>
+      <AssignmentModal
+        show={show}
+        length={props.length}
+        close={closeModalHandler}
+      />
     </div>
   );
 }
