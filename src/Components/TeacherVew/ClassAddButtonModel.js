@@ -42,9 +42,18 @@ export default function ClassAddButtonModel() {
 
   return (
     <div>
-      <IconButton>
+
+       <div>
+          {show ? <div onClick={closeModalHandler} className="back-drop"></div> : null}
+          <IconButton onClick={() => SetShow(true)} className="btn-openModal">
+            <AssignmentInd />
+          </IconButton>
+          <AssignmentModal show={show} close={closeModalHandler} />
+        </div>
+
+      {/* <IconButton>
         <AssignmentInd fontSize="large" />
-      </IconButton>
+      </IconButton> */}
       <IconButton>
         <LinkIcon fontSize="large" />
       </IconButton>

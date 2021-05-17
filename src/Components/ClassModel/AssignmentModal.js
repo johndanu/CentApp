@@ -3,6 +3,17 @@ import React from "react";
 import './AssignmentModal.css';
 
 export const AssignmentModal = ({ show, close }) => {
+    const margin = {
+        marginTop: "2vh",
+        border:"none",
+        padding:"10px",
+    }
+
+    const TextareaMargin = {
+        marginTop: "2vh",
+        padding:"10px",
+
+    }
     return (
         <div style={{ borderRadius: "10px" }} className="modal-wrapper"
             style={{
@@ -19,17 +30,17 @@ export const AssignmentModal = ({ show, close }) => {
             <div className="modal-content">
                 <div className="modal-body">
                     <form>
-                        <Grid>
+                        <Grid style={margin}>
                             <input type="text" placeholder="Assignment Head" />
                         </Grid>
-                        <Grid>
+                        <Grid style={margin}>
                             <input type="text" placeholder="AssignmentModel" />
                         </Grid>
-                        <Grid>
+                        <Grid style={margin}>
                             <input type="DateAndTime" placeholder="DueDate" />
                         </Grid>
-                        <Grid>
-                            <input type="text" placeholder="Message" />
+                        <Grid style={TextareaMargin}>
+                                <textarea placeholder="Message" />
                         </Grid>
                     </form>
                 </div>
