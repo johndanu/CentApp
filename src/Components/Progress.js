@@ -15,7 +15,7 @@ const itemsFromBackend = [
 
 const columnsFromBackend = {
   [uuid()]: {
-    name: "Requested",
+    name: "Assignments",
     items: itemsFromBackend
   },
   [uuid()]: {
@@ -82,7 +82,7 @@ export const Progress = () => {
     width: "175vh",
     backgroundImage:
       "url(https://i.pinimg.com/originals/ab/ab/60/abab60f06ab52fa7846593e6ae0c9a0b.png)",
-    overflowY: "scroll",
+    // overflowY: "scroll",
     marginLeft: "5vh",
     boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
   };
