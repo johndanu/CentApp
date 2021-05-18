@@ -14,9 +14,9 @@ export const StudentViewClassPersonal = () => {
   return (
     <div style={style}>
       <Grid container>
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <h3>Class</h3>
-        </Grid>
+        </Grid> */}
         {/* <Grid item xs={3}>
                     <a href="/">
                         <TutorialName />

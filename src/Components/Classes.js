@@ -244,7 +244,7 @@ export const Classes = () => {
             <TutorialName institute={ClassCollection.Name} />
           </Link>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={3} style={{paddingTop:'20px',textAlign:"center"}}>
           <h3>Class</h3>
         </Grid>
         {/* <Grid item xs={3}>

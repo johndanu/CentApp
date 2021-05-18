@@ -34,7 +34,7 @@ export const ClassNames = (props) => {
             src="https://www.attitudestatus.org/wp-content/uploads/2020/07/dp-whatsapp-9-300x300.jpg"
           />
         </Grid>
-        <Grid item sm={6}>
+        <Grid item sm={6} style={{paddingTop:"20px"}}>
           <h4 onClick={handleClick}>
             {props.name}
             <br />
