@@ -2,6 +2,7 @@ import { Grid, makeStyles } from "@material-ui/core";
 import React, { useState } from "react";
 import "./ClassUpdateModal.css";
 import Firebase from "firebase";
+import { useParams } from "react-router";
 
 // import { Assignment } from "@material-ui/icons";
 
@@ -14,12 +15,13 @@ const useStyle = makeStyles((theme) => ({
 }));
 export const ClassUpdateModal = ({ show, close, length }) => {
   const classes = useStyle();
+  let params = useParams();
   const handleClick = () => {
-    let id = window.location.href.split("/");
-    id = id[id.length - 1].split("");
-    id = id[id.length - 1];
-    id = parseInt(id) - 1;
-    let link = "/ClassCollection/0/classes/0/classupdates/" + length;
+    let iId =
+      parseInt(params.instituteId.charAt(params.instituteId.length - 1)) - 1;
+    console.log(iId);
+    let cId = parseInt(params.classId.charAt(params.classId.length - 1)) - 1;
+    let link = `/ClassCollection/${iId}/classes/${cId}/classupdates/` + length;
     let ref = Firebase.database().ref(link);
     let Assignment = {
       dateAndTime: document.getElementById("date").value,
