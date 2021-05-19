@@ -22,9 +22,9 @@ export const TutoryCommonStuUpdateView = () => {
             <TutorialName />
           </a>
         </Grid>
-        <Grid item xs={4}>
+        {/* <Grid item xs={4}>
           <h3>My Class</h3>
-        </Grid>
+        </Grid> */}
         {/* <Grid item xs={4}>
                     <h3>Tutory Update</h3>
                 </Grid>

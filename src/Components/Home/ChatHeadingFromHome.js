@@ -19,7 +19,8 @@ export const ChatHeadingFromHome = (props) => {
         borderRadius:"50px",
         backgroundColor:'#756D5E',
         color:'#f2f2f2',
-        wigth:'50vh'
+        wigth:'50vh',
+        // marginTop:"10px"
     }
 
     return (
@@ -27,7 +28,7 @@ export const ChatHeadingFromHome = (props) => {
                 <Grid item sm={3} style = {padding}>
                     <Avatar alt="Cent" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT2EgncLjz34RAF0hJBmctuSybA3luujCggw&usqp=CAU" />
                 </Grid>
-                <Grid item sm={9}>
+                <Grid item sm={9} style={padding}>
                     <h2>{props.name}</h2>
                 </Grid>
             </Grid>

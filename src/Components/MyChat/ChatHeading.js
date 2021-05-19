@@ -17,7 +17,7 @@ export const ChatHeading = () => {
 
 
     const padding = {
-        padding: "15px"
+        paddingTop: "15px"
     }
 
     return (
@@ -26,7 +26,7 @@ export const ChatHeading = () => {
                 <Grid item sm={6} style = {padding}>
                     <Avatar alt="Cent" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT2EgncLjz34RAF0hJBmctuSybA3luujCggw&usqp=CAU" />
                 </Grid>
-                <Grid style={{textAlign:'center'}}>
+                <Grid style={{padding:'20px', paddingRight:'3px'}}>
                     <h3>My Chat</h3>
                 </Grid>
             </Grid>
