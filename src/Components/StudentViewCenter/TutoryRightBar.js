@@ -4,8 +4,10 @@ import React from "react";
 import { StudyMaterial } from "../Assignment/StudyMaterial";
 import { AssignmentReceived } from "../Assignment/AssignmentReceived";
 import { Class } from "../Assignment/Class";
+import { useParams } from "react-router";
 
 export const TutoryRightBar = (props) => {
+  let params = useParams();
   const Marginspace = {
     margin: "5px",
   };
@@ -22,16 +24,11 @@ export const TutoryRightBar = (props) => {
   };
   const collection = props.classes;
 
-  let id = window.location.href.split("/");
-  id = id[id.length - 1];
-  console.log(id);
   const classUpdateCollection = collection.find((item) => {
-    if (item.id === id) {
-      return item;
-    } else {
-      return null;
-    }
+    return item.id === params.simpleId;
+    // console.log(item.id, params.simpleId);
   });
+
   return (
     <div style={rightContainer}>
       {classUpdateCollection.classupdates.map((classUpdate, i) => {
