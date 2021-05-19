@@ -12,14 +12,17 @@ export const TutoryLeftBar = (props) => {
 
   return (
     <div style={leftContainer}>
-      {props.classes.map((classes) => (
-        <Link to={"/class/" + classes.id}>
-          <ClassNames
-            name={classes.Class}
-            teacher={classes.teacher}
-            id={classes.id}
-          />
-        </Link>
+      {JSON.stringify(props.classes.classes[0].id)}
+      {props.classes.classes.map((myclasses) => (
+        <React.Fragment>
+          <Link to={`/class/${props.classes.id}/${myclasses.id}`}>
+            <ClassNames
+              name={myclasses.Class}
+              teacher={myclasses.teacher}
+              id={myclasses.id}
+            />
+          </Link>
+        </React.Fragment>
       ))}
       {/* {props.classes} */}
     </div>

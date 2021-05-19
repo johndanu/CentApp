@@ -7,7 +7,7 @@ import { Link, useParams } from "react-router-dom";
 import Firebase from "firebase";
 
 export const Classes = () => {
-  const id = useParams();
+  const params = useParams();
   const [classCollection2, setClassCollection2] = useState([]);
   const [value, setValue] = useState(false);
 
@@ -16,11 +16,12 @@ export const Classes = () => {
     let ref = Firebase.database().ref("/ClassCollection");
     ref.on("value", (snapshot) => {
       const state = snapshot.val();
-      console.log("DATA SAVED", state);
-      state.find((item) => {
-        return item;
+      let data = state.find((item) => {
+        console.log(item.id, "samam", params.id);
+        return item.id === params.id;
       });
-      setClassCollection2(state);
+      setClassCollection2(data);
+      console.log(data);
       setValue(true);
     });
   };
@@ -47,7 +48,7 @@ export const Classes = () => {
           <Grid container>
             <Grid item xs={3}>
               <Link to="/">
-                <TutorialName institute={classCollection2[0].Name} />
+                <TutorialName institute={classCollection2.Name} />
               </Link>
             </Grid>
             <Grid item xs={3}>
@@ -64,10 +65,10 @@ export const Classes = () => {
           </Grid>
           <Grid container>
             <Grid item xs={3}>
-              <TutoryLeftBar classes={classCollection2[0].classes} />
+              <TutoryLeftBar classes={classCollection2} />
             </Grid>
             <Grid item xs={9}>
-              <TutoryRightBar classes={classCollection2[0].classes} />
+              <TutoryRightBar classes={classCollection2.classes} />
             </Grid>
           </Grid>
         </React.Fragment>
