@@ -44,10 +44,10 @@ export const ChatTypingSpace = (props) => {
     let chatData = {
       id: `message00${props.length}`,
       message: document.getElementById("myMessage").value,
-      sender: "0774766597",
+      sender: props.phoneNo,
     };
     ref.set(chatData);
-    console.log(link);
+    console.log(chatData);
   };
 
   // const [myMessage, setMyMessage] = useState();

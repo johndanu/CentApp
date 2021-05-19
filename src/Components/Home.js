@@ -1,12 +1,49 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
-import { Container } from "@material-ui/core";
+import Firebase from "firebase";
 import { ChatHeadingFromHome } from "./Home/ChatHeadingFromHome";
 import { AuthContext } from "../Auth";
 import LandingPage from "./LandingPage";
 import { Link } from "react-router-dom";
+import { makeStyles } from "@material-ui/core";
 
-export const Home = () => {
+const useStyle = makeStyles({
+  avatar: {
+    border: "5px solid white ",
+    width: "50px",
+    height: "50px",
+  },
+});
+export const Home = (props) => {
+  const classes = useStyle();
+
+  const [learningInstitutes, setLearningInstitutes] = useState([]);
+  const [teachingInstitutes, setTeachingInstitutes] = useState([]);
+  const [value, setValue] = useState(false);
+
+  const getClassData = () => {
+    // console.log("sd===============+=");
+    let ref = Firebase.database().ref("/ClassCollection");
+    ref.on("value", (snapshot) => {
+      const state = snapshot.val();
+      let teach = state.filter((item) => {
+        return item.Teacher === props.phoneNo;
+      });
+      let learn = state.filter((item, i) => {
+        console.log(item.id, i);
+        return item.Students.find((student) => {
+          return student === props.phoneNo;
+        });
+      });
+      console.log(teach, "learn");
+      setLearningInstitutes(learn);
+      setTeachingInstitutes(teach);
+      setValue(true);
+    });
+  };
+  useEffect(() => {
+    getClassData();
+  }, []);
   const divStyle = {
     backgroundColor: "white",
     width: "93vw",
@@ -30,34 +67,18 @@ export const Home = () => {
     border: " 1px solid #F2F2F2",
   };
 
-  let LearningInstitutes = [
-    {
-      name: "UKI Coding School",
-      role: "student",
-    },
-    {
-      name: "Choir Team",
-      role: "student",
-    },
-  ];
-  let TeachingInstitutes = [
-    {
-      name: "Sooriyan Tution",
-      role: "teacher",
-    },
-  ];
-  const [user, dispatch] = useContext(AuthContext);
-  let thisuser = () => {
-    if (user) {
-      return true;
-    }
-  };
+  const [user] = useContext(AuthContext);
 
   return (
     <div>
       {user.user ? (
         <Grid container style={divStyle}>
           <Grid container style={style}>
+            <img
+              className={classes.avatar}
+              alt="userPhoto"
+              src={user.user.photoURL}
+            />
             <h1 style={{ padding: "10px", marginTop: "1px" }}>
               Hi {user.user.displayName}!
             </h1>
@@ -72,30 +93,37 @@ export const Home = () => {
                   <ChatHeadingFromHome name="Progress" />
                 </Link>
               </Grid>
-              <Grid item sm={12}>
-                <h1>Student at </h1>
-              </Grid>
-              {LearningInstitutes.map((institute, i) => {
-                return (
-                  <Grid item sm={6} style={padding}>
-                    <Link to="/class/class001-001">
-                      <ChatHeadingFromHome name={institute.name} />
-                    </Link>
+              {value ? (
+                <React.Fragment>
+                  <Grid item sm={12}>
+                    <h1>Student at </h1>
                   </Grid>
-                );
-              })}
-              <Grid item sm={12}>
-                <h1>Teach in</h1>
-              </Grid>
-              {TeachingInstitutes.map((institute, i) => {
-                return (
-                  <Grid item sm={6} style={padding}>
-                    <Link to="/techview/class001-001">
-                      <ChatHeadingFromHome name={institute.name} />
-                    </Link>
+                  {learningInstitutes.map((institute, i) => {
+                    return (
+                      <Grid item sm={6} style={padding}>
+                        <Link to={`/class/${institute.id}/001`}>
+                          {JSON.stringify(institute.id)}
+                          <ChatHeadingFromHome name={institute.Name} />
+                        </Link>
+                      </Grid>
+                    );
+                  })}
+                  <Grid item sm={12}>
+                    <h1>Teach in</h1>
                   </Grid>
-                );
-              })}
+                  {teachingInstitutes.map((institute, i) => {
+                    return (
+                      <Grid item sm={6} style={padding}>
+                        <Link to={`/techview/${institute.id}/001`}>
+                          <ChatHeadingFromHome name={institute.Name} />
+                        </Link>
+                      </Grid>
+                    );
+                  })}
+                </React.Fragment>
+              ) : (
+                <p>Loading</p>
+              )}
             </Grid>
           </Grid>
         </Grid>

@@ -1,9 +1,8 @@
 // import { IconButton } from "@material-ui/core";
 import React from "react";
 import { ClassNames } from "../StudentViewCenter/ClassNames";
-// import { makeStyles } from "@material-ui/core/styles";
+
 import { Link } from "react-router-dom";
-// import ClassAddButtonModel from "./ClassAddButtonModel";
 
 export default function TeacherLeftView(props) {
   const classes = props.classes;
@@ -22,17 +21,19 @@ export default function TeacherLeftView(props) {
       {/* {classes} */}
       {/* <p>{JSON.stringify(classes.classes[0].Class)}</p>  */}
       {classes.classes.map((myclasses) => (
-        <Link to={"/techview/" + myclasses.id}>
-          {myclasses.teacherno === "0774766597" ? (
-            <ClassNames
-              name={classes.Name}
-              teacher={myclasses.Class}
-              id={myclasses.id}
-            />
+        <React.Fragment>
+          {myclasses.teacherno === props.phoneNo ? (
+            <Link to={`/techview/${classes.id}/${myclasses.id}`}>
+              <ClassNames
+                name={classes.Name}
+                teacher={myclasses.Class}
+                id={myclasses.id}
+              />
+            </Link>
           ) : (
             <br />
           )}{" "}
-        </Link>
+        </React.Fragment>
       ))}
     </div>
   );

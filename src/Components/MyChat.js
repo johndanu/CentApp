@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import { MyChatLeftBar } from "./MyChat/MyChatLeftBar";
 import { MyChatRightBar } from "./MyChat/MyChatRightBar";
@@ -6,9 +6,11 @@ import { CentLogo } from "./MyChat/CentLogo";
 import { ChatHeading } from "./MyChat/ChatHeading";
 import { Link } from "react-router-dom";
 import Firebase from "firebase";
+import LandingPage from "./LandingPage";
+import { AuthContext } from "../Auth";
 // import axios from 'axios'
 
-export const MyChat = () => {
+export const MyChat = ({ phoneNo }) => {
   var style = {
     paddingTop: "1px",
     height: "85vh",
@@ -21,6 +23,7 @@ export const MyChat = () => {
   //   backgroundColor: "white",
   // }
   const [ChatCollections2, setChatCollections2] = useState([]);
+  const [user] = useContext(AuthContext);
 
   const [value, setValue] = useState(false);
 
@@ -44,27 +47,33 @@ export const MyChat = () => {
   return (
     // <div style={style}>
     <Grid style={style}>
-      <Grid container>
-        <Grid item xs={3}>
-          <Link to="/">
-            <CentLogo />
-          </Link>
-        </Grid>
-        <Grid item xs={9}>
-          <ChatHeading />
-        </Grid>
-      </Grid>
-      {value ? (
-        <Grid container>
-          <Grid item xs={3}>
-            <MyChatLeftBar chat={ChatCollections2} />
-          </Grid>
-          <Grid item xs={9}>
-            <MyChatRightBar chat={ChatCollections2} />
-          </Grid>
-        </Grid>
+      {user.user ? (
+        value ? (
+          <React.Fragment>
+            <Grid container>
+              <Grid item xs={3}>
+                <Link to="/">
+                  <CentLogo url={user.user.photoURL} />
+                </Link>
+              </Grid>
+              <Grid item xs={9}>
+                <ChatHeading />
+              </Grid>
+            </Grid>
+            <Grid container>
+              <Grid item xs={3}>
+                <MyChatLeftBar chat={ChatCollections2} phoneNo={phoneNo} />
+              </Grid>
+              <Grid item xs={9}>
+                <MyChatRightBar chat={ChatCollections2} phoneNo={phoneNo} />
+              </Grid>
+            </Grid>
+          </React.Fragment>
+        ) : (
+          <div> Loading </div>
+        )
       ) : (
-        <div> Loading </div>
+        <LandingPage />
       )}
     </Grid>
     // </div>
