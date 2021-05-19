@@ -17,13 +17,18 @@ import { AuthProvider } from "./Auth";
 import reducer, { initialState } from "./Authreducer";
 
 function App() {
+  const phoneNo = "0774766597";
+
   return (
     // <Container style={{ backgroundColor: "white", marginTop: "10px", paddingTop: "10px", marginBottom: "10px", borderRadius: "10px" }}>
     <AuthProvider initialState={initialState} reducer={reducer}>
       <Router>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/mychat/:id" component={MyChat} />
+          <Route path="/" exact component={() => <Home phoneNo={phoneNo} />} />
+          <Route
+            path="/mychat/:id"
+            component={() => <MyChat phoneNo={phoneNo} />}
+          />
           <Route path="/landing" component={LandingPage} />
           {/* <Route path="/mychat/:id" component={<MyChat />} /> */}
           <Route path="/stuview" component={TutoryCommonStuUpdateView} />
@@ -33,7 +38,10 @@ function App() {
           <Route path="/adminmsg" component={AdminToStuChat} />
           <Route path="/progress" component={Progress} />
           {/* <Route path="/techview" component={TeacherView} /> */}
-          <Route path="/techview/:id" component={TeacherView} />
+          <Route
+            path="/techview/:instituteId/:classId"
+            component={() => <TeacherView phoneNo={phoneNo} />}
+          />
           <Route path="/TeachToAdminChat" component={TeacherToAdminChat} />
           <Route path="/TeachClsWork" component={TeacherClassWork} />
           <Route path="/Tech2Stu" component={Teacher2StuPersonal} />

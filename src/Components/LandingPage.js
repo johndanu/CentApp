@@ -1,8 +1,7 @@
 import { Button, Grid } from "@material-ui/core";
-import React, { useCallback, useContext } from "react";
-import { firebaseApp, auth, provider } from "../fire";
-import firebase from "firebase";
-import { CreditCard } from "@material-ui/icons";
+import React, { useContext } from "react";
+import { firebaseApp, provider } from "../fire";
+
 import { AuthContext } from "../Auth";
 import { actionType } from "../Authreducer";
 
@@ -22,7 +21,7 @@ export default function LandingPage() {
     marginLeft: "10vh",
     marginTop: "20vh",
     paddingLeft: "5vh",
-    paddingTop: '10vh',
+    paddingTop: "10vh",
     backgroundColor: "#F2F2F2",
     // boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
   };
@@ -40,8 +39,8 @@ export default function LandingPage() {
     marginLeft: "8vh",
     marginTop: "8vh",
     paddingLeft: "20vh",
-    paddingTop: '3vh',
-    borderRedius:'10px',
+    paddingTop: "3vh",
+    borderRedius: "10px",
     backgroundImage:
       "url(https://img.freepik.com/free-vector/online-tutorials-concept_52683-37480.jpg?size=626&ext=jpg)",
     // boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
@@ -60,7 +59,6 @@ export default function LandingPage() {
         .auth()
         .signInWithPopup(provider)
         .then((result) => {
-          var user = result.user;
           dispatch({
             type: actionType.SET_USER,
             user: result.user,
@@ -70,9 +68,7 @@ export default function LandingPage() {
       console.log(error);
     }
   };
-  const display = () => {
-    alert(user.displayName);
-  };
+
   return (
     <Grid container xs={12} sm={12} spacing={3} style={style}>
       <Grid style={logoDivStyle}>
@@ -83,7 +79,7 @@ export default function LandingPage() {
         <h3>Member Login</h3>
         <Button variant="contained" onClick={click} style={buttonStyle}>
           Log in With Google
-          </Button>
+        </Button>
       </Grid>
     </Grid>
   );

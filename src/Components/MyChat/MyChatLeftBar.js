@@ -12,7 +12,7 @@ export const MyChatLeftBar = (props) => {
   return (
     <div style={space}>
       {ChatList.map((chat, i) => {
-        if (chat.members[0] == "0774766597") {
+        if (chat.members[0] === props.phoneNo) {
           var lastMessage = chat.chats[chat.chats.length - 1].message;
           if (lastMessage.length >= 20) {
             lastMessage = lastMessage.slice(0, 19) + "...";

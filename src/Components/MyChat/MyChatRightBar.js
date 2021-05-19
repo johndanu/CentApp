@@ -51,7 +51,7 @@ export const MyChatRightBar = (props) => {
   return (
     <div style={space}>
       {filteredChat.chats.map((data) => {
-        if (data.sender == "0774766597") {
+        if (data.sender === props.phoneNo) {
           return (
             <Grid container>
               <Grid item sm={6} />
@@ -70,7 +70,10 @@ export const MyChatRightBar = (props) => {
           );
         }
       })}
-      <ChatTypingSpace length={filteredChat.chats.length} />
+      <ChatTypingSpace
+        length={filteredChat.chats.length}
+        phoneNo={props.phoneNo}
+      />
     </div>
   );
 };
