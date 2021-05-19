@@ -14,7 +14,7 @@ export const MyChatRightBar = (props) => {
   // // }, []);
   const space = {
     padding: "15px",
-    height: "76.2vh",
+    height: "70.1vh",
     backgroundImage:
       "url(https://i.pinimg.com/originals/ab/ab/60/abab60f06ab52fa7846593e6ae0c9a0b.png)",
     overflowY: "scroll",
