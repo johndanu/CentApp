@@ -102,7 +102,7 @@ export const Home = (props) => {
                     return (
                       <Grid item sm={6} style={padding}>
                         <Link to={`/class/${institute.id}/001`}>
-                          {JSON.stringify(institute.id)}
+                          {/* {JSON.stringify(institute.id)} */}
                           <ChatHeadingFromHome name={institute.Name} />
                         </Link>
                       </Grid>
