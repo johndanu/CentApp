@@ -4,7 +4,13 @@ import { Home } from "./Components/Home";
 import { MyChat } from "./Components/MyChat";
 import { StudentViewClassPersonal } from "./Components/StudentViewClassPersonal";
 import { TutoryCommonStuUpdateView } from "./Components/TutoryCommonStuUpdateView";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+} from "react-router-dom";
 import { AdminToStuChat } from "./Components/StudentViewCenter/AdminToStuChat";
 import { Progress } from "./Components/Progress";
 import TeacherView from "./Components/TeacherView";
@@ -17,7 +23,7 @@ import { AuthProvider } from "./Auth";
 import reducer, { initialState } from "./Authreducer";
 
 function App() {
-  const phoneNo = "0774766597";
+  const phoneNo = "0775647873";
 
   return (
     // <Container style={{ backgroundColor: "white", marginTop: "10px", paddingTop: "10px", marginBottom: "10px", borderRadius: "10px" }}>
@@ -25,6 +31,13 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact component={() => <Home phoneNo={phoneNo} />} />
+          {/* <Route
+            exact
+            path="/CentApp"
+            render={() => {
+              return <Redirect to="/" />;
+            }}
+          /> */}
           <Route
             path="/mychat/:id"
             component={() => <MyChat phoneNo={phoneNo} />}

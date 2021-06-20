@@ -1,9 +1,10 @@
 import { Button, Grid } from "@material-ui/core";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { firebaseApp, provider } from "../fire";
-
+import firebase from "firebase";
 import { AuthContext } from "../Auth";
 import { actionType } from "../Authreducer";
+import { useFormik } from "formik";
 
 export default function LandingPage() {
   var style = {
@@ -14,7 +15,14 @@ export default function LandingPage() {
     backgroundColor: "#F2F2F2",
     boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
   };
-
+  let checkOTP;
+  const [OTPSent, setOTPSent] = useState(false);
+  let formik = useFormik({
+    initialValues: {
+      phoneNo: "",
+      OTP: "",
+    },
+  });
   var divStyle = {
     height: "35vh",
     width: "65vh",
@@ -53,6 +61,37 @@ export default function LandingPage() {
   };
 
   const [user, dispatch] = useContext(AuthContext);
+
+  let OTPClick = () => {
+    console.log("clicker");
+    var recaptcha = new firebase.auth.RecaptchaVerifier("recaptcha", {
+      size: "invisible",
+    });
+    let number = "+94774766597";
+    firebaseApp
+      .auth()
+      .signInWithPhoneNumber(number, recaptcha)
+      .then((e) => {
+        checkOTP = e;
+        console.log(checkOTP);
+
+        setOTPSent(true);
+        let code = prompt("enter the otp", "");
+        console.log(e);
+        if (code == null) return;
+        e.confirm(code).then((result) => {
+          console.log(result, "result");
+          dispatch({
+            type: actionType.SET_USER,
+            user: result.user,
+          });
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const click = () => {
     try {
       firebaseApp
@@ -80,6 +119,14 @@ export default function LandingPage() {
         <Button variant="contained" onClick={click} style={buttonStyle}>
           Log in With Google
         </Button>
+
+        <div>
+          <div id="recaptcha"></div>
+          <Button variant="contained" onClick={OTPClick}>
+            <p> kk </p>
+            OTP
+          </Button>
+        </div>
       </Grid>
     </Grid>
   );

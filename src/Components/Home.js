@@ -6,6 +6,7 @@ import { AuthContext } from "../Auth";
 import LandingPage from "./LandingPage";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core";
+import staticProfile from "../files/profile.png";
 
 const useStyle = makeStyles({
   avatar: {
@@ -22,22 +23,22 @@ export const Home = (props) => {
   const [value, setValue] = useState(false);
 
   const getClassData = () => {
-    // console.log("sd===============+=");
     let ref = Firebase.database().ref("/ClassCollection");
     ref.on("value", (snapshot) => {
       const state = snapshot.val();
+
       let teach = state.filter((item) => {
         return item.Teacher === props.phoneNo;
       });
       let learn = state.filter((item, i) => {
-        console.log(item.id, i);
         return item.Students.find((student) => {
           return student === props.phoneNo;
         });
       });
-      console.log(teach, "learn");
+
       setLearningInstitutes(learn);
       setTeachingInstitutes(teach);
+
       setValue(true);
     });
   };
@@ -74,14 +75,27 @@ export const Home = (props) => {
       {user.user ? (
         <Grid container style={divStyle}>
           <Grid container style={style}>
-            <img
-              className={classes.avatar}
-              alt="userPhoto"
-              src={user.user.photoURL}
-            />
-            <h1 style={{ padding: "10px", marginTop: "1px" }}>
-              Hi {user.user.displayName}!
-            </h1>
+            {user.user.photoURL ? (
+              <img
+                className={classes.avatar}
+                alt="userPhoto"
+                src={user.user.photoURL}
+              />
+            ) : (
+              <img
+                className={classes.avatar}
+                alt="userPhoto"
+                src={staticProfile}
+              />
+            )}
+            {user.user.displayName ? (
+              <h1 style={{ padding: "10px", marginTop: "1px" }}>
+                Hi {user.user.displayName}!
+              </h1>
+            ) : (
+              <h1>Hi Friend!</h1>
+            )}
+
             <Grid container>
               <Grid item sm={6} style={padding}>
                 <Link to="/mychat/chat001">
