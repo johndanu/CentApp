@@ -5,7 +5,7 @@ import { ReceiverChat } from "./ReceiverChat";
 import { SenderChat } from "./SenderChat";
 import Firebase from "firebase";
 
-export const MyChatRightBar = (props) => {
+export const MyChatRightBar = ({ id, chat, phoneNo }) => {
   // const [chat, setChat] = useState([]);
   // // useEffect((props) => {
   // // console.log();
@@ -20,17 +20,22 @@ export const MyChatRightBar = (props) => {
     overflowY: "scroll",
   };
 
-  let chat = props.chat;
-
-  let id = window.location.href.split("/");
-  id = id[id.length - 1];
-
-  let filteredChat = chat.find((item) => {
-    if (item.id == id) {
-      return item;
+  const [filteredChat, setFilteredChat] = useState(null);
+  const getdata = () => {
+    console.log("get data", id);
+    if (id === null) {
+    } else {
+      let sample = chat.find((item) => {
+        return item.id === id;
+      });
+      setFilteredChat(sample);
     }
-  });
+  };
 
+  useEffect(() => {
+    getdata();
+    console.log(filteredChat, "this is error");
+  }, [id]);
   // const [filteredChat, setFilteredChat] = useState([]);
   // // let filteredChat = [];
   // setFilteredChat(
@@ -50,29 +55,33 @@ export const MyChatRightBar = (props) => {
   // };
   return (
     <div style={space}>
-      {filteredChat.chats.map((data) => {
-        if (data.sender === props.phoneNo) {
-          return (
-            <Grid container>
-              <Grid item sm={6} />
-              <Grid item sm={6}>
-                <SenderChat message={data.message} />
+      {filteredChat === null ? (
+        <p>hello</p>
+      ) : (
+        filteredChat.chats.map((data) => {
+          if (data.sender === phoneNo) {
+            return (
+              <Grid container>
+                <Grid item sm={6} />
+                <Grid item sm={6}>
+                  <SenderChat message={data.message} />
+                </Grid>
               </Grid>
-            </Grid>
-          );
-        } else {
-          return (
-            <Grid container>
-              <Grid item sm={6}>
-                <ReceiverChat message={data.message} />
+            );
+          } else {
+            return (
+              <Grid container>
+                <Grid item sm={6}>
+                  <ReceiverChat message={data.message} />
+                </Grid>
               </Grid>
-            </Grid>
-          );
-        }
-      })}
+            );
+          }
+        })
+      )}
       <ChatTypingSpace
-        length={filteredChat.chats.length}
-        phoneNo={props.phoneNo}
+        length={filteredChat === null ? null : filteredChat.chats.length}
+        phoneNo={phoneNo}
       />
     </div>
   );

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ChatPerson } from "./ChatPerson";
 
-export const MyChatLeftBar = (props) => {
-  var ChatList = props.chat;
+export const MyChatLeftBar = ({ setId, phoneNo, chat }) => {
+  var ChatList = chat;
 
   const space = {
     height: "75.5vh",
@@ -12,29 +12,43 @@ export const MyChatLeftBar = (props) => {
   return (
     <div style={space}>
       {ChatList.map((chat, i) => {
-        if (chat.members[0] === props.phoneNo) {
-          var lastMessage = chat.chats[chat.chats.length - 1].message;
+        console.log(chat.members[0], phoneNo);
+        var lastMessage = chat.chats[chat.chats.length - 1].message;
+        if (chat.members[0] === phoneNo) {
           if (lastMessage.length >= 20) {
             lastMessage = lastMessage.slice(0, 19) + "...";
           }
           return (
-            <ChatPerson
-              name={chat.members[1]}
-              chat={lastMessage}
-              chatId={chat.id}
-            />
+            <div
+              onClick={() => {
+                setId(chat.id);
+              }}
+            >
+              <ChatPerson
+                name={chat.members[1]}
+                chat={lastMessage}
+                chatId={chat.id}
+              />
+            </div>
           );
         } else {
-          var lastMessage = chat.chats[chat.chats.length - 1].message;
           if (lastMessage.length >= 20) {
             lastMessage = lastMessage.slice(0, 19) + "...";
           }
           return (
-            <ChatPerson
-              name={chat.members[0]}
-              chat={lastMessage}
-              chatId={chat.id}
-            />
+            <React.Fragment>
+              <div
+                onClick={() => {
+                  setId(chat.id);
+                }}
+              >
+                <ChatPerson
+                  name={chat.members[0]}
+                  chat={lastMessage}
+                  chatId={chat.id}
+                />
+              </div>
+            </React.Fragment>
           );
         }
       })}

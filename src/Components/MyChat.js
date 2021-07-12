@@ -10,7 +10,7 @@ import LandingPage from "./LandingPage";
 import { AuthContext } from "../Auth";
 // import axios from 'axios'
 
-export const MyChat = ({ phoneNo }) => {
+export const MyChat = () => {
   var style = {
     paddingTop: "1px",
     height: "85vh",
@@ -24,22 +24,31 @@ export const MyChat = ({ phoneNo }) => {
   // }
   const [ChatCollections2, setChatCollections2] = useState([]);
   const [user] = useContext(AuthContext);
-
   const [value, setValue] = useState(false);
+  let phoneNo = null;
+  const [id, setId] = useState(null);
 
   const getUserData = () => {
-    // console.log("sd===============+=");
-    let ref = Firebase.database().ref("/PersonalChatCollection");
+    phoneNo = user.user.phoneNumber;
+    let ref = Firebase.database()
+      .ref("/PersonalChatCollection")
+      .orderByChild("members");
     ref.on("value", (snapshot) => {
-      const state = snapshot.val();
-      console.log("DATA SAVED", state);
+      let state = snapshot.val();
+      state = state.filter((d) =>
+        d.members.find((d) => {
+          return d === phoneNo;
+        })
+      );
       setChatCollections2(state);
       setValue(true);
     });
   };
   useEffect(() => {
-    getUserData();
-  }, []);
+    if (user.user) {
+      getUserData();
+    }
+  }, [user]);
   console.log(ChatCollections2, "chat");
 
   console.log(value);
@@ -62,10 +71,18 @@ export const MyChat = ({ phoneNo }) => {
             </Grid>
             <Grid container>
               <Grid item xs={3}>
-                <MyChatLeftBar chat={ChatCollections2} phoneNo={phoneNo} />
+                <MyChatLeftBar
+                  chat={ChatCollections2}
+                  phoneNo={phoneNo}
+                  setId={setId}
+                />
               </Grid>
               <Grid item xs={9}>
-                <MyChatRightBar chat={ChatCollections2} phoneNo={phoneNo} />
+                <MyChatRightBar
+                  chat={ChatCollections2}
+                  phoneNo={phoneNo}
+                  id={id}
+                />
               </Grid>
             </Grid>
           </React.Fragment>
