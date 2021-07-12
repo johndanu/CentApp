@@ -21,7 +21,7 @@ export default function TeacherView(props) {
   };
   const [user] = useContext(AuthContext);
   const [classCollection2, setClassCollection2] = useState([]);
-  let man = "sam";
+
   const [value, setValue] = useState(false);
 
   const getUserData = () => {
@@ -38,9 +38,11 @@ export default function TeacherView(props) {
       setValue(true);
     });
   };
-  useEffect(() => {
-    getUserData();
-  }, [man]);
+  getUserData();
+
+  // useEffect(() => {
+  //   getUserData();
+  // }, [man]);
 
   return (
     <div style={style}>
