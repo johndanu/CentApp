@@ -34,12 +34,12 @@ function App() {
           <Route path="/mychat" component={() => <MyChat />} />
           <Route path="/landing" component={LandingPage} />
           {/* <Route path="/mychat/:id" component={<MyChat />} /> */}
-          <Route path="/stuview" component={TutoryCommonStuUpdateView} />
-          <Route path="/clspersonal" component={StudentViewClassPersonal} />
+          {/* <Route path="/stuview" component={TutoryCommonStuUpdateView} /> */}
+          {/* <Route path="/clspersonal" component={StudentViewClassPersonal} /> */}
           {/* <Route path="/class" exact component={Classes} /> */}
-          <Route path="/class/:id/:simpleId" component={Classes} />
-          <Route path="/adminmsg" component={AdminToStuChat} />
-          <Route path="/progress" component={Progress} />
+          {/* <Route path="/class/:id/:simpleId" component={Classes} /> */}
+          {/* <Route path="/adminmsg" component={AdminToStuChat} /> */}
+          {/* <Route path="/progress" component={Progress} /> */}
           {/* <Route path="/techview" component={TeacherView} /> */}
           {/* <Route
             path="/techview/:instituteId/:classId"

@@ -38,11 +38,10 @@ export default function TeacherView(props) {
       setValue(true);
     });
   };
-  getUserData();
 
-  // useEffect(() => {
-  //   getUserData();
-  // }, [man]);
+  useEffect(() => {
+    getUserData();
+  }, [props.phoneNo]);
 
   return (
     <div style={style}>
