@@ -41,13 +41,13 @@ function App() {
           <Route path="/adminmsg" component={AdminToStuChat} />
           <Route path="/progress" component={Progress} />
           {/* <Route path="/techview" component={TeacherView} /> */}
-          <Route
+          {/* <Route
             path="/techview/:instituteId/:classId"
             component={() => <TeacherView />}
-          />
-          <Route path="/TeachToAdminChat" component={TeacherToAdminChat} />
-          <Route path="/TeachClsWork" component={TeacherClassWork} />
-          <Route path="/Tech2Stu" component={Teacher2StuPersonal} />
+          /> */}
+          {/* <Route path="/TeachToAdminChat" component={TeacherToAdminChat} /> */}
+          {/* <Route path="/TeachClsWork" component={TeacherClassWork} /> */}
+          {/* <Route path="/Tech2Stu" component={Teacher2StuPersonal} /> */}
           {/* <Route path="/myChatOpen" component={IfMyChatOpen}/> */}
         </Switch>
       </Router>
