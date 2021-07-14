@@ -109,7 +109,6 @@ export default function LandingPage() {
         .then((e) => {
           checkOTP = e;
           console.log(checkOTP);
-
           setOTPSent(true);
           let code = prompt("enter the otp", "");
           console.log(e);

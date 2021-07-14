@@ -34,13 +34,13 @@ export const MyChat = () => {
       .ref("/PersonalChatCollection")
       .orderByChild("members");
     ref.on("value", (snapshot) => {
-      let state = snapshot.val();
-      state = state.filter((d) =>
-        d.members.find((d) => {
-          return d === phoneNo;
-        })
-      );
-      setChatCollections2(state);
+      var state = [];
+      var state = snapshot.val();
+      var filterNo = Object.entries(state).filter(([key, val]) => (
+        val.members && val.members.find((d) =>( d == phoneNo))
+      ))
+      console.log(filterNo,'f////');
+      setChatCollections2(filterNo);
       setValue(true);
     });
   };
@@ -49,12 +49,9 @@ export const MyChat = () => {
       getUserData();
     }
   }, [user]);
-  console.log(ChatCollections2, "chat");
-
-  console.log(value);
+  console.log(ChatCollections2, "filter_chat");
 
   return (
-    // <div style={style}>
     <Grid style={style}>
       {user.user ? (
         value ? (
@@ -93,6 +90,5 @@ export const MyChat = () => {
         <LandingPage />
       )}
     </Grid>
-    // </div>
   );
 };

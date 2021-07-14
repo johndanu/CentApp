@@ -16,7 +16,7 @@ const useStyle = makeStyles({
     height: "50px",
   },
 });
-export const Home = (props) => {
+export const  Home = (props) => {
   const classes = useStyle();
   const [phoneNo, setPhoneNo] = useState(null);
   const [learningInstitutes, setLearningInstitutes] = useState([]);

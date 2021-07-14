@@ -27,7 +27,7 @@ export const ChatPerson = (props) => {
         </Grid>
         <Grid item sm={6} style={{ paddingTop: "20px" }}>
           <h4>
-            {props.name}
+            {props.name}ss
             <br />
             <small>{props.chat}</small>
           </h4>
