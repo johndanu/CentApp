@@ -36,10 +36,10 @@ export const MyChat = () => {
     ref.on("value", (snapshot) => {
       var state = [];
       var state = snapshot.val();
-      var filterNo = Object.entries(state).filter(([key, val]) => (
-        val.members && val.members.find((d) =>( d == phoneNo))
-      ))
-      console.log(filterNo,'f////');
+      var filterNo = Object.entries(state).filter(
+        ([key, val]) => val.members && val.members.find((d) => d == phoneNo)
+      );
+      console.log(filterNo, "f////");
       setChatCollections2(filterNo);
       setValue(true);
     });
@@ -73,6 +73,7 @@ export const MyChat = () => {
                   phoneNo={phoneNo}
                   setId={setId}
                 />
+                qqq
               </Grid>
               <Grid item xs={9}>
                 <MyChatRightBar

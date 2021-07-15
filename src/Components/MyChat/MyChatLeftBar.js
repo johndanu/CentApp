@@ -1,9 +1,11 @@
 import { isEmpty } from "lodash";
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useRouteMatch } from "react-router-dom";
 import { ChatPerson } from "./ChatPerson";
 
 export const MyChatLeftBar = ({ setId, phoneNo, chat }) => {
+  let match = useRouteMatch();
+  console.log(match,'mat');
   var ChatList = chat;
   console.log(ChatList,'////');
   const space = {
@@ -30,7 +32,7 @@ export const MyChatLeftBar = ({ setId, phoneNo, chat }) => {
           return (
             chat.chats  &&
             <div>
-              <Link to={'/'+`${chat.id}`} >
+              <Link to={`${match.url}/${chat.id}`} >
                 <div>
                 <ChatPerson
                   name={chat.members[1]}

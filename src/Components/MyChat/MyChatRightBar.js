@@ -4,8 +4,19 @@ import { ChatTypingSpace } from "./ChatTypingSpace";
 import { ReceiverChat } from "./ReceiverChat";
 import { SenderChat } from "./SenderChat";
 import Firebase from "firebase";
+import { useHistory, useParams, useRouteMatch } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { isEmpty } from "lodash";
 
-export const MyChatRightBar = ({ id, chat, phoneNo }) => {
+export const MyChatRightBar = ({ chat, phoneNo }) => {
+  let history = useHistory();
+  let chatIdArray = history.location.pathname.split("/");
+  let id = chatIdArray[chatIdArray.length - 1];
+  if (id == "mychat") {
+    id = null;
+  }
+  console.log(id, ">>>>?id");
+
   // const [chat, setChat] = useState([]);
   // // useEffect((props) => {
   // // console.log();
@@ -25,64 +36,68 @@ export const MyChatRightBar = ({ id, chat, phoneNo }) => {
     console.log("get data", id);
     if (id === null) {
     } else {
-      let sample = chat.find((item) => {
-        return item.id === id;
-      });
+      let sample = chat.find((item) => item.find((it) => it.id === id));
+      // let sampleChat = sample.map((item) => {
+      //   item.charts &&
+      // });
+      console.log(sample, "samlpwe");
       setFilteredChat(sample);
     }
   };
 
   useEffect(() => {
     getdata();
-    console.log(filteredChat, "this is error");
   }, [id]);
-  // const [filteredChat, setFilteredChat] = useState([]);
-  // // let filteredChat = [];
-  // setFilteredChat(
-  //   chat.find((item) => {
-  //     if (item.id == id) {
-  //       return item;
-  //     }
-  //   })
-  // );
-  // console.log(chat, "====arrayfl");
-  // let filteredChat = {
-  //   chats: [s
-  //     {
-  //       name: "john",
-  //     },
-  //   ],
-  // };
+  console.log(filteredChat, "this is error");
+  if (filteredChat) {
+    filteredChat.map((item) => {
+      if (item.chats) {
+        console.log(item.chats, "//dd");
+        setFilteredChat(() => item.chats);
+      }
+    });
+    console.log(filteredChat, "//ddddddd");
+  }
+  console.log(filteredChat, ">>>");
   return (
     <div style={space}>
-      {filteredChat === null ? (
-        <p>hello</p>
-      ) : (
-        filteredChat.chats.map((data) => {
-          if (data.sender === phoneNo) {
-            return (
-              <Grid container>
-                <Grid item sm={6} />
-                <Grid item sm={6}>
-                  <SenderChat message={data.message} />
-                </Grid>
-              </Grid>
-            );
-          } else {
-            return (
-              <Grid container>
-                <Grid item sm={6}>
-                  <ReceiverChat message={data.message} />
-                </Grid>
-              </Grid>
-            );
-          }
-        })
-      )}
-      <ChatTypingSpace
+      <Router>
+        <Switch>
+          <Route path="/mychat/:id" exact>
+            {JSON.stringify(filteredChat)}
+            {filteredChat === null ? (
+              <p>hello000</p>
+            ) : (
+              filteredChat &&
+              filteredChat.map(
+                (data) => (
+                  console.log(data, "data"),
+                  data.sender === phoneNo ? (
+                    <Grid container>
+                      <Grid item sm={6} />
+                      <Grid item sm={6}>
+                        sdsds
+                        <SenderChat message={data.message} />
+                      </Grid>
+                    </Grid>
+                  ) : (
+                    <Grid container>
+                      <Grid item sm={6}>
+                        <ReceiverChat message={data.message} />
+                      </Grid>
+                    </Grid>
+                  )
+                )
+              )
+            )}{" "}
+            */}
+          </Route>
+        </Switch>
+      </Router>
+      {/* <ChatTypingSpace
         length={filteredChat === null ? null : filteredChat.chats.length}
         phoneNo={phoneNo}
-      />
+      /> */}
     </div>
   );
 };

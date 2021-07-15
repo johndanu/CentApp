@@ -1,0 +1,6 @@
+{
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "diffEditor.renderSideBySide": false,
+    "files.autoSave": "onFocusChange"
+}
