@@ -35,19 +35,25 @@ const buttonStle = {
 
 export const ChatTypingSpace = (props) => {
   const handleClick = () => {
+    alert("ss ");
     let id = window.location.href.split("/");
     id = id[id.length - 1].split("");
     id = id[id.length - 1];
     id = parseInt(id) - 1;
-    let link = "/PersonalChatCollection/" + id + "/chats/" + props.length;
+    let link =
+      "/PersonalChatCollection/" +
+      "PersonalChatCollection/" +
+      id +
+      "/chats/" +
+      props.length;
     let ref = Firebase.database().ref(link);
     let chatData = {
       id: `message00${props.length}`,
       message: document.getElementById("myMessage").value,
       sender: props.phoneNo,
     };
-    ref.set(chatData);
-    console.log(chatData);
+    ref.push().set(chatData);
+    console.log(chatData, "chat data");
   };
 
   // const [myMessage, setMyMessage] = useState();

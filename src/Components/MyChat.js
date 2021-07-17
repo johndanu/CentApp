@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 import Firebase from "firebase";
 import LandingPage from "./LandingPage";
 import { AuthContext } from "../Auth";
-// import axios from 'axios'
 
 export const MyChat = () => {
+  const [user] = useContext(AuthContext);
   var style = {
     paddingTop: "1px",
     height: "85vh",
@@ -18,34 +18,39 @@ export const MyChat = () => {
     backgroundColor: "#F2F2F2",
     boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
   };
-
-  // var containerStyle = {
-  //   backgroundColor: "white",
-  // }
   const [ChatCollections2, setChatCollections2] = useState([]);
-  const [user] = useContext(AuthContext);
   const [value, setValue] = useState(false);
-  let phoneNo = null;
+  const [phoneNo, setPhoneNo] = useState({
+    user: {
+      user: {
+        phoneNumber: null,
+      },
+    },
+  });
   const [id, setId] = useState(null);
+  // if (user.user) {
+  //   console.log(user.user.phoneNumber, phoneNo, "user");
+  //   setPhoneNo(user.user.phoneNo);
+  // }
 
   const getUserData = () => {
-    phoneNo = user.user.phoneNumber;
+    setPhoneNo(user.user.phoneNumber);
     let ref = Firebase.database()
-      .ref("/PersonalChatCollection")
+      .ref("/PersonalChatCollection/PersonalChatCollection")
       .orderByChild("members");
     ref.on("value", (snapshot) => {
-      var state = [];
       var state = snapshot.val();
       var filterNo = Object.entries(state).filter(
-        ([key, val]) => val.members && val.members.find((d) => d == phoneNo)
+        ([key, val]) =>
+          val.members && val.members.find((d) => d == user.user.phoneNumber)
       );
-      console.log(filterNo, "f////");
       setChatCollections2(filterNo);
       setValue(true);
     });
   };
   useEffect(() => {
-    if (user.user) {
+    if (user.user != null) {
+      console.log(user, "22222");
       getUserData();
     }
   }, [user]);
@@ -68,12 +73,14 @@ export const MyChat = () => {
             </Grid>
             <Grid container>
               <Grid item xs={3}>
-                <MyChatLeftBar
-                  chat={ChatCollections2}
-                  phoneNo={phoneNo}
-                  setId={setId}
-                />
-                qqq
+                {phoneNo && (
+                  <MyChatLeftBar
+                    chat={ChatCollections2}
+                    phoneNo={phoneNo}
+                    setId={setId}
+                  />
+                  // <p>ss</p>
+                )}
               </Grid>
               <Grid item xs={9}>
                 <MyChatRightBar

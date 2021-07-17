@@ -39,7 +39,7 @@ function App() {
           {/* <Route path="/class" exact component={Classes} /> */}
           {/* <Route path="/class/:id/:simpleId" component={Classes} /> */}
           {/* <Route path="/adminmsg" component={AdminToStuChat} /> */}
-          {/* <Route path="/progress" component={Progress} /> */}
+          <Route path="/progress" component={Progress} />
           {/* <Route path="/techview" component={TeacherView} /> */}
           {/* <Route
             path="/techview/:instituteId/:classId"

@@ -1,89 +1,77 @@
-import { isEmpty } from "lodash";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 import { ChatPerson } from "./ChatPerson";
+import { makeStyles } from "@material-ui/core/styles";
+import Fab from "../core/fab";
 
-export const MyChatLeftBar = ({ setId, phoneNo, chat }) => {
-  let match = useRouteMatch();
-  console.log(match,'mat');
-  var ChatList = chat;
-  console.log(ChatList,'////');
-  const space = {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+  },
+  space: {
     height: "75.5vh",
     overflowY: "scroll",
-  };
-  var x=10;
+    position: "relative",
+  },
+  fab: {
+    position: "absolute",
+    bottom: theme.spacing(3),
+    right: theme.spacing(3),
+  },
+}));
+export const MyChatLeftBar = ({ phoneNo, chat }) => {
+  const classes = useStyles();
+  let match = useRouteMatch();
+  const [ChatList, setChatList] = useState(chat);
+  useEffect(() => {
+    setChatList(chat);
+  }, [chat]);
+  console.log(chat, "chatt");
   return (
-    <div style={space}>
-      {ChatList && ChatList.map((chat, i) => (
-        // <p>hiiioio</p>
-        
-        chat.map((chat) => {
-          var x = 10;
-          if (chat.chats) {
-            var x = 23;
-            var lastMessage = chat.chats[chat.chats.length - 1].message;
-            console.log(lastMessage, '////mes s')
-            if (lastMessage.length >= 20) {
-              var lastMessage =  lastMessage.slice(0, 19) + "...";
+    <div className={classes.space}>
+      {ChatList &&
+        ChatList.map((chat, i) =>
+          chat.map((chat) => {
+            var lastMessage = "let's start";
+            if (chat.id) {
+              var ChatPersonName = chat.members[1];
+              chat.members.map((item) => {
+                if (item !== phoneNo) {
+                  ChatPersonName = item;
+                }
+              });
+              if (chat.chats) {
+                lastMessage = chat.chats[chat.chats.length - 1].message;
+                console.log(lastMessage, "/////////////");
+              } else {
+                lastMessage = "let's start";
+              }
+              // if (lastMessage.length >= 20) {
+              //   lastMessage = lastMessage.slice(0, 19) + "...";
+              // }
             }
-          }
-         // // console.log(chat.chats[chat.chats.length - 1].message,'/////messs')
-          return (
-            chat.chats  &&
-            <div>
-              <Link to={`${match.url}/${chat.id}`} >
-                <div>
-                <ChatPerson
-                  name={chat.members[1]}
-                  chat={lastMessage}
-                  chatId={chat.id}
-                />
-              </div>
-              </Link>
-            </div>
-            )
-        })
-                
-      ))}
+            return (
+              chat.id && (
+                <div key={i}>
+                  <Link to={`${match.url}/${chat.id}`}>
+                    <div>
+                      <ChatPerson
+                        name={ChatPersonName}
+                        chat={lastMessage}
+                        chatId={chat.id}
+                      />
+                    </div>
+                  </Link>
+                </div>
+              )
+            );
+          })
+        )}
+      <div className={classes.fab}>
+        <Fab />
+      </div>
     </div>
   );
 };
-// var lastMessage = chat.chats[chat.chats.length - 1].message;
-//         if (chat.members[0] === phoneNo) {
-//           if (lastMessage.length >= 20) {
-//             lastMessage = lastMessage.slice(0, 19) + "...";
-//           }
-//           return (
-            // <div
-            //   onClick={() => {
-            //     setId(chat.id);
-            //   }}
-            // >
-            //   <ChatPerson
-            //     name={chat.members[1]}
-            //     chat={lastMessage}
-            //     chatId={chat.id}
-            //   />
-            // </div>
-//           );
-//         } else {
-//           if (lastMessage.length >= 20) {
-//             lastMessage = lastMessage.slice(0, 19) + "...";
-//           }
-//           return (
-//             <React.Fragment>
-//               <div
-//                 onClick={() => {
-//                   setId(chat.id);
-//                 }}
-//               >
-//                 <ChatPerson
-//                   name={chat.members[0]}
-//                   chat={lastMessage}
-//                   chatId={chat.id}
-//                 />
-//               </div>
-//             </React.Fragment>
-//           );
-//         }

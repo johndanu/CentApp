@@ -1,6 +1,4 @@
-export const initialState = {
-  user: null,
-};
+export const initialState = {};
 console.log(initialState, "==========");
 export const actionType = {
   SET_USER: "SET_USER",
