@@ -42,7 +42,7 @@ export const ChatTypingSpace = (props) => {
     id = parseInt(id) - 1;
     let link =
       "/PersonalChatCollection/" +
-      "PersonalChatCollection/" +
+      // "PersonalChatCollection/" +
       id +
       "/chats/" +
       props.length;
