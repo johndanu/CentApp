@@ -17,6 +17,7 @@
     "firebase": "^8.4.3",
     "formik": "^2.2.9",
     "lodash": "^4.17.21",
+    "prettier": "^2.3.2",
     "react": "^17.0.1",
     "react-beautiful-dnd": "^13.1.0",
     "react-blocks": "^1.1.4",
