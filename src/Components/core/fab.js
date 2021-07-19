@@ -17,7 +17,13 @@ export default function FabS() {
         1: `${userPhoneNumber}`,
       };
       let UserChatInfo = {
-        chats: {},
+        chats: [
+          {
+            id: "",
+            message: "",
+            sender: "",
+          },
+        ],
         id: "chat004",
         members: members,
         type: "personal",

@@ -13,6 +13,7 @@ export const MyChatRightBar = ({ chat, phoneNo }) => {
   if (id == "mychat") {
     id = null;
   }
+  console.log(id);
   const space = {
     padding: "15px",
     height: "70.1vh",
@@ -24,34 +25,43 @@ export const MyChatRightBar = ({ chat, phoneNo }) => {
   const [filteredChat, setFilteredChat] = useState([]);
   const getdata = () => {
     if (id === null) {
+      setFilteredChat(() => chat[0][1]);
     } else {
-      let sample = chat.find((item) => item.find((it) => it.id === id));
-      setFilteredChat(sample);
+      let sample = [];
+      for (let i = 0; i < chat.length - 1; i++) {
+        if (id == chat[i][0]) {
+          console.log(chat[i][1], "///");
+          setFilteredChat(() => chat[i][1]);
+        }
+      }
+      // });
+      // console.log(chat[i][1], "////");
     }
   };
 
   useEffect(() => {
     getdata();
-  }, [id]);
-  if (filteredChat) {
-    filteredChat.map((item) => {
-      if (item.chats) {
-        setFilteredChat(() => item.chats);
-      }
-    });
-  }
+  }, [chat, id]);
+  // console.log(chat, "changee");
+  // if (filteredChat) {
+  //   Object.entries(filteredChat).map(([key, item]) => {
+  //     if (item.chats) {
+  //       setFilteredChat(item);
+  //     }
+  //   });
+  // }
+  console.log(filteredChat.chats, "data");
   return (
     <div style={space}>
-      {filteredChat === null ? (
+      {filteredChat.length < 0 ? (
         <p>hello000</p>
       ) : (
-        filteredChat &&
-        filteredChat.map((data) =>
+        filteredChat.chats &&
+        Object.entries(filteredChat.chats).map(([key, data]) =>
           data.sender === phoneNo ? (
             <Grid container>
               <Grid item sm={6} />
               <Grid item sm={6}>
-                sdsds
                 <SenderChat message={data.message} />
               </Grid>
             </Grid>
@@ -65,7 +75,7 @@ export const MyChatRightBar = ({ chat, phoneNo }) => {
         )
       )}
       <ChatTypingSpace
-        length={filteredChat === null ? null : filteredChat.length}
+        // length={filteredChat === null ? null : filteredChat.length}
         phoneNo={phoneNo}
       />
     </div>

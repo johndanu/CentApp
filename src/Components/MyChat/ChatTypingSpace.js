@@ -39,20 +39,18 @@ export const ChatTypingSpace = (props) => {
     let id = window.location.href.split("/");
     id = id[id.length - 1].split("");
     id = id[id.length - 1];
-    id = parseInt(id) - 1;
+    console.log(id, "iddd");
     let link =
-      "/PersonalChatCollection/" +
-      // "PersonalChatCollection/" +
-      id +
-      "/chats/" +
-      props.length;
+      "/PersonalChatCollection/" + "PersonalChatCollection/" + id + "/chats";
     let ref = Firebase.database().ref(link);
     let chatData = {
       id: `message00${props.length}`,
       message: document.getElementById("myMessage").value,
       sender: props.phoneNo,
     };
-    ref.push().set(chatData);
+
+    // ref.push(chatData);
+    ref.set(chatData);
     console.log(chatData, "chat data");
   };
 

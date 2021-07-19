@@ -40,13 +40,15 @@ export const MyChat = () => {
       .orderByChild("members");
     ref.on("value", (snapshot) => {
       var state = snapshot.val();
+      console.log(state, "state");
       var filterNo = Object.entries(state).filter(
         ([key, val]) =>
           val.members && val.members.find((d) => d == user.user.phoneNumber)
       );
-      setChatCollections2(filterNo);
+      setChatCollections2(() => filterNo);
       setValue(true);
     });
+    // .then(console.log(1233));
   };
   useEffect(() => {
     if (user.user != null) {
