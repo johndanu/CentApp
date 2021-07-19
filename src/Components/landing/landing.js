@@ -52,7 +52,7 @@ export default function Landing() {
     alignItems:'center',
     margin:'0 auto',
     width:'20%',
-    paddingTop: "48px",
+    paddingTop: "10%",
 
   //  backgroundColor: "#F2F2F2",
     // boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
@@ -70,7 +70,16 @@ export default function Landing() {
    
     // boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
   };
+ var Inputbox={
+width:'281px',
+height:'46px',
+backgroundColor:'#E8F0F2',
+color:'#053742',
+textAlign:'center',
+borderRadius:'20px',
+border:'none'
 
+ };
   var buttonStyle = {
     padding: "2vh",
     color: "#ffffff",
@@ -83,6 +92,10 @@ export default function Landing() {
     height:'100%',
     maxHeight:'400px',
     borderRadius:'25px',
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'space-around',
+    flexDirection:'column'
 
 
   };
@@ -202,8 +215,8 @@ export default function Landing() {
             <img src={Girl}/>
             </div>
             <div style={Form}>
-            <h3>SignUp
-</h3>
+            <h2>Sign Up
+</h2>
         {/* <Button variant="contained" onClick={click} style={buttonStyle}>
           Log in With Google
         </Button> */}
@@ -212,15 +225,16 @@ export default function Landing() {
           <input
             type="text"
             name="phoneNo"
+            style={Inputbox}
             onChange={formik.handleChange}
             value={formik.values.phoneNo}
             maxlength="10"
             minLength="9"
+            placeholder="Enter Your Phone Number"
           />
           <div id="recaptcha"></div>
-          <Button variant="contained" onClick={OTPClick}>
-            <p> kk </p>
-            OTP
+          <Button style={{color:'#ffffff', backgroundColor:'#00ADB5', borderRadius:'16px' , float:'right',marginTop:'16px'}} variant="contained" onClick={OTPClick}>
+Sent            OTP
           </Button>
         </div>
         <Snackbar
@@ -245,8 +259,9 @@ export default function Landing() {
             </React.Fragment>
           }
         />
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-</p>
+        <div>  <p style={{padding:'20px',textAlign:'center',color:'#00ADB5'}}>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+</p> </div>
+      
             </div>
 
          
