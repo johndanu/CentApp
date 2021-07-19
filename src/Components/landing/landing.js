@@ -16,7 +16,6 @@ export default function Landing() {
     marginTop: "6%",
     height: "85vh",
     width: "92.5vw",
-  //  margin: "50px",
     backgroundColor: "#00ADB5",
     borderRadius:'25px',
     boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
@@ -39,12 +38,8 @@ export default function Landing() {
     justifyContent:'space-around',
     alignItems:'center',
 
-    // marginLeft: "10vh",
-    // marginTop: "20vh",
-    // paddingLeft: "5vh",
-    // paddingTop: "10vh",
+ 
     backgroundColor: "#E8F0F2",
-    // boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
   };
 
   var logoDivStyle = {
@@ -55,8 +50,6 @@ export default function Landing() {
     width:'20%',
     paddingTop: "10%",
 
-  //  backgroundColor: "#F2F2F2",
-    // boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
   };
   var mainStyle ={
      display:'flex',
@@ -64,13 +57,7 @@ export default function Landing() {
      alignItems:'center',
   };
 
-  var imageDivStyle = {
-   // height: "300px",
-    // width: "60vh",
-   
-   
-    // boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
-  };
+
  var Inputbox={
 width:'281px',
 height:'46px',
@@ -78,7 +65,9 @@ backgroundColor:'#E8F0F2',
 color:'#053742',
 textAlign:'center',
 borderRadius:'20px',
-border:'none'
+border:'none',
+fontSize:'20px',
+outline: 'none',
 
  };
   var buttonStyle = {
@@ -203,7 +192,7 @@ border:'none'
     <Grid container xs={12} sm={12} spacing={3} style={style}>
       <Grid item xs={2} style={logoDivStyle}>
         
-        <div style={imageDivStyle}>
+        <div>
             <img src={Logo}/>
         </div>
         <div>
