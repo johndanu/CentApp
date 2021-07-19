@@ -13,11 +13,13 @@ import { color } from "@material-ui/system";
 import Container from '@material-ui/core/Container';
 import {useTheme } from '@material-ui/core';
 export default function Landing() {
+    const theme = useTheme()
+
   var style = {
     marginTop: "6%",
     height: "85vh",
     width: "92.5vw",
-    backgroundColor: "#00ADB5",
+    backgroundColor:theme.palette.primary.main,
     borderRadius:'25px',
     boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
   };
@@ -29,7 +31,6 @@ export default function Landing() {
     },
   });
   const [open, setOpen] = useState(false);
-const theme = useTheme()
   var divStyle = {
     height: "90%",
     width: "95%",
@@ -77,7 +78,7 @@ outline: 'none',
     backgroundColor: "#756d5e",
   };
   var Form={
-    backgroundColor:theme.palette.primary.main,
+    backgroundColor:theme.palette.secondary1.main,
     width:'100%',
     maxWidth:'400px',
     height:'100%',
@@ -197,8 +198,8 @@ outline: 'none',
             <img src={Logo}/>
         </div>
         <div>
-        <h1 style={{color:'#ffffff',textAlign:'center'}}>Zent.App</h1>
-        <p style={{color:'#ffffff',textAlign:'center'}}>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+        <h1 style={{color:theme.palette.text.main,textAlign:'center'}}>Zent.App</h1>
+        <p style={{color:theme.palette.text.main,textAlign:'center'}}>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
         </div>
       </Grid>
       <Grid item xs={10} style={mainStyle} >
@@ -226,7 +227,7 @@ outline: 'none',
             placeholder="Enter Your Phone Number"
           />
           <div id="recaptcha"></div>
-          <Button style={{color:'#ffffff', backgroundColor:'#00ADB5', borderRadius:'16px' , float:'right',marginTop:'16px'}} variant="contained" onClick={OTPClick}>
+          <Button style={{color:theme.palette.text.main, backgroundColor:theme.palette.primary.main, borderRadius:'16px' , float:'right',marginTop:'16px'}} variant="contained" onClick={OTPClick}>
 Sent            OTP
           </Button>
         </div>
@@ -252,7 +253,7 @@ Sent            OTP
             </React.Fragment>
           }
         />
-        <div>  <p style={{padding:'20px',textAlign:'center',color:'#00ADB5'}}>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+        <div>  <p style={{padding:'20px',textAlign:'center',color:theme.palette.primary.main}}>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 </p> </div>
       
             </div>
