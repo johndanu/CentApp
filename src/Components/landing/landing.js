@@ -11,6 +11,7 @@ import Girl from "../../images/Lady.png"
 import CloseIcon from "@material-ui/icons/Close";
 import { color } from "@material-ui/system";
 import Container from '@material-ui/core/Container';
+import {useTheme } from '@material-ui/core';
 export default function Landing() {
   var style = {
     marginTop: "6%",
@@ -28,7 +29,7 @@ export default function Landing() {
     },
   });
   const [open, setOpen] = useState(false);
-
+const theme = useTheme()
   var divStyle = {
     height: "90%",
     width: "95%",
@@ -76,7 +77,7 @@ outline: 'none',
     backgroundColor: "#756d5e",
   };
   var Form={
-    backgroundColor:'#D7E6EA',
+    backgroundColor:theme.palette.primary.main,
     width:'100%',
     maxWidth:'400px',
     height:'100%',
