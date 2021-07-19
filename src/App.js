@@ -13,6 +13,7 @@ import TeacherClassWork from "./Components/TeacherVew/TeacherClassWork";
 import Teacher2StuPersonal from "./Components/TeacherVew/Teacher2StuPersonal";
 // import IfMyChatOpen from "./Components/MyChat/IfMyChatOpen";
 import LandingPage from "./Components/LandingPage";
+import Landing from "./Components/landing/landing"
 import { AuthProvider } from "./Auth";
 import reducer, { initialState } from "./Authreducer";
 import React, { useContext } from "react";
@@ -32,6 +33,8 @@ function App() {
             }}
           /> */}
           <Route path="/mychat" component={() => <MyChat />} />
+          <Route path="/home" component={() => <Landing />} />
+
           <Route path="/landing" component={LandingPage} />
           <Route path="/mychat/:id" component={<MyChat />} />
           <Route path="/stuview" component={TutoryCommonStuUpdateView} />
