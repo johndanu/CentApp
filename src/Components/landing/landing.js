@@ -12,6 +12,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import { color } from "@material-ui/system";
 import Container from '@material-ui/core/Container';
 import {useTheme } from '@material-ui/core';
+import ZentHeader from '../../Components/core/Header/header'
 export default function Landing() {
     const theme = useTheme()
 
@@ -257,7 +258,7 @@ Sent            OTP
 </p> </div>
       
             </div>
-
+<ZentHeader/>
          
 
           </div>
