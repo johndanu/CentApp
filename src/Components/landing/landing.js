@@ -10,12 +10,13 @@ import Logo from "../../images/Subtract.svg"
 import Girl from "../../images/Lady.png"
 import CloseIcon from "@material-ui/icons/Close";
 import { color } from "@material-ui/system";
+import Container from '@material-ui/core/Container';
 export default function Landing() {
   var style = {
-    paddingTop: "1px",
+    marginTop: "6%",
     height: "85vh",
     width: "92.5vw",
-    margin: "50px",
+  //  margin: "50px",
     backgroundColor: "#00ADB5",
     borderRadius:'25px',
     boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
@@ -197,6 +198,8 @@ border:'none'
   };
 
   return (
+      <div > 
+      <Container > 
     <Grid container xs={12} sm={12} spacing={3} style={style}>
       <Grid item xs={2} style={logoDivStyle}>
         
@@ -270,5 +273,7 @@ Sent            OTP
 
       </Grid>
     </Grid>
+    </Container>
+    </div>
   );
 }
