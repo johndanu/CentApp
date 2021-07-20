@@ -16,6 +16,16 @@ const useStyles = makeStyles((theme) => ({
       alignItems: 'center',
       width: 400,
     },
+    Main:{
+      display: 'flex',
+      alignItems: 'center',
+      flexDirection:'row',
+    },
+    LeftIcon:{
+      display: 'flex',
+      alignItems: 'center',
+      flexDirection:'row',
+    },
     input: {
       marginLeft: theme.spacing(1),
       flex: 1,
@@ -32,15 +42,15 @@ const useStyles = makeStyles((theme) => ({
     const classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.Main} >
         <div>
         <img src={Logo}/>
         <h2>
         Zent.app
         </h2>
         </div>
-        <div>
-            <div>
+        <div className={classes.LeftIcon} >
+            <div className={classes.LeftIcon} >
             <InputBase
         className={classes.input}
         placeholder="Search Google Maps"
