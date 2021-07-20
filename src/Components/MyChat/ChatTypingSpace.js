@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IconButton } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
 import Firebase from "firebase";
@@ -34,14 +34,15 @@ const buttonStle = {
 };
 
 export const ChatTypingSpace = (props) => {
-  const handleClick = () => {
-    alert("ss ");
-    let id = window.location.href.split("/");
-    id = id[id.length - 1].split("");
-    id = id[id.length - 1];
+  let id = window.location.href.split("/");
+  id = id[id.length - 1];
+  const [UserId, setUserId] = useState(0);
+  useEffect(() => {
+    setUserId(id);
     console.log(id, "iddd");
-    let link =
-      "/PersonalChatCollection/" + "PersonalChatCollection/" + id + "/chats";
+  }, [id]);
+  const handleClick = () => {
+    let link = "PersonalChatCollection/" + id + "/chats";
     let ref = Firebase.database().ref(link);
     let chatData = {
       id: `message00${props.length}`,
@@ -49,8 +50,8 @@ export const ChatTypingSpace = (props) => {
       sender: props.phoneNo,
     };
 
-    // ref.push(chatData);
-    ref.set(chatData);
+    ref.push(chatData);
+    // ref.set(chatData);
     console.log(chatData, "chat data");
   };
 

@@ -36,7 +36,7 @@ export const MyChat = () => {
   const getUserData = () => {
     setPhoneNo(user.user.phoneNumber);
     let ref = Firebase.database()
-      .ref("/PersonalChatCollection/PersonalChatCollection")
+      .ref("/PersonalChatCollection")
       .orderByChild("members");
     ref.on("value", (snapshot) => {
       var state = snapshot.val();

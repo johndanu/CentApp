@@ -13,7 +13,6 @@ export const MyChatRightBar = ({ chat, phoneNo }) => {
   if (id == "mychat") {
     id = null;
   }
-  console.log(id);
   const space = {
     padding: "15px",
     height: "70.1vh",
@@ -27,30 +26,19 @@ export const MyChatRightBar = ({ chat, phoneNo }) => {
     if (id === null) {
       setFilteredChat(() => chat[0][1]);
     } else {
-      let sample = [];
-      for (let i = 0; i < chat.length - 1; i++) {
-        if (id == chat[i][0]) {
-          console.log(chat[i][1], "///");
-          setFilteredChat(() => chat[i][1]);
+      for (let i = 0; i < chat.length; i++) {
+        for (let y = 0; y < chat[i].length; y++) {
+          if (id == chat[i][0]) {
+            setFilteredChat(() => chat[i][1]);
+          }
         }
       }
-      // });
-      // console.log(chat[i][1], "////");
     }
   };
 
   useEffect(() => {
     getdata();
   }, [chat, id]);
-  // console.log(chat, "changee");
-  // if (filteredChat) {
-  //   Object.entries(filteredChat).map(([key, item]) => {
-  //     if (item.chats) {
-  //       setFilteredChat(item);
-  //     }
-  //   });
-  // }
-  console.log(filteredChat.chats, "data");
   return (
     <div style={space}>
       {filteredChat.length < 0 ? (
@@ -60,6 +48,8 @@ export const MyChatRightBar = ({ chat, phoneNo }) => {
         Object.entries(filteredChat.chats).map(([key, data]) =>
           data.sender === phoneNo ? (
             <Grid container>
+              {/* {JSON.stringify(data)} */}
+
               <Grid item sm={6} />
               <Grid item sm={6}>
                 <SenderChat message={data.message} />
@@ -67,6 +57,7 @@ export const MyChatRightBar = ({ chat, phoneNo }) => {
             </Grid>
           ) : (
             <Grid container>
+              {/* {JSON.stringify(data)} */}
               <Grid item sm={6}>
                 <ReceiverChat message={data.message} />
               </Grid>

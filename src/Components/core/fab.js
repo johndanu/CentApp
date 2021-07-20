@@ -10,7 +10,7 @@ export default function FabS() {
   const getUser = () => {
     var chatUserName = prompt("write the user phone number");
     if (chatUserName) {
-      let link = "/PersonalChatCollection/PersonalChatCollection";
+      let link = "/PersonalChatCollection/";
       let ref = Firebase.database().ref(link);
       const members = {
         0: `${chatUserName}`,

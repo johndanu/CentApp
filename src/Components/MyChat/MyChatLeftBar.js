@@ -28,23 +28,25 @@ export const MyChatLeftBar = ({ phoneNo, chat }) => {
   let match = useRouteMatch();
   const [ChatList, setChatList] = useState(chat);
   // const [user] = useContext(AuthContext);
-  // const [phoneNo, setPhoneNo] = useState("")
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   useEffect(() => {
     setChatList(chat);
-    // console.log(ChatList);
+    setPhoneNumber(phoneNo);
+    console.log(ChatList, "chatlist");
     // setPhoneNo(user.user.phoneNumber);
   }, [chat]);
   // console.log(chat[0][1], "/chatt");
   const ChatuserList = (props) => {
     var { phoneNo } = props;
+    console.log(phoneNumber, "phone number");
     let userList = [];
     for (let i = 0; i < ChatList.length; i++) {
       if (ChatList[i][1].id) {
         var ChatPersonName = ChatList[i][1].members[0];
         ChatList[i][1].members.map((item) => {
-          if (item != phoneNo) {
-            // console.log("/////", item);
+          if (item != phoneNumber) {
+            console.log("/////", item, phoneNumber);
             ChatPersonName = item;
           }
         });
