@@ -29,11 +29,11 @@ export default function TeacherView(props) {
     let ref = Firebase.database().ref("/ClassCollection");
     ref.on("value", (snapshot) => {
       let state = snapshot.val();
+      console.log("DATA SAVED", state);
       state = state.find((item) => {
         console.log(item.id);
         return item.id === params.instituteId;
       });
-      console.log("DATA SAVED", state);
       setClassCollection2(state);
       setValue(true);
     });
@@ -41,17 +41,27 @@ export default function TeacherView(props) {
 
   useEffect(() => {
     getUserData();
+    // classCollection2 &&
+    //   console.log(
+    //     classCollection2.length < 1 || classCollection2 == undefined,
+    //     "class collecrtion"
+    //   );
   }, [props]);
 
   return (
     <div style={style}>
       {user.user ? (
-        value ? (
+        value &&
+        params !== undefined &&
+        classCollection2 &&
+        classCollection2.length > 0 ? (
           <span>
             <Grid container>
               <Grid item xs={3}>
                 <Link to="/">
-                  <TeachingPlace name={classCollection2.Name} />
+                  {classCollection2 && classCollection2.length > 0 && (
+                    <TeachingPlace name={classCollection2.Name} />
+                  )}
                   {/* <p>{classCollection2}</p> */}
                 </Link>
               </Grid>
