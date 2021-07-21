@@ -41,7 +41,7 @@ export default function TeacherView(props) {
 
   useEffect(() => {
     getUserData();
-  }, [props.phoneNo]);
+  }, [props]);
 
   return (
     <div style={style}>

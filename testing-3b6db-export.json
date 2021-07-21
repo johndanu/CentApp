@@ -1,0 +1,1039 @@
+{
+  "ClassCollection": [
+    {
+      "Name": "UKI Coding Class",
+      "Students": ["+94761711675", "0776867625"],
+      "Teacher": "+94761711675",
+      "classes": [
+        {
+          "Class": "Maths",
+          "classGroup": [
+            {
+              "Message": "Hi Team When shall we have our Next Gavel Club",
+              "sender": "0774766597"
+            },
+            {
+              "Message": "Next Week",
+              "sender": "0774766597"
+            },
+            {
+              "Message": "Next Week Iam Busy",
+              "sender": "0774766597"
+            }
+          ],
+          "classPersonal": [
+            {
+              "chats": [
+                {
+                  "id": "message001",
+                  "message": "Hi Teacher! I want a leave tommorow",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message002",
+                  "message": "Have you finished your Assignment",
+                  "sender": "0776858489"
+                },
+                {
+                  "id": "message003",
+                  "message": "Yes I have submitted an hour before",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message001",
+                  "message": "OK fine.",
+                  "sender": "0776858489"
+                }
+              ],
+              "id": "Classchat003",
+              "members": ["0774766597", "0776858489"],
+              "type": "personal"
+            },
+            {
+              "chats": [
+                {
+                  "id": "message001",
+                  "message": "Hi Teacher! I want a leave tommorow",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message002",
+                  "message": "Have you finished your Assignment",
+                  "sender": "0776858489"
+                },
+                {
+                  "id": "message003",
+                  "message": "Yes I have submitted an hour before",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message001",
+                  "message": "OK fine.",
+                  "sender": "0776858489"
+                }
+              ],
+              "id": "Classchat003",
+              "members": ["077458757", "0776858489"],
+              "type": "personal"
+            }
+          ],
+          "classupdates": [
+            {
+              "classOn": "Algorithams",
+              "dateAndTime": "Sun May 10 2021 22:38:59 GMT+0530 (India Standard Time)",
+              "place": "offline",
+              "type": "ClassUpdate",
+              "venue": "Sooriyan Building"
+            },
+            {
+              "description": "Every students should submit a cuboid that made up of cardboard",
+              "duedate": "Date",
+              "title": "Make a cuboid with cardboard",
+              "type": "assignment"
+            },
+            {
+              "link": "www.mathteacher.com",
+              "title": "Further Studies",
+              "type": "studyMaterial"
+            },
+            {
+              "classOn": "Maths Class on Arithmetic Expression",
+              "dateAndTime": "Sun May 09 2021 22:38:59 GMT+0530 (India Standard Time)",
+              "place": "online",
+              "type": "ClassUpdate",
+              "venue": "meet.google.com/ffd-fzss-kty"
+            },
+            {
+              "description": "Should Be Finished By Next week ",
+              "duedate": "Next Week",
+              "title": "Maths Home Work",
+              "type": "assignment"
+            },
+            {
+              "description": "message",
+              "duedate": "2021.06.01",
+              "title": "homework",
+              "type": "assignment"
+            },
+            {
+              "classOn": "Phythagarous Theorum",
+              "dateAndTime": "23.05.2021",
+              "description": "We will learn about the theorum.",
+              "place": "offline",
+              "type": "ClassUpdate",
+              "venue": "Hello Hall"
+            },
+            {
+              "classOn": "Arithmatic Operation",
+              "dateAndTime": "23.05-2029",
+              "place": "online",
+              "type": "ClassUpdate",
+              "venue": "Next Building"
+            },
+            {
+              "link": "https://www.mathcentre.ac.uk/resources/uploaded/mc-ty-pythagoras-2009-1.pdf",
+              "title": "Maths Phythogoras Theorum",
+              "type": "studyMaterial"
+            },
+            {
+              "description": "Here is a description",
+              "duedate": "Date will be here",
+              "title": "This is a sample Title",
+              "type": "assignment"
+            },
+            {
+              "link": "dfgfdg",
+              "title": "dg",
+              "type": "studyMaterial"
+            },
+            {
+              "description": "adf",
+              "duedate": "adf",
+              "title": "qqwer",
+              "type": "assignment"
+            }
+          ],
+          "id": "001",
+          "teacher": "Senthil",
+          "teacherno": "0774766597"
+        },
+        {
+          "Class": "HTML",
+          "classGroup": [
+            {
+              "Message": "Hi Team When shall we have our Next Gavel Club",
+              "sender": "0774766597"
+            },
+            {
+              "Message": "Next Week",
+              "sender": "0774766597"
+            },
+            {
+              "Message": "Next Week Iam Busy",
+              "sender": "0774766597"
+            }
+          ],
+          "classPersonal": [
+            {
+              "chats": [
+                {
+                  "id": "message001",
+                  "message": "Hi Teacher! I want a leave tommorow",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message002",
+                  "message": "Have you finished your Assignment",
+                  "sender": "0776858489"
+                },
+                {
+                  "id": "message003",
+                  "message": "Yes I have submitted an hour before",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message001",
+                  "message": "OK fine.",
+                  "sender": "0776858489"
+                }
+              ],
+              "id": "Classchat003",
+              "members": ["0774766597", "0776858489"],
+              "type": "personal"
+            },
+            {
+              "chats": [
+                {
+                  "id": "message001",
+                  "message": "Hi Teacher! I want a leave tommorow",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message002",
+                  "message": "Have you finished your Assignment",
+                  "sender": "0776858489"
+                },
+                {
+                  "id": "message003",
+                  "message": "Yes I have submitted an hour before",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message001",
+                  "message": "OK fine.",
+                  "sender": "0776858489"
+                }
+              ],
+              "id": "Classchat003",
+              "members": ["077458757", "0776858489"],
+              "type": "personal"
+            }
+          ],
+          "classupdates": [
+            {
+              "description": "This would be a sample description",
+              "duedate": "Date",
+              "title": "Assignment One",
+              "type": "assignment"
+            },
+            {
+              "link": "www.schoolbag.pro",
+              "title": "HTML Tags",
+              "type": "studyMaterial"
+            },
+            {
+              "classOn": "Using HTML tags Effectively",
+              "dateAndTime": "Sun May 09 2021 22:38:59 GMT+0530 (India Standard Time)",
+              "place": "online",
+              "type": "ClassUpdate",
+              "venue": "meet.google.com/ffd-fzss-kty"
+            },
+            {
+              "classOn": "Build Your First Website",
+              "dateAndTime": "Sun May 10 2021 22:38:59 GMT+0530 (India Standard Time)",
+              "place": "offline",
+              "type": "ClassUpdate",
+              "venue": "Mahareswary Building"
+            }
+          ],
+          "id": "002",
+          "teacher": "Senthil",
+          "teacherno": "0774855762"
+        }
+      ],
+      "id": "class001"
+    },
+    {
+      "Name": "Sooriyan Tution",
+      "Students": ["0775647873", "0776867625"],
+      "Teacher": "0774766597",
+      "classes": [
+        {
+          "Class": "Maths",
+          "classGroup": [
+            {
+              "Message": "Hi Team When shall we have our Next Gavel Club",
+              "sender": "0774766597"
+            },
+            {
+              "Message": "Next Week",
+              "sender": "0774766597"
+            },
+            {
+              "Message": "Next Week Iam Busy",
+              "sender": "0774766597"
+            }
+          ],
+          "classPersonal": [
+            {
+              "chats": [
+                {
+                  "id": "message001",
+                  "message": "Hi Teacher! I want a leave tommorow",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message002",
+                  "message": "Have you finished your Assignment",
+                  "sender": "0776858489"
+                },
+                {
+                  "id": "message003",
+                  "message": "Yes I have submitted an hour before",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message001",
+                  "message": "OK fine.",
+                  "sender": "0776858489"
+                }
+              ],
+              "id": "Classchat003",
+              "members": ["0774766597", "0776858489"],
+              "type": "personal"
+            },
+            {
+              "chats": [
+                {
+                  "id": "message001",
+                  "message": "Hi Teacher! I want a leave tommorow",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message002",
+                  "message": "Have you finished your Assignment",
+                  "sender": "0776858489"
+                },
+                {
+                  "id": "message003",
+                  "message": "Yes I have submitted an hour before",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message001",
+                  "message": "OK fine.",
+                  "sender": "0776858489"
+                }
+              ],
+              "id": "Classchat003",
+              "members": ["077458757", "0776858489"],
+              "type": "personal"
+            }
+          ],
+          "classupdates": [
+            {
+              "classOn": "Algorithams",
+              "dateAndTime": "Sun May 10 2021 22:38:59 GMT+0530 (India Standard Time)",
+              "place": "offline",
+              "type": "ClassUpdate",
+              "venue": "Sooriyan Building"
+            },
+            {
+              "description": "Every students should submit a cuboid that made up of cardboard",
+              "duedate": "Date",
+              "title": "Make a cuboid with cardboard",
+              "type": "assignment"
+            },
+            {
+              "link": "www.mathteacher.com",
+              "title": "Further Studies",
+              "type": "studyMaterial"
+            },
+            {
+              "classOn": "Maths Class on Arithmetic Expression",
+              "dateAndTime": "Sun May 09 2021 22:38:59 GMT+0530 (India Standard Time)",
+              "place": "online",
+              "type": "ClassUpdate",
+              "venue": "meet.google.com/ffd-fzss-kty"
+            },
+            {
+              "description": "Should Be Finished By Next week ",
+              "duedate": "Next Week",
+              "title": "Maths Home Work",
+              "type": "assignment"
+            },
+            {
+              "link": "StudyMet",
+              "title": "HTML",
+              "type": "studyMaterial"
+            },
+            {
+              "link": "study ",
+              "title": "class",
+              "type": "studyMaterial"
+            },
+            {
+              "link": "study ",
+              "title": "React",
+              "type": "studyMaterial"
+            },
+            {
+              "link": "StudyMet ",
+              "title": "React",
+              "type": "studyMaterial"
+            },
+            {
+              "link": "study  ",
+              "title": "Java",
+              "type": "studyMaterial"
+            },
+            {
+              "link": "StudyMet",
+              "title": "React",
+              "type": "studyMaterial"
+            },
+            {
+              "classOn": "react",
+              "dateAndTime": "2020.04.02",
+              "place": "offline",
+              "type": "ClassUpdate",
+              "venue": "church road"
+            }
+          ],
+          "id": "001",
+          "teacher": "Angelika",
+          "teacherno": "0774766597"
+        },
+        {
+          "Class": "HTML",
+          "classGroup": [
+            {
+              "Message": "Hi Team When shall we have our Next Gavel Club",
+              "sender": "0774766597"
+            },
+            {
+              "Message": "Next Week",
+              "sender": "0774766597"
+            },
+            {
+              "Message": "Next Week Iam Busy",
+              "sender": "0774766597"
+            }
+          ],
+          "classPersonal": [
+            {
+              "chats": [
+                {
+                  "id": "message001",
+                  "message": "Hi Teacher! I want a leave tommorow",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message002",
+                  "message": "Have you finished your Assignment",
+                  "sender": "0776858489"
+                },
+                {
+                  "id": "message003",
+                  "message": "Yes I have submitted an hour before",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message001",
+                  "message": "OK fine.",
+                  "sender": "0776858489"
+                }
+              ],
+              "id": "Classchat003",
+              "members": ["0774766597", "0776858489"],
+              "type": "personal"
+            },
+            {
+              "chats": [
+                {
+                  "id": "message001",
+                  "message": "Hi Teacher! I want a leave tommorow",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message002",
+                  "message": "Have you finished your Assignment",
+                  "sender": "0776858489"
+                },
+                {
+                  "id": "message003",
+                  "message": "Yes I have submitted an hour before",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message001",
+                  "message": "OK fine.",
+                  "sender": "0776858489"
+                }
+              ],
+              "id": "Classchat003",
+              "members": ["077458757", "0776858489"],
+              "type": "personal"
+            }
+          ],
+          "classupdates": [
+            {
+              "description": "This would be a sample description",
+              "duedate": "Date",
+              "title": "Assignment One",
+              "type": "assignment"
+            },
+            {
+              "link": "www.schoolbag.pro",
+              "title": "HTML Tags",
+              "type": "studyMaterial"
+            },
+            {
+              "classOn": "Using HTML tags Effectively",
+              "dateAndTime": "Sun May 09 2021 22:38:59 GMT+0530 (India Standard Time)",
+              "place": "online",
+              "type": "ClassUpdate",
+              "venue": "meet.google.com/ffd-fzss-kty"
+            },
+            {
+              "classOn": "Build Your First Website",
+              "dateAndTime": "Sun May 10 2021 22:38:59 GMT+0530 (India Standard Time)",
+              "place": "offline",
+              "type": "ClassUpdate",
+              "venue": "Mahareswary Building"
+            }
+          ],
+          "id": "class002-002",
+          "teacher": "Senthil"
+        }
+      ],
+      "id": "class002",
+      "studets": ["077653625", "09827362", "0776526517"]
+    },
+    {
+      "Name": "Royal Academy",
+      "Students": ["0775647873", "0776867625"],
+      "Teacher": "0775647873",
+      "classes": [
+        {
+          "Class": "Health",
+          "classGroup": [
+            {
+              "Message": "Hi Team When shall we have our Next Gavel Club",
+              "sender": "0774766597"
+            },
+            {
+              "Message": "Next Week",
+              "sender": "0774766597"
+            },
+            {
+              "Message": "Next Week Iam Busy",
+              "sender": "0774766597"
+            }
+          ],
+          "classPersonal": [
+            {
+              "chats": [
+                {
+                  "id": "message001",
+                  "message": "Hi Teacher! I want a leave tommorow",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message002",
+                  "message": "Have you finished your Assignment",
+                  "sender": "0776858489"
+                },
+                {
+                  "id": "message003",
+                  "message": "Yes I have submitted an hour before",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message001",
+                  "message": "OK fine.",
+                  "sender": "0776858489"
+                }
+              ],
+              "id": "Classchat003",
+              "members": ["0774766597", "0776858489"],
+              "type": "personal"
+            },
+            {
+              "chats": [
+                {
+                  "id": "message001",
+                  "message": "Hi Teacher! I want a leave tommorow",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message002",
+                  "message": "Have you finished your Assignment",
+                  "sender": "0776858489"
+                },
+                {
+                  "id": "message003",
+                  "message": "Yes I have submitted an hour before",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message001",
+                  "message": "OK fine.",
+                  "sender": "0776858489"
+                }
+              ],
+              "id": "Classchat003",
+              "members": ["077458757", "0776858489"],
+              "type": "personal"
+            }
+          ],
+          "classupdates": [
+            {
+              "classOn": "Algorithams",
+              "dateAndTime": "Sun May 10 2021 22:38:59 GMT+0530 (India Standard Time)",
+              "place": "offline",
+              "type": "ClassUpdate",
+              "venue": "Sooriyan Building"
+            }
+          ],
+          "id": "001",
+          "teacher": "Senthil",
+          "teacherno": "0774766597"
+        },
+        {
+          "Class": "Social",
+          "classGroup": [
+            {
+              "Message": "Hi Team When shall we have our Next Gavel Club",
+              "sender": "0774766597"
+            },
+            {
+              "Message": "Next Week",
+              "sender": "0774766597"
+            },
+            {
+              "Message": "Next Week Iam Busy",
+              "sender": "0774766597"
+            }
+          ],
+          "classPersonal": [
+            {
+              "chats": [
+                {
+                  "id": "message001",
+                  "message": "Hi Teacher! I want a leave tommorow",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message002",
+                  "message": "Have you finished your Assignment",
+                  "sender": "0776858489"
+                },
+                {
+                  "id": "message003",
+                  "message": "Yes I have submitted an hour before",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message001",
+                  "message": "OK fine.",
+                  "sender": "0776858489"
+                }
+              ],
+              "id": "Classchat003",
+              "members": ["0774766597", "0776858489"],
+              "type": "personal"
+            },
+            {
+              "chats": [
+                {
+                  "id": "message001",
+                  "message": "Hi Teacher! I want a leave tommorow",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message002",
+                  "message": "Have you finished your Assignment",
+                  "sender": "0776858489"
+                },
+                {
+                  "id": "message003",
+                  "message": "Yes I have submitted an hour before",
+                  "sender": "0774766597"
+                },
+                {
+                  "id": "message001",
+                  "message": "OK fine.",
+                  "sender": "0776858489"
+                }
+              ],
+              "id": "Classchat003",
+              "members": ["077458757", "0776858489"],
+              "type": "personal"
+            }
+          ],
+          "classupdates": [
+            {
+              "description": "This would be a sample description",
+              "duedate": "Date",
+              "title": "Assignment One",
+              "type": "assignment"
+            },
+            {
+              "link": "www.schoolbag.pro",
+              "title": "HTML Tags",
+              "type": "studyMaterial"
+            },
+            {
+              "classOn": "Using HTML tags Effectively",
+              "dateAndTime": "Sun May 09 2021 22:38:59 GMT+0530 (India Standard Time)",
+              "place": "online",
+              "type": "ClassUpdate",
+              "venue": "meet.google.com/ffd-fzss-kty"
+            },
+            {
+              "classOn": "Build Your First Website",
+              "dateAndTime": "Sun May 10 2021 22:38:59 GMT+0530 (India Standard Time)",
+              "place": "offline",
+              "type": "ClassUpdate",
+              "venue": "Mahareswary Building"
+            }
+          ],
+          "id": "002",
+          "teacher": "Senthil"
+        }
+      ],
+      "id": "class003"
+    },
+    {
+      "Name": "Sample",
+      "Students": ["+94775765759"],
+      "Teacher": "+94774766597",
+      "id": "class004"
+    }
+  ],
+  "PersonalChatCollection": {
+    "0": {
+      "chats": {
+        "0": {
+          "id": "message001",
+          "message": "Hi Iam john Danushan",
+          "sender": "0774766597"
+        },
+        "1": {
+          "id": "message002",
+          "message": "Hello John",
+          "sender": "0775647873"
+        },
+        "2": {
+          "id": "message003",
+          "message": "how can i help you",
+          "sender": "0774766597"
+        },
+        "3": {
+          "id": "message001",
+          "message": "May I call you tommoroww",
+          "sender": "0775647873"
+        },
+        "4": {
+          "id": "message004",
+          "message": "hi",
+          "sender": "0774766597"
+        },
+        "5": {
+          "id": "message005",
+          "message": "how are you",
+          "sender": "0774766597"
+        },
+        "6": {
+          "id": "message006",
+          "message": "fine",
+          "sender": "0775647873"
+        },
+        "7": {
+          "id": "message007",
+          "message": "ooooh good",
+          "sender": "0774766597"
+        },
+        "8": {
+          "id": "message008",
+          "message": "hei",
+          "sender": "0774766597"
+        },
+        "9": {
+          "id": "message009",
+          "message": "Yes",
+          "sender": "0775647873"
+        },
+        "10": {
+          "id": "message0010",
+          "message": "what are you dooing",
+          "sender": "0774766597"
+        },
+        "11": {
+          "id": "message0011",
+          "message": "hei",
+          "sender": "+94775765759"
+        },
+        "12": {
+          "id": "message0012",
+          "message": "yes",
+          "sender": "0775647873"
+        },
+        "13": {
+          "id": "message0013",
+          "message": "hei",
+          "sender": "0774766597"
+        },
+        "14": {
+          "id": "message0014",
+          "message": "yes",
+          "sender": "0775647873"
+        },
+        "15": {
+          "id": "message0015",
+          "message": "what are you dooing",
+          "sender": "0774766597"
+        },
+        "16": {
+          "id": "message0016",
+          "message": "yes",
+          "sender": "0775647873"
+        },
+        "17": {
+          "id": "message0017",
+          "message": "hei ",
+          "sender": "0775647873"
+        },
+        "18": {
+          "id": "message0018",
+          "message": "hi",
+          "sender": "0774766597"
+        },
+        "19": {
+          "id": "message0019",
+          "message": "hi",
+          "sender": "0775647873"
+        },
+        "20": {
+          "id": "message0020",
+          "message": "hi",
+          "sender": "0774766597"
+        },
+        "21": {
+          "id": "message0021",
+          "message": "hi",
+          "sender": "0775647873"
+        },
+        "22": {
+          "id": "message0022",
+          "message": "hi",
+          "sender": "0774766597"
+        },
+        "23": {
+          "id": "message0023",
+          "message": "hi",
+          "sender": "0774766597"
+        },
+        "24": {
+          "id": "message0024",
+          "message": "hi",
+          "sender": "0774766597"
+        },
+        "25": {
+          "id": "message0025",
+          "message": "hi",
+          "sender": "0775647873"
+        },
+        "26": {
+          "id": "message0026",
+          "message": "hi",
+          "sender": "0774766597"
+        },
+        "27": {
+          "id": "message0027",
+          "message": "hi",
+          "sender": "0775647873"
+        },
+        "-Mf0svO1hpWS0AhytQ0g": {
+          "id": "message00undefined",
+          "message": "ji",
+          "sender": "+94761711675"
+        },
+        "-Mf0sxJb8CKcZ6OHpolX": {
+          "id": "message00undefined",
+          "message": "ji",
+          "sender": "+94761711675"
+        },
+        "-Mf0sywf6zITlbwk2WbK": {
+          "id": "message00undefined",
+          "message": "ok",
+          "sender": "+94761711675"
+        },
+        "-Mf33y5AS6QZBwIp7Rxr": {
+          "id": "message00undefined",
+          "message": "hii",
+          "sender": "+94761711675"
+        },
+        "-Mf34eAcajclucnfbelJ": {
+          "id": "message00undefined",
+          "message": "hii",
+          "sender": "+94761711675"
+        },
+        "-Mf34f3ZmzBoOfq1SIvE": {
+          "id": "message00undefined",
+          "message": "hii",
+          "sender": "+94761711675"
+        },
+        "-Mf34lCdF1UupVnO50_3": {
+          "id": "message00undefined",
+          "message": "00000000000000",
+          "sender": "+94761711675"
+        },
+        "-Mf35EdH60tNc1-VYLX6": {
+          "id": "message00undefined",
+          "message": "test1",
+          "sender": "+94761711675"
+        },
+        "-Mf39UOmS4QPDB-DCPO-": {
+          "id": "message00undefined",
+          "message": "tst01",
+          "sender": "+94761711675"
+        }
+      },
+      "id": "chat001",
+      "members": ["+94761711675", "0774766597"],
+      "type": "personal"
+    },
+    "1": {
+      "chats": {
+        "0": {
+          "id": "message001",
+          "message": "Hi Iam john Danushan",
+          "sender": "0774766597"
+        },
+        "1": {
+          "id": "message002",
+          "message": "Hello John",
+          "sender": "0774548725"
+        },
+        "2": {
+          "id": "message003",
+          "message": "how can i help you",
+          "sender": "0774548725"
+        },
+        "3": {
+          "id": "message001",
+          "message": "where can I go for dinner",
+          "sender": "0774766597"
+        },
+        "4": {
+          "id": "message004",
+          "message": "checking",
+          "sender": "0774766597"
+        },
+        "-Mf3EisReVqjd7KSRDMO": {
+          "id": "message00undefined",
+          "message": "hi",
+          "sender": "+94761711675"
+        },
+        "-Mf3EloPwJT37uQjEXkQ": {
+          "id": "message00undefined",
+          "message": "009",
+          "sender": "+94761711675"
+        }
+      },
+      "id": "chat002",
+      "members": ["+94761711675", "0774766597"],
+      "type": "personal"
+    },
+    "2": {
+      "chats": [
+        {
+          "id": "message001",
+          "message": "Hi Iam john Danushan",
+          "sender": "0774766597"
+        },
+        {
+          "id": "message002",
+          "message": "Hello John",
+          "sender": "0776858489"
+        },
+        {
+          "id": "message003",
+          "message": "how can i help you",
+          "sender": "0774766597"
+        },
+        {
+          "id": "message001",
+          "message": "I dont need any help",
+          "sender": "0776858489"
+        },
+        {
+          "id": "message004",
+          "message": "hei",
+          "sender": "0774766597"
+        }
+      ],
+      "id": "chat003",
+      "members": ["0774766597", "0776858489"],
+      "type": "personal"
+    },
+    "3": {
+      "chats": [
+        {
+          "id": "message005",
+          "message": "hi",
+          "sender": "+94775765759"
+        }
+      ],
+      "id": "chat004",
+      "members": ["+94774766597", "+94775765759"],
+      "type ": "personal"
+    },
+    "-Mf3DbzTUVfWkUlRIUyk": {
+      "chats": {
+        "0": {
+          "id": "",
+          "message": "",
+          "sender": ""
+        },
+        "-Mf3UizLWo-I8BGyvqzz": {
+          "id": "message00undefined",
+          "message": "ji",
+          "sender": "+94761711675"
+        }
+      },
+      "id": "chat004",
+      "members": ["0987655432", "+94761711675"],
+      "type": "personal"
+    },
+    "-Mf3UlWuFjZjVaqbpW91": {
+      "chats": {
+        "0": {
+          "id": "",
+          "message": "",
+          "sender": ""
+        },
+        "-Mf3Uo5YSjPfztXk4MhC": {
+          "id": "message00undefined",
+          "message": "test0045",
+          "sender": "+94761711675"
+        }
+      },
+      "id": "chat004",
+      "members": ["0775454567", "+94761711675"],
+      "type": "personal"
+    }
+  }
+}

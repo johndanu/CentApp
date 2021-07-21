@@ -1,7 +1,6 @@
 import { Grid } from "@material-ui/core";
 import React from "react";
 import { MyChatRightBar } from "../MyChat/MyChatRightBar";
-// import TeacherChatRight from './TeacherChatRight'
 import TeacherLeftView from "./TeacherLeftView";
 import TeachingPlace from "./TeachingPlace";
 
@@ -33,6 +32,7 @@ export default function TeacherToAdminChat() {
       <Grid container>
         <Grid item xs={3}>
           <TeacherLeftView />
+          sss
         </Grid>
         <Grid item xs={9}>
           <MyChatRightBar />

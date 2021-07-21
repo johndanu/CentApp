@@ -8,6 +8,7 @@ import { useParams } from "react-router";
 
 export const TutoryRightBar = (props) => {
   let params = useParams();
+  console.log(props, "props");
   const Marginspace = {
     margin: "5px",
   };

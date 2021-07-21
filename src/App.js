@@ -37,14 +37,14 @@ function App() {
           <Route path="/stuview" component={TutoryCommonStuUpdateView} />
           {/* <Route path="/clspersonal" component={StudentViewClassPersonal} /> */}
           {/* <Route path="/class" exact component={Classes} /> */}
-          {/* <Route path="/class/:id/:simpleId" component={Classes} /> */}
+          <Route path="/class/:id/:simpleId" component={Classes} />
           {/* <Route path="/adminmsg" component={AdminToStuChat} /> */}
           <Route path="/progress" component={Progress} />
           {/* <Route path="/techview" component={TeacherView} /> */}
-          {/* <Route
+          <Route
             path="/techview/:instituteId/:classId"
             component={() => <TeacherView />}
-          /> */}
+          />
           {/* <Route path="/TeachToAdminChat" component={TeacherToAdminChat} /> */}
           {/* <Route path="/TeachClsWork" component={TeacherClassWork} /> */}
           {/* <Route path="/Tech2Stu" component={Teacher2StuPersonal} /> */}

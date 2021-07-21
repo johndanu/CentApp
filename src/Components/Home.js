@@ -16,9 +16,9 @@ const useStyle = makeStyles({
     height: "50px",
   },
 });
-export const  Home = (props) => {
+export const Home = (props) => {
   const classes = useStyle();
-  const [phoneNo, setPhoneNo] = useState(null);
+  const [phoneNo, setPhoneNo] = useState("11");
   const [learningInstitutes, setLearningInstitutes] = useState([]);
   const [teachingInstitutes, setTeachingInstitutes] = useState([]);
   const [value, setValue] = useState(false);
@@ -31,20 +31,22 @@ export const  Home = (props) => {
     });
   };
   const getClassData = () => {
+    let phoneNumber = user.user.phoneNumber;
+    console.log(phoneNumber);
     if (!user.user) {
       console.log("data not fetched");
     } else {
       let ref = Firebase.database().ref("/ClassCollection");
-      console.log(phoneNo);
       ref.on("value", (snapshot) => {
         const state = snapshot.val();
+        console.log(state, "value");
         let teach = state.filter((item) => {
-          console.log(item.Teacher, phoneNo);
-          return item.Teacher === phoneNo;
+          console.log(item.Teacher, phoneNumber);
+          return item.Teacher === phoneNumber;
         });
         let learn = state.filter((item, i) => {
           return item.Students.find((student) => {
-            return student === phoneNo;
+            return student === phoneNumber;
           });
         });
         setLearningInstitutes(learn);
@@ -54,8 +56,9 @@ export const  Home = (props) => {
     }
   };
   useEffect(() => {
+    console.log(user);
     if (user.user) {
-      setPhoneNo(user.user.phoneNumber);
+      setPhoneNo(() => user.user.phoneNumber);
       getClassData();
     }
   }, [user]);

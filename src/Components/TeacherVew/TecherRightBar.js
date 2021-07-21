@@ -10,6 +10,7 @@ import { AssignmentInd } from "@material-ui/icons";
 import { useParams } from "react-router";
 
 export const TeacherRightBar = (props) => {
+  console.log(props.data);
   const Marginspace = {
     margin: "5px",
   };
