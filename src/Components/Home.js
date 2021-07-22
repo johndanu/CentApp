@@ -8,16 +8,46 @@ import { Link } from "react-router-dom";
 import { Button, makeStyles } from "@material-ui/core";
 import staticProfile from "../files/profile.png";
 import { actionType } from "../Authreducer";
+import ZentHeader from '../Components/core/Header/header'
+import {useTheme } from '@material-ui/core';
 
-const useStyle = makeStyles({
+
+const useStyles = makeStyles((theme) => ({
   avatar: {
     border: "5px solid white ",
     width: "50px",
     height: "50px",
   },
-});
+   divStyle : {
+    // marginTop: "6%",
+    margin:'0 auto',
+     height: "85vh",
+     width: "92.5vw",
+     backgroundColor:theme.palette.primary.main,
+     borderRadius:'25px',
+     boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+   },
+    style : {
+    padding: "20px",
+    height: "77.5vh",
+    margin: "50px",
+    overflowY: "scroll",
+    width: "172vw",
+    boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
+    backgroundColor:theme.palette.primary.main,
+
+  },
+    
+   padding : {
+    padding: "10px",
+    marginTop: "1px",
+   // border: " 1px solid #F2F2F2",
+  },
+}));
+
 export const  Home = (props) => {
-  const classes = useStyle();
+  const theme = useTheme()
+  const classes = useStyles();
   const [phoneNo, setPhoneNo] = useState(null);
   const [learningInstitutes, setLearningInstitutes] = useState([]);
   const [teachingInstitutes, setTeachingInstitutes] = useState([]);
@@ -59,35 +89,16 @@ export const  Home = (props) => {
       getClassData();
     }
   }, [user]);
-  const divStyle = {
-    backgroundColor: "white",
-    width: "93vw",
-    height: "90vh",
-    marginTop: "40px",
-    marginLeft: "53px",
-  };
-  const style = {
-    padding: "20px",
-    height: "77.5vh",
-    margin: "50px",
-    overflowY: "scroll",
-    width: "172vw",
-    boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
-    backgroundImage:
-      "url(https://i.pinimg.com/originals/ab/ab/60/abab60f06ab52fa7846593e6ae0c9a0b.png)",
-  };
-  const padding = {
-    padding: "10px",
-    marginTop: "1px",
-    border: " 1px solid #F2F2F2",
-  };
+ 
+
 
   return (
     <div>
+
       {user.user ? (
-        <Grid container style={divStyle}>
+        <Grid container className={classes.divStyle}>
           {JSON.stringify(user.user.phoneNumber)}
-          <Grid container style={style}>
+          <Grid container className={classes.style}>
             {user.user.photoURL ? (
               <img
                 className={classes.avatar}
@@ -111,14 +122,15 @@ export const  Home = (props) => {
             ) : (
               <h1>Hi Friend!</h1>
             )}
+      <ZentHeader/>
 
             <Grid container>
-              <Grid item sm={6} style={padding}>
+              <Grid item sm={6} className={classes.padding}>
                 <Link to="/mychat">
                   <ChatHeadingFromHome name="MyChat" />
                 </Link>
               </Grid>
-              <Grid item sm={6} style={padding}>
+              <Grid item sm={6} className={classes.padding}>
                 <Link to="/progress">
                   <ChatHeadingFromHome name="Progress" />
                 </Link>
@@ -130,7 +142,7 @@ export const  Home = (props) => {
                   </Grid>
                   {learningInstitutes.map((institute, i) => {
                     return (
-                      <Grid item sm={6} style={padding}>
+                      <Grid item sm={6} className={classes.padding}>
                         <Link to={`/class/${institute.id}/001`}>
                           {JSON.stringify(institute.id)}
                           <ChatHeadingFromHome name={institute.Name} />
@@ -146,7 +158,7 @@ export const  Home = (props) => {
                         </Grid>
                         {teachingInstitutes.map((institute, i) => {
                           return (
-                            <Grid item sm={6} style={padding}>
+                            <Grid item sm={6} className={classes.padding}>
                               <Link to={`/techview/${institute.id}/001`}>
                                 <ChatHeadingFromHome name={institute.Name} />
                               </Link>

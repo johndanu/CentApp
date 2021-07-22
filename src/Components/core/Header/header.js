@@ -1,5 +1,4 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
 import Avatar from '@material-ui/core/Avatar';
  import Settings from '../../../images/icons/settings.svg';
 import Bell from '../../../images/icons/bell.svg';

@@ -2,6 +2,8 @@
 import { Classes } from "./Components/Classes";
 import { Home } from "./Components/Home";
 import { MyChat } from "./Components/MyChat";
+import  TestUi  from "./Components/ui";
+
 import { StudentViewClassPersonal } from "./Components/StudentViewClassPersonal";
 import { TutoryCommonStuUpdateView } from "./Components/TutoryCommonStuUpdateView";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -13,7 +15,6 @@ import TeacherClassWork from "./Components/TeacherVew/TeacherClassWork";
 import Teacher2StuPersonal from "./Components/TeacherVew/Teacher2StuPersonal";
 // import IfMyChatOpen from "./Components/MyChat/IfMyChatOpen";
 import LandingPage from "./Components/LandingPage";
-import Landing from "./Components/landing/landing"
 import { AuthProvider } from "./Auth";
 import reducer, { initialState } from "./Authreducer";
 import React, { useContext } from "react";
@@ -33,10 +34,13 @@ function App() {
             }}
           /> */}
           <Route path="/mychat" component={() => <MyChat />} />
-          <Route path="/home" component={() => <Landing />} />
+      
+
 
           <Route path="/landing" component={LandingPage} />
           <Route path="/mychat/:id" component={<MyChat />} />
+          <Route path="/ui" component={<TestUi/>} />
+
           <Route path="/stuview" component={TutoryCommonStuUpdateView} />
           {/* <Route path="/clspersonal" component={StudentViewClassPersonal} /> */}
           {/* <Route path="/class" exact component={Classes} /> */}
