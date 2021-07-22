@@ -28,11 +28,11 @@ const useStyles = makeStyles((theme) => ({
      boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
    },
     style : {
-    padding: "20px",
-    height: "77.5vh",
-    margin: "50px",
-    overflowY: "scroll",
-    width: "172vw",
+   // padding: "20px",
+   // height: "77.5vh",
+   // margin: "50px",
+   // overflowY: "scroll",
+   // width: "172vw",
     boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)",
     backgroundColor:theme.palette.primary.main,
 
@@ -97,7 +97,8 @@ export const  Home = (props) => {
 
       {user.user ? (
         <Grid container className={classes.divStyle}>
-          {JSON.stringify(user.user.phoneNumber)}
+            <ZentHeader/>
+          {/* {JSON.stringify(user.user.phoneNumber)} */}
           <Grid container className={classes.style}>
             {user.user.photoURL ? (
               <img
@@ -122,7 +123,7 @@ export const  Home = (props) => {
             ) : (
               <h1>Hi Friend!</h1>
             )}
-      <ZentHeader/>
+    
 
             <Grid container>
               <Grid item sm={6} className={classes.padding}>
